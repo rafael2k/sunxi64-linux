@@ -10,6 +10,10 @@
 	compatible = "pine64,pinephone-1.1", "allwinner,sun50i-a64";
 };
 
+&axp803 {
+	x-powers,drive-vbus-en;
+};
+
 &backlight {
 	power-supply = <&reg_ldo_io0>;
 	/*
@@ -27,4 +31,19 @@
 		2916 3271 3664 4096>;
 	num-interpolated-steps = <50>;
 	default-brightness-level = <400>;
+};
+
+&reg_drivevbus {
+	vin-supply = <&reg_vcc5v0>;
+	status = "okay";
+};
+
+&reg_usb0_vbus {
+	gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
+	enable-active-high;
+	vin-supply = <&reg_drivevbus>;
+};
+
+&ring_indicator {
+	gpios = <&pio 1 2 GPIO_ACTIVE_LOW>; /* PB2 */
 };
