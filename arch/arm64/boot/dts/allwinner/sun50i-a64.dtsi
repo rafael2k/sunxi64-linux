@@ -1140,7 +1140,10 @@
 			clocks = <&ccu CLK_BUS_GPU>, <&ccu CLK_GPU>;
 			clock-names = "bus", "core";
 			resets = <&ccu RST_BUS_GPU>;
-			operating-points-v2 = <&gpu_opp_table>;
+			operating-points-v2 = <&gpu_opp_table>; //T
+
+			assigned-clocks = <&ccu CLK_GPU>; //O
+			assigned-clock-rates = <432000000>; //
 		};
 
 		gic: interrupt-controller@1c81000 {
