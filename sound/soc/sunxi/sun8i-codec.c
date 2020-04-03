@@ -23,6 +23,7 @@
 #include <sound/jack.h>
 #include <sound/soc.h>
 #include <sound/soc-dapm.h>
+#include <sound/jack.h>
 #include <sound/tlv.h>
 
 #include "sun8i-codec.h"
@@ -198,6 +199,7 @@ struct sun8i_codec {
 	struct clk			*clk_bus;
 	struct delayed_work 		jack_detect_work;
 	struct sun8i_jack_detection	*jackdet;
+	struct snd_soc_jack 		*jack;
 	enum sun8i_type			type;
 	enum sun8i_jack_event		jack_event;
 };
@@ -1152,14 +1154,16 @@ static const struct regmap_config sun8i_codec_regmap_config = {
 };
 
 int sun8i_codec_set_jack_detect(struct sun8i_codec *scodec,
-			        struct sun8i_jack_detection *jackdet)
+			        struct sun8i_jack_detection *jackdet,
+			        struct snd_soc_jack *jack)
 {
 	unsigned int irq_mask = BIT(SUN8I_HMIC_CTRL_1_JACK_IN_IRQ_EN) |
 				BIT(SUN8I_HMIC_CTRL_1_JACK_OUT_IRQ_EN);
 
-	if (!jackdet)
+	if (!jackdet || !jack)
 		return -1;
 
+	scodec->jack = jack;
 	scodec->jackdet = jackdet;
 	regmap_write(scodec->regmap, SUN8I_HMIC_STS,
 		     0x2 << SUN8I_HMIC_STS_MDATA_DISCARD);
@@ -1169,6 +1173,7 @@ int sun8i_codec_set_jack_detect(struct sun8i_codec *scodec,
 		     SUN8I_HMIC_CTRL_1_HMIC_N_MASK);
 	regmap_update_bits(scodec->regmap, SUN8I_HMIC_CTRL_1,
 			   irq_mask, irq_mask);
+	snd_soc_jack_report(scodec->jack, 0, SND_JACK_HEADSET);
 
 	return 0;
 }
@@ -1214,12 +1219,17 @@ static void jack_detect(struct work_struct *work)
 					BIT(SUN8I_HMIC_CTRL_1_MIC_DET_IRQ_EN),
 					BIT(SUN8I_HMIC_CTRL_1_MIC_DET_IRQ_EN));
 		}
+		snd_soc_jack_report(scodec->jack, jack_type, SND_JACK_HEADSET);
 	} else if (scodec->jack_event == SUN8I_JACK_REMOVED) {
 		regmap_update_bits(scodec->regmap, SUN8I_HMIC_CTRL_1,
 				   BIT(SUN8I_HMIC_CTRL_1_MIC_DET_IRQ_EN), 0);
 		jackdet->enable_micdet(jackdet->component, false);
+		snd_soc_jack_report(scodec->jack, 0, SND_JACK_HEADSET);
 	} else if (scodec->jack_event == SUN8I_JACK_BUTTON_PRESSED) {
 		value = jack_read_button(scodec);
+		snd_soc_jack_report(scodec->jack, value,
+				    SND_JACK_BTN_0 | SND_JACK_BTN_1 |
+				    SND_JACK_BTN_2);
 	}
 }
 

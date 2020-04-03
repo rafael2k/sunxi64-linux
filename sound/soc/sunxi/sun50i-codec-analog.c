@@ -21,6 +21,7 @@
 
 #include <sound/soc.h>
 #include <sound/soc-dapm.h>
+#include <sound/jack.h>
 #include <sound/tlv.h>
 
 #include "sun8i-adda-pr-regmap.h"
@@ -132,6 +133,7 @@
 struct sun50i_codec {
 	struct sun8i_jack_detection	jackdet;
 	struct sun8i_codec		*codec_data;
+	struct snd_soc_jack		jack;
 	bool				internal_bias_resistor;
 };
 
@@ -502,9 +504,22 @@ static void sun50i_a64_enable_micdet(struct snd_soc_component *component, bool e
 	}
 }
 
+static struct snd_soc_jack_pin sun50i_a64_codec_pins[] = {
+	{
+		.pin = "Headphone",
+		.mask = SND_JACK_HEADPHONE,
+	},
+	{
+		.pin = "Headset Microphone",
+		.mask = SND_JACK_MICROPHONE,
+	},
+};
+
 static int sun50i_a64_codec_probe(struct snd_soc_component *component)
 {
 	struct sun50i_codec *scodec = snd_soc_component_get_drvdata(component);
+	struct snd_soc_card *card = component->card;
+	int ret;
 
 	if (scodec->internal_bias_resistor) {
 		regmap_update_bits(component->regmap,
@@ -523,8 +538,19 @@ static int sun50i_a64_codec_probe(struct snd_soc_component *component)
 	scodec->jackdet.component = component;
 	scodec->jackdet.enable_micdet = sun50i_a64_enable_micdet;
 
+	ret = snd_soc_card_jack_new(card, "Headphone Jack",
+				    SND_JACK_HEADSET | SND_JACK_BTN_0 |
+				    SND_JACK_BTN_1 | SND_JACK_BTN_2,
+				    &scodec->jack, sun50i_a64_codec_pins,
+				    ARRAY_SIZE(sun50i_a64_codec_pins));
+	if (ret) {
+		dev_err(card->dev, "failed to create jack (%d)\n", ret);
+		return ret;
+	}
+
 	return sun8i_codec_set_jack_detect(scodec->codec_data,
-					   &scodec->jackdet);
+					   &scodec->jackdet,
+					   &scodec->jack);
 }
 
 static int sun50i_a64_codec_suspend(struct snd_soc_component *component)
