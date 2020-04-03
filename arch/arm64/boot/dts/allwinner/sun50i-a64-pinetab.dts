@@ -117,11 +117,13 @@
 };
 
 &codec {
+	allwinner,inverted-jack-detection;
 	status = "okay";
 };
 
 &codec_analog {
 	cpvdd-supply = <&reg_eldo1>;
+	allwinner,internal-bias-resistor;
 	status = "okay";
 };
 
@@ -462,10 +464,11 @@
 
 &sound {
 	status = "okay";
+	simple-audio-card,name = "PineTab";
 	simple-audio-card,aux-devs = <&codec_analog>, <&speaker_amp>;
 	simple-audio-card,widgets = "Microphone", "Internal Microphone Left",
 				    "Microphone", "Internal Microphone Right",
-				    "Headphone", "Headphone Jack",
+				    "Headphone", "Headphone",
 				    "Speaker", "Internal Speaker";
 	simple-audio-card,routing =
 			"Left DAC", "DACL",
@@ -474,7 +477,7 @@
 			"Speaker Amp INR", "LINEOUT",
 			"Internal Speaker", "Speaker Amp OUTL",
 			"Internal Speaker", "Speaker Amp OUTR",
-			"Headphone Jack", "HP",
+			"Headphone", "HP",
 			"ADCL", "Left ADC",
 			"ADCR", "Right ADC",
 			"Internal Microphone Left", "MBIAS",
