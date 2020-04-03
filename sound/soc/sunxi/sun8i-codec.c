@@ -14,6 +14,7 @@
 #include <linux/clk.h>
 #include <linux/io.h>
 #include <linux/of_device.h>
+#include <linux/of_irq.h>
 #include <linux/pm_runtime.h>
 #include <linux/regmap.h>
 #include <linux/log2.h>
@@ -1085,6 +1086,8 @@ static const struct snd_soc_dapm_route sun8i_codec_dapm_routes[] = {
 static int sun8i_codec_component_probe(struct snd_soc_component *component)
 {
 	struct sun8i_codec *scodec = snd_soc_component_get_drvdata(component);
+	unsigned int irq_mask = BIT(SUN8I_HMIC_CTRL_1_JACK_IN_IRQ_EN) |
+				BIT(SUN8I_HMIC_CTRL_1_JACK_OUT_IRQ_EN);
 
 	/* Set AIF1CLK clock source to PLL */
 	regmap_update_bits(scodec->regmap, SUN8I_SYSCLK_CTL,
@@ -1100,6 +1103,17 @@ static int sun8i_codec_component_probe(struct snd_soc_component *component)
 	regmap_update_bits(scodec->regmap, SUN8I_SYSCLK_CTL,
 			   BIT(SUN8I_SYSCLK_CTL_SYSCLK_SRC),
 			   SUN8I_SYSCLK_CTL_SYSCLK_SRC_AIF1CLK);
+
+	if (scodec->type == SUN8I_TYPE_A64) {
+		regmap_write(scodec->regmap, SUN8I_HMIC_STS,
+			     0x2 << SUN8I_HMIC_STS_MDATA_DISCARD);
+		regmap_write(scodec->regmap, SUN8I_HMIC_CTRL_2,
+			     0x10 << SUN8I_HMIC_CTRL_2_MDATA_THRESHOLD);
+		regmap_write(scodec->regmap, SUN8I_HMIC_CTRL_1,
+			     SUN8I_HMIC_CTRL_1_HMIC_N_MASK);
+		regmap_update_bits(scodec->regmap, SUN8I_HMIC_CTRL_1,
+				   irq_mask, irq_mask);
+	}
 
 	return 0;
 }
@@ -1138,15 +1152,48 @@ static const struct regmap_config sun8i_codec_regmap_config = {
 	.cache_type	= REGCACHE_FLAT,
 };
 
+static irqreturn_t sun8i_codec_interrupt(int irq, void *dev_id)
+{
+	struct sun8i_codec *scodec = dev_id;
+	unsigned int status, irq_mask;
+	irqreturn_t ret = IRQ_NONE;
+
+	regmap_read(scodec->regmap, SUN8I_HMIC_STS, &status);
+	irq_mask = BIT(SUN8I_HMIC_STS_JACK_DET_IIRQ) |
+		   BIT(SUN8I_HMIC_STS_JACK_DET_OIRQ) |
+		   BIT(SUN8I_HMIC_STS_MIC_DET_ST);
+
+	if (status & irq_mask) {
+		if (status & BIT(SUN8I_HMIC_STS_JACK_DET_IIRQ)) {
+			pr_debug("sun8i-codec: received JACK_IN interrupt\n");
+		}
+		if (status & BIT(SUN8I_HMIC_STS_JACK_DET_OIRQ)) {
+			pr_debug("sun8i-codec: received JACK_OUT interrupt\n");
+		}
+		if (status & BIT(SUN8I_HMIC_STS_MIC_DET_ST)) {
+			pr_debug("sun8i-codec: received MIC_DET interrupt\n");
+		}
+		regmap_update_bits(scodec->regmap, SUN8I_HMIC_STS,
+				   irq_mask, irq_mask);
+		ret = IRQ_HANDLED;
+	}
+
+	return ret;
+}
+
 static int sun8i_codec_probe(struct platform_device *pdev)
 {
 	struct sun8i_codec *scodec;
 	void __iomem *base;
-	int ret;
+	int irq, ret;
 
 	scodec = devm_kzalloc(&pdev->dev, sizeof(*scodec), GFP_KERNEL);
 	if (!scodec)
 		return -ENOMEM;
+
+	irq = irq_of_parse_and_map(pdev->dev.of_node, 0);
+	if (irq < 0)
+		return irq;
 
 	scodec->clk_module = devm_clk_get(&pdev->dev, "mod");
 	if (IS_ERR(scodec->clk_module)) {
@@ -1177,6 +1224,15 @@ static int sun8i_codec_probe(struct platform_device *pdev)
 
 	platform_set_drvdata(pdev, scodec);
 
+	if (scodec->type == SUN8I_TYPE_A64) {
+		ret = devm_request_irq(&pdev->dev, irq, sun8i_codec_interrupt,
+				       0, "sun8i-jackdet-irq", scodec);
+		if (ret) {
+			dev_err(&pdev->dev, "Failed to setup interrupt\n");
+			return ret;
+		}
+	}
+
 	pm_runtime_enable(&pdev->dev);
 	if (!pm_runtime_enabled(&pdev->dev)) {
 		ret = sun8i_codec_runtime_resume(&pdev->dev);
@@ -1206,6 +1262,14 @@ err_pm_disable:
 
 static int sun8i_codec_remove(struct platform_device *pdev)
 {
+	struct sun8i_codec *scodec = platform_get_drvdata(pdev);
+	unsigned int irq_mask = BIT(SUN8I_HMIC_CTRL_1_JACK_IN_IRQ_EN)  |
+				BIT(SUN8I_HMIC_CTRL_1_JACK_OUT_IRQ_EN) |
+				BIT(SUN8I_HMIC_CTRL_1_MIC_DET_IRQ_EN);
+
+	/* Disable jack detection interrupts */
+	regmap_update_bits(scodec->regmap, SUN8I_HMIC_CTRL_1, irq_mask, 0);
+
 	pm_runtime_disable(&pdev->dev);
 	if (!pm_runtime_status_suspended(&pdev->dev))
 		sun8i_codec_runtime_suspend(&pdev->dev);
