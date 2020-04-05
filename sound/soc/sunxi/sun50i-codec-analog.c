@@ -12,6 +12,7 @@
  */
 
 #include <linux/io.h>
+#include <linux/input.h>
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/of.h>
@@ -547,6 +548,10 @@ static int sun50i_a64_codec_probe(struct snd_soc_component *component)
 		dev_err(card->dev, "failed to create jack (%d)\n", ret);
 		return ret;
 	}
+
+	snd_jack_set_key(scodec->jack.jack, SND_JACK_BTN_0, KEY_PLAYPAUSE);
+	snd_jack_set_key(scodec->jack.jack, SND_JACK_BTN_1, KEY_VOLUMEUP);
+	snd_jack_set_key(scodec->jack.jack, SND_JACK_BTN_2, KEY_VOLUMEDOWN);
 
 	return sun8i_codec_set_jack_detect(scodec->codec_data,
 					   &scodec->jackdet,
