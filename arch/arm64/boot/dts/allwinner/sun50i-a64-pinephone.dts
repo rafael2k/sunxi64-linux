@@ -155,6 +155,19 @@
 		enable-gpios = <&pio 3 2 GPIO_ACTIVE_HIGH>; /* PD2 */
 		vcc-supply = <&reg_dcdc1>;
 	};
+
+	gpio_keys {
+		compatible = "gpio-keys";
+
+		ring_indicator {
+			label = "Ring Indicator";
+			gpios =  <&pio 1 2 IRQ_TYPE_EDGE_FALLING>; /* PB2 */
+			linux,input-type = <EV_KEY>;
+			linux,code = <KEY_WAKEUP>;
+			linux,can-disable;
+			wakeup-source;
+		};
+	};
 };
 
 &codec {
