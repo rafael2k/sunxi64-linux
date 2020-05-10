@@ -121,6 +121,8 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
 
 	spin_lock_init(&pfdevfreq->lock);
 
+	spin_lock_init(&pfdevfreq->lock);
+
 	panfrost_devfreq_reset(pfdevfreq);
 
 	cur_freq = clk_get_rate(pfdev->clock);
