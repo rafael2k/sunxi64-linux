@@ -1175,7 +1175,9 @@
 			operating-points-v2 = <&gpu_opp_table>; //T
 
 			assigned-clocks = <&ccu CLK_GPU>; //O
-			assigned-clock-rates = <432000000>; //
+			assigned-clock-rates = <432000000>; //O
+			assigned-clocks = <&ccu CLK_GPU>;//OO
+			assigned-clock-rates = <500000000>;//OO
 		};
 
 		gic: interrupt-controller@1c81000 {
