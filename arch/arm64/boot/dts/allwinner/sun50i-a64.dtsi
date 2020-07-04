@@ -134,7 +134,7 @@
 		status = "disabled";
 	};
 
-	gpu_opp_table: opp-table-gpu {
+	gpu_opp_table: opp-table-gpu {//T
 		compatible = "operating-points-v2";
 
 		opp-120000000 {
@@ -146,7 +146,23 @@
 		};
 
 		opp-432000000 {
-			opp-hz = /bits/ 64 <432000000>;
+			opp-hz = /bits/ 64 <432000000>;//T
+	hdmi_sound: hdmi-sound {//O
+		compatible = "simple-audio-card";
+		simple-audio-card,format = "i2s";
+		simple-audio-card,name = "sun50i-a64-hdmi";
+		simple-audio-card,mclk-fs = <128>;
+		simple-audio-card,frame-inversion;
+		status = "disabled";
+
+		simple-audio-card,codec {
+			sound-dai = <&hdmi>;
+		};
+
+		simple-audio-card,cpu {
+			sound-dai = <&i2s2>;
+			dai-tdm-slot-num = <2>;
+			dai-tdm-slot-width = <32>;//O
 		};
 	};
 
@@ -1278,6 +1294,7 @@
 		};
 
 		hdmi: hdmi@1ee0000 {
+			#sound-dai-cells = <0>;
 			compatible = "allwinner,sun50i-a64-dw-hdmi",
 				     "allwinner,sun8i-a83t-dw-hdmi";
 			reg = <0x01ee0000 0x10000>;
