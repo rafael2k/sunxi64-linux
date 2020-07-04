@@ -341,6 +341,22 @@ static int vidioc_enum_fmt_vid_cap(struct file *file, void *priv,
 	return 0;
 }
 
+static int vidioc_enum_framesizes(struct file *file, void *fh,
+				  struct v4l2_frmsizeenum *fsize)
+{
+	u32 index = fsize->index;
+
+	if (index >= ARRAY_SIZE(supported_pixformats))
+		return -EINVAL;
+
+	fsize->pixel_format = supported_pixformats[index];
+	fsize->type = V4L2_FRMSIZE_TYPE_DISCRETE;
+	fsize->discrete.width = 1280;
+	fsize->discrete.height = 720;
+
+	return 0;
+}
+
 static int vidioc_g_fmt_vid_cap(struct file *file, void *priv,
 				struct v4l2_format *fmt)
 {
@@ -475,6 +491,7 @@ static int vidioc_s_parm(struct file *file, void *priv,
 static const struct v4l2_ioctl_ops sun6i_video_ioctl_ops = {
 	.vidioc_querycap		= vidioc_querycap,
 	.vidioc_enum_fmt_vid_cap	= vidioc_enum_fmt_vid_cap,
+	.vidioc_enum_framesizes		= vidioc_enum_framesizes,
 	.vidioc_g_fmt_vid_cap		= vidioc_g_fmt_vid_cap,
 	.vidioc_s_fmt_vid_cap		= vidioc_s_fmt_vid_cap,
 	.vidioc_try_fmt_vid_cap		= vidioc_try_fmt_vid_cap,
