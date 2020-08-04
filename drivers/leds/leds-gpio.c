@@ -108,6 +108,8 @@ static int create_gpio_led(const struct gpio_led *template,
 	if (ret < 0)
 		return ret;
 
+	led_dat->cdev.max_brightness = template->max_brightness;
+
 	if (template->name) {
 		led_dat->cdev.name = template->name;
 		ret = devm_led_classdev_register(parent, &led_dat->cdev);
@@ -179,6 +181,8 @@ static struct gpio_leds_priv *gpio_leds_create(struct platform_device *pdev)
 			led.retain_state_shutdown = 1;
 		if (fwnode_property_present(child, "panic-indicator"))
 			led.panic_indicator = 1;
+
+		fwnode_property_read_u32(child, "max-brightness", &led.max_brightness);
 
 		ret = create_gpio_led(&led, led_dat, dev, child, NULL);
 		if (ret < 0) {
