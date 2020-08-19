@@ -185,6 +185,14 @@
 	cpu-supply = <&reg_dcdc2>;
 };
 
+&cpu_alert0 {
+	temperature = <60000>;
+};
+
+&cpu_alert1 {
+	temperature = <80000>;
+};
+
 &csi {
 	pinctrl-0 = <&csi_pins>, <&csi_mclk_pin>;
 	status = "okay";
