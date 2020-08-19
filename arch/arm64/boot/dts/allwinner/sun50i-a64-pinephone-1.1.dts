@@ -29,11 +29,11 @@
 	 * value here was chosen as a safe default.
 	 */
 	brightness-levels = <
-		774  793  814  842
-		882  935  1003 1088
-		1192 1316 1462 1633
-		1830 2054 2309 2596
-		2916 3271 3664 4096>;
+		392  413  436  468
+		512  571  647  742
+		857  995  1159 1349
+		1568 1819 2103 2423
+		2779 3176 3614 4096>;
 	num-interpolated-steps = <50>;
 	default-brightness-level = <400>;
 };
