@@ -694,6 +694,31 @@ static struct snd_soc_dai_driver sun8i_codec_dais[] = {
 		.symmetric_channels	= true,
 		.symmetric_sample_bits	= true,
 	},
+	{
+		.name	= "sun8i-codec-aif3",
+		.id	= SUN8I_CODEC_AIF3,
+		.ops	= &sun8i_codec_dai_ops,
+		/* capture capabilities */
+		.capture = {
+			.stream_name	= "AIF3 Capture",
+			.channels_min	= 1,
+			.channels_max	= 1,
+			.rates		= SUN8I_CODEC_PCM_RATES,
+			.formats	= SUN8I_CODEC_PCM_FORMATS,
+			.sig_bits	= 24,
+		},
+		/* playback capabilities */
+		.playback = {
+			.stream_name	= "AIF3 Playback",
+			.channels_min	= 1,
+			.channels_max	= 1,
+			.rates		= SUN8I_CODEC_PCM_RATES,
+			.formats	= SUN8I_CODEC_PCM_FORMATS,
+		},
+		.symmetric_rate	= true,
+		.symmetric_channels	= true,
+		.symmetric_sample_bits	= true,
+	},
 };
 
 static int sun8i_codec_aif_event(struct snd_soc_dapm_widget *w,
