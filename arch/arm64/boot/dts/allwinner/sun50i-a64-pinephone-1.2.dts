@@ -35,6 +35,10 @@
 	default-brightness-level = <500>;
 };
 
+&codec_analog {
+	allwinner,internal-bias-resistor;
+};
+
 &lis3mdl {
 	/*
 	 * Board revision 1.2 fixed routing of the interrupt to DRDY pin,
