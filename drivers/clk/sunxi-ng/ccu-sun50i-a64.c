@@ -950,6 +950,8 @@ static struct ccu_rate_reset_nb sun50i_a64_pll_video0_reset_tcon0_nb = {
 	.common		= &pll_video0_clk.common,
 };
 
+#define CCU_MIPI_DSI_CLK 0x168
+
 static int sun50i_a64_ccu_probe(struct platform_device *pdev)
 {
 	void __iomem *reg;
@@ -968,6 +970,12 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
 	writel(0x515, reg + SUN50I_A64_PLL_MIPI_REG);
 
 	ret = devm_sunxi_ccu_probe(&pdev->dev, reg, &sun50i_a64_ccu_desc);//T
+	/* Set MIPI-DSI clock parent to periph0(1x), so that video0(1x) is free to change. */
+	val = readl(reg + CCU_MIPI_DSI_CLK);//OO
+	val &= 0x30f;
+	val |= (2 << 8) | ((4 - 1) << 0); /* M-1 */
+	writel(val, reg + CCU_MIPI_DSI_CLK);//OO
+
 	/* Force the parent of TCON0 to PLL-MIPI */
 	val = readl(reg + SUN50I_A64_TCON0_REG);//O
 	val &= ~GENMASK(26, 24);
