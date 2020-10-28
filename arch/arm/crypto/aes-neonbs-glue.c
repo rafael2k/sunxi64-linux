@@ -20,7 +20,7 @@ MODULE_AUTHOR("Ard Biesheuvel <ard.biesheuvel@linaro.org>");
 MODULE_LICENSE("GPL v2");
 
 MODULE_ALIAS_CRYPTO("ecb(aes)");
-MODULE_ALIAS_CRYPTO("cbc(aes)");
+MODULE_ALIAS_CRYPTO("cbc(aes)-all");
 MODULE_ALIAS_CRYPTO("ctr(aes)");
 MODULE_ALIAS_CRYPTO("xts(aes)");
 
@@ -187,7 +187,10 @@ static int cbc_init(struct crypto_tfm *tfm)
 {
 	struct aesbs_cbc_ctx *ctx = crypto_tfm_ctx(tfm);
 
-	ctx->enc_tfm = crypto_alloc_cipher("aes", 0, 0);
+	ctx->enc_tfm = crypto_alloc_skcipher("cbc(aes)", 0, CRYPTO_ALG_ASYNC |
+					     CRYPTO_ALG_NEED_FALLBACK);
+	if (IS_ERR(ctx->enc_tfm))
+		return PTR_ERR(ctx->enc_tfm);
 
 	return PTR_ERR_OR_ZERO(ctx->enc_tfm);
 }
@@ -431,7 +434,8 @@ static struct skcipher_alg aes_algs[] = { {
 	.base.cra_blocksize	= AES_BLOCK_SIZE,
 	.base.cra_ctxsize	= sizeof(struct aesbs_cbc_ctx),
 	.base.cra_module	= THIS_MODULE,
-	.base.cra_flags		= CRYPTO_ALG_INTERNAL,
+	.base.cra_flags		= CRYPTO_ALG_INTERNAL |
+				  CRYPTO_ALG_NEED_FALLBACK,
 	.base.cra_init		= cbc_init,
 	.base.cra_exit		= cbc_exit,
 
