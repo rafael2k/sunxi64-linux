@@ -447,6 +447,8 @@ static struct skcipher_alg aes_algs[] = { {
 	.base.cra_module	= THIS_MODULE,
 	.base.cra_flags		= CRYPTO_ALG_INTERNAL |
 				  CRYPTO_ALG_NEED_FALLBACK,
+	.base.cra_init		= cbc_init,
+	.base.cra_exit		= cbc_exit,
 
 	.min_keysize		= AES_MIN_KEY_SIZE,
 	.max_keysize		= AES_MAX_KEY_SIZE,
