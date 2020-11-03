@@ -1272,7 +1272,7 @@ static const struct snd_soc_dapm_route sun8i_codec_legacy_routes[] = {
 
 static struct snd_soc_jack_pin sun8i_codec_jack_pins[] = {
 	{
-		.pin	= "Headphone Jack",
+		.pin	= "Headphone",
 		.mask	= SND_JACK_HEADPHONE,
 	},
 	{
