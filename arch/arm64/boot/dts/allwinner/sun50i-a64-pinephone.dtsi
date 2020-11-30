@@ -287,6 +287,7 @@
 
 &i2c0 {
 	status = "okay";
+	clock-frequency = <400000>;
 
 	anx7688: hdmi-bridge@28 {
 		compatible = "analogix,anx7688";
@@ -329,6 +330,7 @@
 
 &i2c1 {
 	status = "okay";
+	clock-frequency = <400000>;
 
 	/* Magnetometer */
 	lis3mdl: magnetometer@1e {
