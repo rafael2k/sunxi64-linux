@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Force rebuild initramfs if using disk encryption: this will ensure it is small
+# enough so we can still build the initramfs for the new kernel
+# (works around too small /boot partition on old images)
+update-initramfs -u -k all
+
+#DEBHELPER#
