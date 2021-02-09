@@ -1,4 +1,11 @@
-linux-sunxi64 (5.10.4+sunxi64) unstable; urgency=medium
+linux-sunxi64 (5.10.6+sunxi64-3) unstable; urgency=medium
+
+  * pine64_defconfig: add full support for A64 crypto engine.
+  * pine64_defconfig: add support for more squashfs compression options.
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Tue, 09 Feb 2021 09:47:06 +0100
+
+linux-sunxi64 (5.10.6+sunxi64-2) unstable; urgency=medium
 
   * Initial release
 
