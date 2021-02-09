@@ -1,0 +1,61 @@
+Source: linux-sunxi64
+Section: kernel
+Priority: optional
+Maintainer: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Build-Depends:
+ bc,
+ bison,
+ cpio,
+ debhelper-compat (=12),
+ flex | flex:native,
+ kmod,
+ libssl-dev:native,
+ rsync,
+Standards-Version: 4.5.1
+Homepage: https://gitlab.com/mobian1/devices/sunxi64-linux
+Vcs-Git: https://gitlab.com/mobian1/devices/sunxi64-linux.git
+Vcs-Browser: https://gitlab.com/mobian1/devices/sunxi64-linux
+Rules-Requires-Root: no
+
+Package: linux-image-5.11-sunxi64
+Architecture: arm64
+Depends:
+ initramfs-tools,
+ kmod,
+ linux-base,
+ mobian-pinephone-tweaks (>= 0.52) | mobian-pinetab-tweaks (>= 0.12),
+Description: Linux 5.11 for Allwinner A64 devices
+ The linux kernel, modules and corresponding other files for Allwinner A64
+ devices such as the PinePhone and PineTab.
+
+Package: linux-headers-5.11-sunxi64
+Architecture: arm64
+Description: Linux kernel headers for Allwinner A64 devices
+ This package provides kernel header files for the sunxi64 kernel.
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-libc-dev
+Section: devel
+Provides: linux-kernel-headers
+Architecture: arm64
+Description: Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
+Multi-Arch: same
+
+Package: linux-image-5.11-sunxi64-dbg
+Section: debug
+Architecture: arm64
+Description: Linux kernel debugging symbols for Allwinner A64 devices
+ This package will come in handy if you need to debug the kernel. It provides
+ all the necessary debug symbols for the kernel and its modules.
+
+Package: linux-image-sunxi64
+Architecture: arm64
+Section: kernel
+Depends:
+ linux-image-5.11-sunxi64 (>= ${binary:Version}),
+Description: Linux kernel for Allwinner A64 devices
+ This packages sole purpose is to depend on the latest Linux kernel and modules
+ for use on Allwinner A64 devices such as the PinePhone and PineTab.

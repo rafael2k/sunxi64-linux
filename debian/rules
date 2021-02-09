@@ -1,0 +1,55 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+srctree ?= .
+
+KREL=5.11-sunxi64
+KREL_MAJOR=$(shell echo "${KREL}" | sed 's/\([0-9].[0-9]\+\).*/\1/')
+BUILD=$(MAKE) KERNELRELEASE=$(KREL)
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	BUILD += -j$(NUMJOBS)
+endif
+
+ifeq ($(DEB_SOURCE), linux-sunxi64)
+	BUILD_LIBC_PKG=0
+	export BUILD_LIBC_PKG
+endif
+
+debian/control: debian/control.in
+	sed -e 's/\%KREL\%/$(KREL)/g' \
+	    -e 's/\%DEB_SOURCE\%/$(DEB_SOURCE)/g' \
+	    -e 's/\%KREL_MAJOR\%/$(KREL_MAJOR)/g' \
+		debian/control.in > debian/control.tmp
+	mv debian/control.tmp debian/control
+
+.config: arch/arm64/configs/pine64_defconfig
+	$(BUILD) pine64_defconfig
+
+build-arch: .config
+	$(BUILD) -f $(srctree)/Makefile
+
+binary-indep:
+
+binary-arch: debian/control
+	$(BUILD) -f $(srctree)/Makefile intdeb-pkg
+ifeq ($(DEB_SOURCE), linux-sunxi64)
+	dh_installdeb -plinux-image-sunxi64
+	dh_gencontrol -plinux-image-sunxi64
+	dh_install -plinux-image-sunxi64
+	dh_installdocs -plinux-image-sunxi64
+	dh_installchangelogs -plinux-image-sunxi64
+	dh_compress -plinux-image-sunxi64
+	dh_builddeb -plinux-image-sunxi64
+endif
+
+clean: debian/control
+ifeq ($(DEB_SOURCE), linux-sunxi64)
+	dh_clean -plinux-image-sunxi64
+endif
+	rm -rf debian/*tmp debian/files
+	$(BUILD) clean
+
+binary: build-arch binary-arch
