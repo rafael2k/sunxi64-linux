@@ -1,0 +1,39 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+srctree ?= .
+
+KREL=5.15-sunxi64
+KREL_MAJOR=$(shell echo "${KREL}" | sed 's/\([0-9].[0-9]\+\).*/\1/')
+BUILD=$(MAKE) KERNELRELEASE=$(KREL)
+
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+	BUILD += -j$(NUMJOBS)
+else
+	BUILD += -j$(shell nproc)
+endif
+
+debian/control: debian/control.in
+	sed -e 's/\%KREL\%/$(KREL)/g' \
+	    -e 's/\%KREL_MAJOR\%/$(KREL_MAJOR)/g' \
+		debian/control.in > debian/control.tmp
+	mv debian/control.tmp debian/control
+
+.config: arch/arm64/configs/pine64_defconfig
+	$(BUILD) pine64_defconfig
+
+build-arch: .config
+	$(BUILD) -f $(srctree)/Makefile
+
+binary-indep:
+
+binary-arch: debian/control build-arch
+	$(BUILD) -f $(srctree)/Makefile intdeb-pkg
+
+clean: debian/control
+	rm -rf debian/*tmp debian/files
+	$(BUILD) clean
+
+binary: binary-arch
