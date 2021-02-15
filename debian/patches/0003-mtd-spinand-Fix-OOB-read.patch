@@ -1,0 +1,37 @@
+From 8767c7f99756fa22501f019cb4cb613e932f8100 Mon Sep 17 00:00:00 2001
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+Date: Thu, 1 Oct 2020 12:20:13 +0200
+Subject: [PATCH 003/184] mtd: spinand: Fix OOB read
+
+commit 868cbe2a6dcee451bd8f87cbbb2a73cf463b57e5 upstream.
+
+So far OOB have never been used in SPI-NAND, add the missing memcpy to
+make it work properly.
+
+Fixes: 7529df465248 ("mtd: nand: Add core infrastructure to support SPI NANDs")
+Cc: stable@vger.kernel.org
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Link: https://lore.kernel.org/linux-mtd/20201001102014.20100-6-miquel.raynal@bootlin.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+---
+ drivers/mtd/nand/spi/core.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/mtd/nand/spi/core.c b/drivers/mtd/nand/spi/core.c
+index 61d932c1b718..8abe16b042fc 100644
+--- a/drivers/mtd/nand/spi/core.c
++++ b/drivers/mtd/nand/spi/core.c
+@@ -450,6 +450,10 @@ static int spinand_write_to_cache_op(struct spinand_device *spinand,
+ 		buf += ret;
+ 	}
+ 
++	if (req->ooblen)
++		memcpy(req->oobbuf.in, spinand->oobbuf + req->ooboffs,
++		       req->ooblen);
++
+ 	return 0;
+ }
+ 
+-- 
+2.30.0
+

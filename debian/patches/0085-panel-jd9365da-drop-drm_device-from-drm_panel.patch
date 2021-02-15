@@ -1,0 +1,25 @@
+From 0d5f2ab630c59c86926ecb8d3acfed6b138036cb Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 11 Apr 2020 00:54:56 +0200
+Subject: [PATCH 085/184] panel: jd9365da: drop drm_device from drm_panel
+
+---
+ drivers/gpu/drm/panel/panel-pinephone-jd9365da.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
+index 558b2e0f87be..8e111c9691d6 100644
+--- a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
++++ b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
+@@ -413,7 +413,7 @@ static int pinephone_get_modes(struct drm_panel *panel,
+ 	struct pinephone *ctx = panel_to_pinephone(panel);
+ 	struct drm_display_mode *mode;
+ 
+-	mode = drm_mode_duplicate(panel->drm, &pinephone_default_mode);
++	mode = drm_mode_duplicate(connector->dev, &pinephone_default_mode);
+ 	if (!mode) {
+ 		DRM_DEV_ERROR(&ctx->dsi->dev, "failed to add mode %ux%ux@%u\n",
+ 			      pinephone_default_mode.hdisplay,
+-- 
+2.30.0
+

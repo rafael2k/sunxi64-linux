@@ -1,0 +1,34 @@
+From c13a81dc893b37a35c1b2689281dea5f70df1527 Mon Sep 17 00:00:00 2001
+From: Samuel Holland <samuel@sholland.org>
+Date: Tue, 7 Apr 2020 23:11:43 -0500
+Subject: [PATCH 070/184] Revert "drm/sun4i: tcon: Prepare and enable TCON
+ channel 0 clock at init"
+
+This reverts commit b14e945bda8ae227d1bf2b1837c0c4a61721cd1a.
+---
+ drivers/gpu/drm/sun4i/sun4i_tcon.c | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+index 1e643bc7e786..45f45cb0e134 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+@@ -808,7 +808,6 @@ static int sun4i_tcon_init_clocks(struct device *dev,
+ 			return PTR_ERR(tcon->sclk0);
+ 		}
+ 	}
+-	clk_prepare_enable(tcon->sclk0);
+ 
+ 	if (tcon->quirks->has_channel_1) {
+ 		tcon->sclk1 = devm_clk_get(dev, "tcon-ch1");
+@@ -823,7 +822,6 @@ static int sun4i_tcon_init_clocks(struct device *dev,
+ 
+ static void sun4i_tcon_free_clocks(struct sun4i_tcon *tcon)
+ {
+-	clk_disable_unprepare(tcon->sclk0);
+ 	clk_disable_unprepare(tcon->clk);
+ }
+ 
+-- 
+2.30.0
+

@@ -1,0 +1,31 @@
+From 5ed8fe51674d124e02395921c881ed31bde2fa12 Mon Sep 17 00:00:00 2001
+From: Samuel Holland <samuel@sholland.org>
+Date: Wed, 8 Apr 2020 18:54:06 -0500
+Subject: [PATCH 094/184] mmc: sunxi-mmc: Ensure host is suspended during
+ system sleep
+
+If the device suspend process begins before the mmc host's autosuspend
+timeout, the host will continue running during system suspend. Avoid
+this by forcing runtime suspend during a global system sleep transition.
+
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ drivers/mmc/host/sunxi-mmc.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/mmc/host/sunxi-mmc.c b/drivers/mmc/host/sunxi-mmc.c
+index 6310693f2ac0..cfee8db7b76d 100644
+--- a/drivers/mmc/host/sunxi-mmc.c
++++ b/drivers/mmc/host/sunxi-mmc.c
+@@ -1507,6 +1507,8 @@ static int sunxi_mmc_runtime_suspend(struct device *dev)
+ #endif
+ 
+ static const struct dev_pm_ops sunxi_mmc_pm_ops = {
++	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
++				pm_runtime_force_resume)
+ 	SET_RUNTIME_PM_OPS(sunxi_mmc_runtime_suspend,
+ 			   sunxi_mmc_runtime_resume,
+ 			   NULL)
+-- 
+2.30.0
+

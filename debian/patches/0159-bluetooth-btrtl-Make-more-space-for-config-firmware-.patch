@@ -1,0 +1,29 @@
+From a338fa79e9b3e9dc2b0938716bbddc07c200e58f Mon Sep 17 00:00:00 2001
+From: Ondrej Jirman <megous@megous.com>
+Date: Fri, 31 Jan 2020 22:22:56 +0100
+Subject: [PATCH 159/184] bluetooth: btrtl: Make more space for config firmware
+ file name
+
+It gets clipped on pinephone.
+
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ drivers/bluetooth/btrtl.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/bluetooth/btrtl.c b/drivers/bluetooth/btrtl.c
+index 12d5cb9d3723..049ec74a74df 100644
+--- a/drivers/bluetooth/btrtl.c
++++ b/drivers/bluetooth/btrtl.c
+@@ -630,7 +630,7 @@ struct btrtl_device_info *btrtl_initialize(struct hci_dev *hdev,
+ 	struct btrtl_device_info *btrtl_dev;
+ 	struct sk_buff *skb;
+ 	struct hci_rp_read_local_version *resp;
+-	char cfg_name[40];
++	char cfg_name[128];
+ 	u16 hci_rev, lmp_subver;
+ 	u8 hci_ver, chip_type = 0;
+ 	int ret;
+-- 
+2.30.0
+

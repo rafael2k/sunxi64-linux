@@ -1,0 +1,32 @@
+From d78e849357a16edd02dd51aa9654b5e7e0246e35 Mon Sep 17 00:00:00 2001
+From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+Date: Fri, 3 Apr 2020 17:13:55 +0200
+Subject: [PATCH 047/184] arm64: dts: allwinner: pinephone: Set audio card name
+
+Add the "PinePhone" name to the sound card: this will make
+upstreaming an ALSA UCM config easier as we can use a unique name.
+
+It also avoids an issue where the default card name is truncated.
+
+Signed-off-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+[Samuel: Split out change, updated commit message]
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+index fffe5dc6b6a8..5d67eeaf2ac7 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -430,6 +430,7 @@ &reg_rtc_ldo {
+ 
+ &sound {
+ 	status = "okay";
++	simple-audio-card,name = "PinePhone";
+ 	simple-audio-card,aux-devs = <&codec_analog>, <&speaker_amp>;
+ 	simple-audio-card,widgets = "Microphone", "Headset Microphone",
+ 				    "Microphone", "Internal Microphone",
+-- 
+2.30.0
+
