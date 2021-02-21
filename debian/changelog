@@ -1,4 +1,12 @@
-linux-sunxi64 (5.11+sunxi64-1) unstable; urgency=medium
+linux-sunxi64 (5.11.0+sunxi64-2) unstable; urgency=medium
+
+  * debian: add Mobian patches
+  * d/rules: use as many threads as cpu count by default
+  * d/patches: update power supply patches
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Sun, 21 Feb 2021 12:59:13 +0100
+
+linux-sunxi64 (5.11.0+sunxi64-1) unstable; urgency=medium
 
   * Initial release
 
