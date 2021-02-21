@@ -93,11 +93,12 @@
 0093-media-ov5640-set-default-ae-target-lower.patch
 0094-mmc-sunxi-mmc-Ensure-host-is-suspended-during-system.patch
 0095-phy-allwinner-sun4i-usb-Add-support-for-usb_role_swi.patch
-0096-power-supply-axp20x_usb_power-allow-disabling-input-.patch
-0097-power-supply-axp20x_usb_power-add-applied-max-Vbus-s.patch
+#0096-power-supply-axp20x_usb_power-allow-disabling-input-.patch
+#0097-power-supply-axp20x_usb_power-add-applied-max-Vbus-s.patch
 0098-regulator-axp20x-Add-support-for-vin-supply-for-driv.patch
 0099-regulator-axp20x-Turn-N_VBUSEN-to-input-on-x-powers-.patch
 0100-usb-musb-sunxi-Handle-MUSB_ULPI_BUSCONTROL.patch
+0096-input-current-limit.patch
 0101-power-supply-Add-support-for-USB_BC_ENABLED-and-USB_.patch
 0102-power-supply-axp20x-Export-usb_type-usb_bc_enabled-d.patch
 0103-usb-typec-anx7688-Add-driver-for-ANX7688-USB-C-HDMI-.patch
@@ -121,6 +122,7 @@
 0121-usb-typec-anx7688-Loudly-report-connection-failure.patch
 0122-usb-typec-anx7688-Add-more-docs-to-the-driver.patch
 0123-power-supply-axp20x-usb-power-Don-t-require-exact-va.patch
+0123-usb-anx7688-fix-flash.patch
 0124-arm64-dts-allwinner-set-GPU-clock-to-432-MHz.patch
 0125-Bump-gpu-clock-to-500mHz.patch
 0126-arm64-dts-allwinner-a64-add-additional-opp.patch

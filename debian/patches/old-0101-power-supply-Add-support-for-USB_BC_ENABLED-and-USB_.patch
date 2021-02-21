@@ -1,7 +1,7 @@
-From 53b34032bdf127dddb2e71f6656c2e1c494a9ddc Mon Sep 17 00:00:00 2001
+From 17ac17cfcaa4c5064a2d537946941c33520d7dfb Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 22 Jun 2020 02:28:01 +0200
-Subject: [PATCH 02/25] power: supply: Add support for USB_BC_ENABLED and
+Subject: [PATCH 101/184] power: supply: Add support for USB_BC_ENABLED and
  USB_DCP_INPUT_CURRENT_LIMIT
 
 - USB_BC_ENABLED - enabling/disabling BC 1.2 USB type detection
