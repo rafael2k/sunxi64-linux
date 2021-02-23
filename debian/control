@@ -20,7 +20,7 @@ Rules-Requires-Root: no
 Package: linux-image-5.15-sunxi64
 Architecture: arm64
 Depends:
- initramfs-tools,
+ initramfs-tools | linux-initramfs-tool,
  kmod,
  linux-base,
 Provides: wireguard-modules (= 1.0.0)
