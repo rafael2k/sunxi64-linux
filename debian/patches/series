@@ -182,3 +182,4 @@
 0181-arm64-dts-allwinner-pinephone-improve-device-tree.patch
 0182-arm64-dts-allwinner-pinetab-enable-jack-detection.patch
 0183-pine64_defconfig-cleanup-defconfig-and-enable-additi.patch
+0184-pine64_defconfig-enable-new-LEDs-framework.patch
