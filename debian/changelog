@@ -1,3 +1,9 @@
+linux-sunxi64 (5.11.0+sunxi64-3) unstable; urgency=medium
+
+  * d/patches: restore LED functionality
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Thu, 25 Feb 2021 00:26:35 +0100
+
 linux-sunxi64 (5.11.0+sunxi64-2) unstable; urgency=medium
 
   * debian: add Mobian patches
