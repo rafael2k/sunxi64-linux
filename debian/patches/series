@@ -93,8 +93,6 @@
 0093-media-ov5640-set-default-ae-target-lower.patch
 0094-mmc-sunxi-mmc-Ensure-host-is-suspended-during-system.patch
 0095-phy-allwinner-sun4i-usb-Add-support-for-usb_role_swi.patch
-#0096-power-supply-axp20x_usb_power-allow-disabling-input-.patch
-#0097-power-supply-axp20x_usb_power-add-applied-max-Vbus-s.patch
 0098-regulator-axp20x-Add-support-for-vin-supply-for-driv.patch
 0099-regulator-axp20x-Turn-N_VBUSEN-to-input-on-x-powers-.patch
 0100-usb-musb-sunxi-Handle-MUSB_ULPI_BUSCONTROL.patch
@@ -160,7 +158,6 @@
 0159-bluetooth-btrtl-Make-more-space-for-config-firmware-.patch
 0160-crypto-arm-aes-neonbs-fix-usage-of-cbc-aes-fallback.patch
 0161-usb-musb-Fix-MUSB_QUIRK_B_DISCONNECT_99-hanging-the-.patch
-0162-usb-musb-Fix-runtime-PM-race-in-musb_queue_resume_wo.patch
 0163-arm64-dts-sun50i-pinephone-Bump-I2C-frequency-to-400.patch
 0164-arm64-allwinner-a64-pinetab-enable-RTL8723CS-bluetoo.patch
 0165-8723cs-Add-a-new-driver-v5.12.2-7-g2de5ec386.2020101.patch
