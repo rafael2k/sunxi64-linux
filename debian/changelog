@@ -1,3 +1,9 @@
+linux-sunxi64 (5.11.3+sunxi64-1) unstable; urgency=medium
+
+  * d/patches: cleanup and rebase on 5.11.3
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Fri, 05 Mar 2021 23:23:47 +0100
+
 linux-sunxi64 (5.11.0+sunxi64-3) unstable; urgency=medium
 
   * d/patches: restore LED functionality
