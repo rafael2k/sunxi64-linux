@@ -1,7 +1,7 @@
-From a661cf67c858a61278dd1f66064b57ccaedab536 Mon Sep 17 00:00:00 2001
+From 6485e05eefdf7ae7ef8325be9ad9ed725e1232ad Mon Sep 17 00:00:00 2001
 From: Yangtao Li <frank@allwinnertech.com>
 Date: Tue, 10 Nov 2020 14:24:40 +0800
-Subject: [PATCH 004/184] pinctrl: sunxi: Always call chained_irq_{enter, exit}
+Subject: [PATCH 004/183] pinctrl: sunxi: Always call chained_irq_{enter, exit}
  in sunxi_pinctrl_irq_handler
 
 commit a1158e36f876f6269978a4176e3a1d48d27fe7a1 upstream.

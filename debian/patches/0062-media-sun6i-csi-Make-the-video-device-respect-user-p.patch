@@ -1,7 +1,7 @@
-From da044052d6fd910695c5673ca5f19b9b2ce6882a Mon Sep 17 00:00:00 2001
+From b9fda29a01e4b9444e4607d26eac9e53ca5718a8 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Fri, 24 Jan 2020 18:24:22 +0100
-Subject: [PATCH 062/184] media: sun6i-csi: Make the video device respect user
+Subject: [PATCH 062/183] media: sun6i-csi: Make the video device respect user
  passed bytesperline
 
 WIP!!!

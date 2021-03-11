@@ -1,7 +1,7 @@
-From 666dd925055e0a7f84ad075108418a5af51f528e Mon Sep 17 00:00:00 2001
+From e0e5601511db0fbc2400a7f13ab022e03d53829d Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sat, 30 Sep 2017 21:31:35 +0200
-Subject: [PATCH 060/184] MAINTAINERS: Add entry for Himax HM5065
+Subject: [PATCH 060/183] MAINTAINERS: Add entry for Himax HM5065
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---

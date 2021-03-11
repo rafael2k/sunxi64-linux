@@ -1,7 +1,7 @@
-From aaa3c220cfd9648e5024b6644d0cdee83b2b5e53 Mon Sep 17 00:00:00 2001
+From e822e1d3a6d1d1e908c8a537fe1aabfff546b091 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 22:09:08 -0600
-Subject: [PATCH 008/184] bus: sunxi-rsb: Use devm_platform_ioremap_resource
+Subject: [PATCH 008/183] bus: sunxi-rsb: Use devm_platform_ioremap_resource
 
 This simplifies the code and removes the need for a "struct resource".
 

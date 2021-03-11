@@ -1,7 +1,7 @@
-From 0d0382142ad2a7d4f0657ed487f4fd9931d66cb9 Mon Sep 17 00:00:00 2001
+From a53f95d9ef84d9ad5d257c759554c7fdfd2f8a88 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 17 Jan 2021 23:06:03 +0100
-Subject: [PATCH 137/184] arm64: dts: sun50i-pinephone: Add interrupt pin for
+Subject: [PATCH 137/183] arm64: dts: sun50i-pinephone: Add interrupt pin for
  WiFi
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>

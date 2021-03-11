@@ -1,7 +1,7 @@
-From 7d6b803de8fe6a6d4b149cd0e56b34133cd610ae Mon Sep 17 00:00:00 2001
+From e14dbbb538361298813f64ff386c850cb93b1784 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 22:50:02 -0600
-Subject: [PATCH 012/184] bus: sunxi-rsb: Implement global suspend/resume
+Subject: [PATCH 012/183] bus: sunxi-rsb: Implement global suspend/resume
  callbacks
 
 Since system firmware is likely to use the RSB bus to communicate with a

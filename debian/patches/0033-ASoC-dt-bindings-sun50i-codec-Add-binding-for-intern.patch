@@ -1,7 +1,7 @@
-From 329a00fce77cf48d15c7ea888ae88a692f27d66f Mon Sep 17 00:00:00 2001
+From 3261c19d39992d21b9c3bc01e900e9b2a5c748da Mon Sep 17 00:00:00 2001
 From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
 Date: Sun, 20 Sep 2020 20:26:36 -0500
-Subject: [PATCH 033/184] ASoC: dt-bindings: sun50i-codec: Add binding for
+Subject: [PATCH 033/183] ASoC: dt-bindings: sun50i-codec: Add binding for
  internal bias
 
 In order to properly bias headset microphones, there should be a

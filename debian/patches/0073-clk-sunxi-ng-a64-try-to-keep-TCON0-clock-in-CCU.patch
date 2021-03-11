@@ -1,7 +1,7 @@
-From 2c9a672dabdc48a0e52a3be474607100c92c01b8 Mon Sep 17 00:00:00 2001
+From ea87cf439cfded5ce9c1612592e41801d6aec9f8 Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <icenowy@aosc.io>
 Date: Wed, 17 Jun 2020 08:42:52 +0800
-Subject: [PATCH 073/184] clk: sunxi-ng: a64: try to keep TCON0 clock in CCU
+Subject: [PATCH 073/183] clk: sunxi-ng: a64: try to keep TCON0 clock in CCU
 
 As part of the clock tree of LCD and HDMI pipelines on A64 are
 conflicted, usual way to keep LCD clock cannot work on A64.

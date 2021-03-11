@@ -1,7 +1,7 @@
-From 5e516b9b60cfe985e230f60702652f48f5a48bb5 Mon Sep 17 00:00:00 2001
+From 78a25c8e7d553b63ff6c15f0627c1100de40474e Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 29 Feb 2020 01:04:33 -0600
-Subject: [PATCH 025/184] power: supply: axp20x_battery: Monitor battery health
+Subject: [PATCH 025/183] power: supply: axp20x_battery: Monitor battery health
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---

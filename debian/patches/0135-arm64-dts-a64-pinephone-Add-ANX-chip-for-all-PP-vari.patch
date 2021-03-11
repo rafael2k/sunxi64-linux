@@ -1,7 +1,7 @@
-From 98b50c59e2adbd599e8a92b7e48d55ecab494e01 Mon Sep 17 00:00:00 2001
+From edbfd7dcb32b48c0ea2a514ab62579dca6a6cc27 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 9 Jun 2020 21:11:09 -0500
-Subject: [PATCH 135/184] arm64: dts: a64: pinephone: Add ANX chip for all PP
+Subject: [PATCH 135/183] arm64: dts: a64: pinephone: Add ANX chip for all PP
  variants 1.0-1.2
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>

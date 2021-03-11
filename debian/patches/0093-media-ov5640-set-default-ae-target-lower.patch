@@ -1,7 +1,7 @@
-From bf41630d7f5ca975aba5d11be0dfafa03781edc6 Mon Sep 17 00:00:00 2001
+From 024e76fd0265e349b2569cf6035592e025367557 Mon Sep 17 00:00:00 2001
 From: Martijn Braam <martijn@brixit.nl>
 Date: Wed, 7 Oct 2020 17:33:43 +0200
-Subject: [PATCH 093/184] media: ov5640: set default ae target lower
+Subject: [PATCH 093/183] media: ov5640: set default ae target lower
 
 The OV5640 tries to overexpose all photos by about 1 stop. This makes
 the exposure target one stop lower.

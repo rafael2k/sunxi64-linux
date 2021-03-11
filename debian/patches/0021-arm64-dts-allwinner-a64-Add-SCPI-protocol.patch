@@ -1,7 +1,7 @@
-From 2be68298c5a952610f1a9d88fe13dd1db2c888b9 Mon Sep 17 00:00:00 2001
+From 751fc535504572ced11c04cbae1bb635b9d64c3c Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 14 Dec 2019 20:52:53 -0600
-Subject: [PATCH 021/184] arm64: dts: allwinner: a64: Add SCPI protocol
+Subject: [PATCH 021/183] arm64: dts: allwinner: a64: Add SCPI protocol
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -9,7 +9,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 20 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index a2bdebb4ba97..87cc200d144c 100644
+index 84190e8be3f2..e2f60688cc9b 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 @@ -130,6 +130,13 @@ psci {

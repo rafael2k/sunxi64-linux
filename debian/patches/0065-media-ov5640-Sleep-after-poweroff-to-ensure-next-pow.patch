@@ -1,7 +1,7 @@
-From 7621d00e29c1f694d9f12a471a178dbeca853cbb Mon Sep 17 00:00:00 2001
+From 198c06bfc915b7c7302b0a3f235cff6054c5284a Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 26 Jan 2020 00:19:40 +0100
-Subject: [PATCH 065/184] media: ov5640: Sleep after poweroff to ensure next
+Subject: [PATCH 065/183] media: ov5640: Sleep after poweroff to ensure next
  poweron is not too early
 
 It's easy to use v4l2 userspace api in such a way that user can trigger

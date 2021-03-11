@@ -1,7 +1,7 @@
-From 21115d26c9bea0ad9e441c4907019261ef51bc40 Mon Sep 17 00:00:00 2001
+From 25ffafd3e61b37a5e5c2aa9e234ed252bfdc1e65 Mon Sep 17 00:00:00 2001
 From: Jagan Teki <jagan@amarulasolutions.com>
 Date: Fri, 2 Nov 2018 12:57:07 +0530
-Subject: [PATCH 082/184] arm64: allwinner: a64: pine64-lts: Enable Feiyang
+Subject: [PATCH 082/183] arm64: allwinner: a64: pine64-lts: Enable Feiyang
  FY07024DI26A30-D DSI panel
 
 Feiyang FY07024DI26A30-D MIPI_DSI panel is desiged to attach with

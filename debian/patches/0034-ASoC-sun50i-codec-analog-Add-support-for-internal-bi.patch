@@ -1,7 +1,7 @@
-From a2843a9d227a11b5a1c0f80a758fe9300580eb83 Mon Sep 17 00:00:00 2001
+From 57a5616ffcd3dcde291d153606bd86dbe26561db Mon Sep 17 00:00:00 2001
 From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
 Date: Fri, 3 Apr 2020 11:24:39 +0200
-Subject: [PATCH 034/184] ASoC: sun50i-codec-analog: Add support for internal
+Subject: [PATCH 034/183] ASoC: sun50i-codec-analog: Add support for internal
  bias
 
 In order to properly bias headset microphones, there should be a

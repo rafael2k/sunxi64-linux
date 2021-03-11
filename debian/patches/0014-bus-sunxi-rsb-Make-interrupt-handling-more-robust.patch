@@ -1,7 +1,7 @@
-From 29b3133a17ccaeb530df582af1a8353c96ec45e9 Mon Sep 17 00:00:00 2001
+From faaf0d774d0cb48e4588bc9cb4baf2297fda74b5 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 22:58:21 -0600
-Subject: [PATCH 014/184] bus: sunxi-rsb: Make interrupt handling more robust
+Subject: [PATCH 014/183] bus: sunxi-rsb: Make interrupt handling more robust
 
 The RSB controller has two registers for controlling interrupt inputs:
 RSB_INTE, which has bits for each possible interrupt, and the global

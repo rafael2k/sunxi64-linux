@@ -1,7 +1,7 @@
-From 4f427eb9c9d3c3be778877664b77335f81cd1e8f Mon Sep 17 00:00:00 2001
+From c24a7e6b83fd6a577e4ac01c5b0d069eb06e5a36 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 042/184] arm64: dts: allwinner: a64: Add pinmux nodes for
+Subject: [PATCH 042/183] arm64: dts: allwinner: a64: Add pinmux nodes for
  AIF2/AIF3
 
 Now that the sun8i-1codec driver supports AIF2 and AIF3, boards can use
@@ -13,10 +13,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 12 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 8de6626d1a15..4267d1f25ab6 100644
+index 3a12f86affbd..32800a0564e9 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -694,6 +694,18 @@ pio: pinctrl@1c20800 {
+@@ -698,6 +698,18 @@ pio: pinctrl@1c20800 {
  			interrupt-controller;
  			#interrupt-cells = <3>;
  

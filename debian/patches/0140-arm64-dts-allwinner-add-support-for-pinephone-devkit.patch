@@ -1,7 +1,7 @@
-From 0212b2657503b4d6d0d308d5e9408c11bbf86766 Mon Sep 17 00:00:00 2001
+From 22df8266b2458c126701a22904e4bf18b395c6dd Mon Sep 17 00:00:00 2001
 From: Martijn Braam <martijn@brixit.nl>
 Date: Sat, 20 Apr 2019 01:19:48 +0200
-Subject: [PATCH 140/184] arm64: dts: allwinner: add support for pinephone
+Subject: [PATCH 140/183] arm64: dts: allwinner: add support for pinephone
  devkit
 
 Pinephone "Don't be evil" is a development kit produced by Pine64

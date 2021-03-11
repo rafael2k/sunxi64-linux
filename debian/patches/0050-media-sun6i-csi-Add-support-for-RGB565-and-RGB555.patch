@@ -1,7 +1,7 @@
-From de21b3cf6958a065a6da522d0367787816c4978b Mon Sep 17 00:00:00 2001
+From c0f792ac7eea5b808561c385c62443792af529ef Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sat, 8 Dec 2018 06:09:20 +0100
-Subject: [PATCH 050/184] media: sun6i-csi: Add support for RGB565 and RGB555
+Subject: [PATCH 050/183] media: sun6i-csi: Add support for RGB565 and RGB555
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---

@@ -1,7 +1,7 @@
-From a76e99ddb1182abf1ce6f5934f988902fa3946d0 Mon Sep 17 00:00:00 2001
+From 030bc28be1f9eca871023aac7ae9cc330020083e Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 15:10:32 -0600
-Subject: [PATCH 006/184] arm64: dts: allwinner: a64: Protect SCP clocks
+Subject: [PATCH 006/183] arm64: dts: allwinner: a64: Protect SCP clocks
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -9,10 +9,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 51cc30e84e26..21930ac62c3e 100644
+index 57786fc120c3..2a4699a2abe7 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -637,6 +637,7 @@ ccu: clock@1c20000 {
+@@ -641,6 +641,7 @@ ccu: clock@1c20000 {
  			reg = <0x01c20000 0x400>;
  			clocks = <&osc24M>, <&rtc 0>;
  			clock-names = "hosc", "losc";
@@ -20,7 +20,7 @@ index 51cc30e84e26..21930ac62c3e 100644
  			#clock-cells = <1>;
  			#reset-cells = <1>;
  		};
-@@ -1226,6 +1227,7 @@ r_ccu: clock@1f01400 {
+@@ -1230,6 +1231,7 @@ r_ccu: clock@1f01400 {
  			clocks = <&osc24M>, <&rtc 0>, <&rtc 2>,
  				 <&ccu CLK_PLL_PERIPH0>;
  			clock-names = "hosc", "losc", "iosc", "pll-periph";

@@ -1,7 +1,7 @@
-From 962bfdc6ef93fb77bd9c1408c9bed944a285fd4e Mon Sep 17 00:00:00 2001
+From af6e4db49df2cde0f37f41b33ba9fc47f81c4503 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 17 Oct 2020 16:57:51 -0500
-Subject: [PATCH 139/184] arm64: dts: a64: pinephone: Add HDMI audio/video
+Subject: [PATCH 139/183] arm64: dts: a64: pinephone: Add HDMI audio/video
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---

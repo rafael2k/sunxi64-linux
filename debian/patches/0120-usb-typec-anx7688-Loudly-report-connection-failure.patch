@@ -1,0 +1,27 @@
+From 5512a07910e143e01b4b3e275eb9435c5cc22958 Mon Sep 17 00:00:00 2001
+From: Ondrej Jirman <megous@megous.com>
+Date: Mon, 30 Nov 2020 06:13:03 +0100
+Subject: [PATCH 120/183] usb: typec: anx7688: Loudly report connection failure
+
+Kinda useful.
+
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ drivers/usb/typec/anx7688.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/usb/typec/anx7688.c b/drivers/usb/typec/anx7688.c
+index 0db7d93c41f7..63dd6ab421b0 100644
+--- a/drivers/usb/typec/anx7688.c
++++ b/drivers/usb/typec/anx7688.c
+@@ -537,6 +537,7 @@ static int anx7688_connect(struct anx7688 *anx7688)
+ 	anx7688->vconn_on = false;
+ err_poweroff:
+         anx7688_power_disable(anx7688);
++        dev_err(anx7688->dev, "OCM configuration failed\n");
+         return ret;
+ #endif
+ }
+-- 
+2.30.0
+

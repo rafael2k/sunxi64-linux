@@ -1,7 +1,7 @@
-From e1f5a64864caf6c8f63050120bb75eb15b991fff Mon Sep 17 00:00:00 2001
+From 19605068f7853cf6eb032df515d97b22fcf3859f Mon Sep 17 00:00:00 2001
 From: Marius Gripsgard <marius@ubports.com>
 Date: Thu, 27 Feb 2020 21:21:25 +0530
-Subject: [PATCH 126/184] arm64: dts: allwinner: a64: add additional opp
+Subject: [PATCH 126/183] arm64: dts: allwinner: a64: add additional opp
 
 Signed-off-by: Bhushan Shah <bshah@kde.org>
 Signed-off-by: Marius Gripsgard <marius@ubports.com>

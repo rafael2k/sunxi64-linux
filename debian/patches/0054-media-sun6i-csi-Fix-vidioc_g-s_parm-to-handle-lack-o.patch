@@ -1,7 +1,7 @@
-From c98013adc8938c9da883a699f8c8c06623284509 Mon Sep 17 00:00:00 2001
+From 47c1048d95c978ea6fc873053a1a1e406f75e152 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 26 Jan 2020 00:40:13 +0100
-Subject: [PATCH 054/184] media: sun6i-csi: Fix vidioc_g/s_parm to handle lack
+Subject: [PATCH 054/183] media: sun6i-csi: Fix vidioc_g/s_parm to handle lack
  of the sensor
 
 In case no link is enabled, sun6i_video_remote_subdev would return NULL.

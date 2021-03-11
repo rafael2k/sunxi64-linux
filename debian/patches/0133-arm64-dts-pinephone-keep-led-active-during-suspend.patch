@@ -1,7 +1,7 @@
-From 71b993b9480302749f2b73a48ba9585fa0dd20b0 Mon Sep 17 00:00:00 2001
+From 70a6bbab4f35c4f79831cd992eb68383ac782591 Mon Sep 17 00:00:00 2001
 From: Bhushan Shah <bshah@kde.org>
 Date: Tue, 18 Feb 2020 12:57:55 +0530
-Subject: [PATCH 133/184] arm64: dts: pinephone: keep led active during suspend
+Subject: [PATCH 133/183] arm64: dts: pinephone: keep led active during suspend
 
 Signed-off-by: Bhushan Shah <bshah@kde.org>
 Suggested-by: Samuel Holland <samuel@sholland.org>

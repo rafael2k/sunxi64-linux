@@ -1,7 +1,7 @@
-From 430fb53f4260267584d31f1da425e41e033ff9f7 Mon Sep 17 00:00:00 2001
+From bb16cc6e35cd46032c7b30a9d99e1d8592fdfb50 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 5 Apr 2020 21:16:40 -0500
-Subject: [PATCH 026/184] media: cedrus: Fix missing cleanup in error path
+Subject: [PATCH 026/183] media: cedrus: Fix missing cleanup in error path
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -9,10 +9,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 2 insertions(+)
 
 diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-index ddad5d274ee8..21dd3d50bdd3 100644
+index 7bd9291c8d5f..8af3af74a43f 100644
 --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
 +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-@@ -338,7 +338,9 @@ static int cedrus_open(struct file *file)
+@@ -289,7 +289,9 @@ static int cedrus_open(struct file *file)
  
  err_ctrls:
  	v4l2_ctrl_handler_free(&ctx->hdl);

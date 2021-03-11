@@ -1,7 +1,7 @@
-From 94916e1baaeda95f5a1e2769f9853cb29330d385 Mon Sep 17 00:00:00 2001
+From 3768a5dc36d50d066c5631700a178d9c6d4e2924 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 20 May 2019 17:58:05 +0200
-Subject: [PATCH 058/184] hm5065: yaml bindings (wip)
+Subject: [PATCH 058/183] hm5065: yaml bindings (wip)
 
 ---
  .../devicetree/bindings/media/i2c/hm5065.yaml | 90 +++++++++++++++++++

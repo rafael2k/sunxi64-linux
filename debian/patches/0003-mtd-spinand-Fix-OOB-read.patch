@@ -1,7 +1,7 @@
-From 8767c7f99756fa22501f019cb4cb613e932f8100 Mon Sep 17 00:00:00 2001
+From e304a585a669dad4ef27f9b940778bceddca35fa Mon Sep 17 00:00:00 2001
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 Date: Thu, 1 Oct 2020 12:20:13 +0200
-Subject: [PATCH 003/184] mtd: spinand: Fix OOB read
+Subject: [PATCH 003/183] mtd: spinand: Fix OOB read
 
 commit 868cbe2a6dcee451bd8f87cbbb2a73cf463b57e5 upstream.
 

@@ -1,7 +1,7 @@
-From 52c9e378ee141c7c0be0335c3e7c70b703cce072 Mon Sep 17 00:00:00 2001
+From 29ed5a3e23ad31b294d5e1674417a0c51228e5ed Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 26 Sep 2020 21:39:27 -0500
-Subject: [PATCH 036/184] ASoC: sun50i-codec-analog: Move suspend/resume to
+Subject: [PATCH 036/183] ASoC: sun50i-codec-analog: Move suspend/resume to
  set_bias_level
 
 With idle_bias_on and suspend_bias_off, there are bias level transitions

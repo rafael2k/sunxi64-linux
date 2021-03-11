@@ -1,7 +1,7 @@
-From 2d4a35212b9b7ac45604a9014a6fce7853b310eb Mon Sep 17 00:00:00 2001
+From 6bc1f4a05d82c1b06afb7b50ec335f0364bca58b Mon Sep 17 00:00:00 2001
 From: Martijn Braam <martijn@brixit.nl>
 Date: Thu, 6 Aug 2020 16:19:58 +0200
-Subject: [PATCH 067/184] arm64: dts: allwinner: a64: pinetab: add front camera
+Subject: [PATCH 067/183] arm64: dts: allwinner: a64: pinetab: add front camera
 
 ---
  .../boot/dts/allwinner/sun50i-a64-pinetab.dts | 50 ++++++++++++++++---

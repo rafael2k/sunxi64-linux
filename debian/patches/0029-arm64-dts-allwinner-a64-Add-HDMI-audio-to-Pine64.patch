@@ -1,7 +1,7 @@
-From cc08119974323a0036fb32c5061d7ce50b4bf4eb Mon Sep 17 00:00:00 2001
+From 0a2ef43d426d3bf680140f7bcf27a50a40fdce10 Mon Sep 17 00:00:00 2001
 From: Marcus Cooper <codekipper@gmail.com>
 Date: Sat, 4 Jul 2020 13:39:02 +0200
-Subject: [PATCH 029/184] arm64: dts: allwinner: a64: Add HDMI audio to Pine64
+Subject: [PATCH 029/183] arm64: dts: allwinner: a64: Add HDMI audio to Pine64
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit

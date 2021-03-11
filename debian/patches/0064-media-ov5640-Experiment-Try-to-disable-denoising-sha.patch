@@ -1,7 +1,7 @@
-From dc9e528030e41a5d3b904b88c2eadcbe50b47895 Mon Sep 17 00:00:00 2001
+From 2acf0297c362592fa2c28e71a605fda01fd0427e Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Fri, 24 Jan 2020 18:25:59 +0100
-Subject: [PATCH 064/184] media: ov5640: [Experiment] Try to disable
+Subject: [PATCH 064/183] media: ov5640: [Experiment] Try to disable
  denoising/sharpening
 
 Not sure how this works exactly. More tests are needed.

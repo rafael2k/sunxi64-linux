@@ -1,7 +1,7 @@
-From b3740c590d33bdbddf76ea94d7cf6d29f4fc06aa Mon Sep 17 00:00:00 2001
+From 228fed124499a83ab170cd745715834105f1b991 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 12 Jan 2020 20:00:36 -0600
-Subject: [PATCH 016/184] irqchip/sun6i-r: Add wakeup support
+Subject: [PATCH 016/183] irqchip/sun6i-r: Add wakeup support
 
 Maintain a mask of wake-enabled IRQs, and enable them in hardware
 during the syscore phase of suspend. The restore the original mask

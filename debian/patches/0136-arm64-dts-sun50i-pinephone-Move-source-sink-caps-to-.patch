@@ -1,7 +1,7 @@
-From 53324c670dfbdcf33d1bce653aec94b7e6529983 Mon Sep 17 00:00:00 2001
+From d1d2c467af14e5d93642df3525f7c8cb630e0405 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 01:53:38 +0100
-Subject: [PATCH 136/184] arm64: dts: sun50i-pinephone: Move source/sink-caps
+Subject: [PATCH 136/183] arm64: dts: sun50i-pinephone: Move source/sink-caps
  to DT
 
 This is device specific information and doesn't belong to the driver.

@@ -1,7 +1,7 @@
-From bc98978b47c97c565ffa745d78825691a5a8ded4 Mon Sep 17 00:00:00 2001
+From 8e64ba39bb0221c0630e5b8c0c6ab1272ac1b958 Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <icenowy@aosc.io>
 Date: Wed, 1 Aug 2018 11:42:46 +0800
-Subject: [PATCH 075/184] dt-bindings: simplefb-sunxi: add pipeline strings for
+Subject: [PATCH 075/183] dt-bindings: simplefb-sunxi: add pipeline strings for
  DE2/3 w/ TCON_TOP
 
 Newer Allwinner SoCs come with a display pipeline muxing component

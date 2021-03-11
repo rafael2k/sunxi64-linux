@@ -1,7 +1,7 @@
-From eb037a07bfa98d7859c681248d93f09962d43d95 Mon Sep 17 00:00:00 2001
+From 11f85411b674ba35a29d3655155b4bb17c478def Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 23 Jun 2020 19:51:18 +0200
-Subject: [PATCH 061/184] media: gc2145: Galaxycore camera module driver
+Subject: [PATCH 061/183] media: gc2145: Galaxycore camera module driver
 
 WIP!
 
@@ -14,10 +14,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  create mode 100644 drivers/media/i2c/gc2145.c
 
 diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-index 068a556fe679..6d45b3776b15 100644
+index 346322f710e4..23897c4662fe 100644
 --- a/drivers/media/i2c/Kconfig
 +++ b/drivers/media/i2c/Kconfig
-@@ -1282,6 +1282,15 @@ config VIDEO_HM5065
+@@ -1283,6 +1283,15 @@ config VIDEO_HM5065
  	  This is a V4L2 sensor-level driver for Himax HM5065
  	  5 Mpixel camera.
  

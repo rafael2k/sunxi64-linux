@@ -1,7 +1,7 @@
-From d0af420676ec12a7ad4daa402184b43927be2770 Mon Sep 17 00:00:00 2001
+From d800e5ad23b34998c214e942c786b51a4c12e3c5 Mon Sep 17 00:00:00 2001
 From: Martijn Braam <martijn@brixit.nl>
 Date: Mon, 28 Sep 2020 14:26:11 +0200
-Subject: [PATCH 092/184] media: ov5640: Implement autofocus
+Subject: [PATCH 092/183] media: ov5640: Implement autofocus
 
 The autofocus functionality needs a firmware blob loaded into the
 internal microcontroller.

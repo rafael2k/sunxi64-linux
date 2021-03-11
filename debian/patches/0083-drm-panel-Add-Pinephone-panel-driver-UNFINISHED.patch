@@ -1,7 +1,7 @@
-From 58b896cf7bf8601332100170a878ec5d0d403718 Mon Sep 17 00:00:00 2001
+From e2cb2c8293220410e25ec8d943c6bff09a7bbeb2 Mon Sep 17 00:00:00 2001
 From: Marius Gripsgard <marius@ubports.com>
 Date: Thu, 21 Mar 2019 22:14:21 +0100
-Subject: [PATCH 083/184] drm/panel: Add Pinephone panel driver (UNFINISHED)
+Subject: [PATCH 083/183] drm/panel: Add Pinephone panel driver (UNFINISHED)
 
 Signed-off-by: Marius Gripsgard <marius@ubports.com>
 Signed-off-by: Bhushan Shah <bshah@kde.org>

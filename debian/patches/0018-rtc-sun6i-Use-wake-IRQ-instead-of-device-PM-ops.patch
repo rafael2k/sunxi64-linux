@@ -1,7 +1,7 @@
-From a97f5d4f8c77be4e6e3a85d754c65b906303881c Mon Sep 17 00:00:00 2001
+From aab7ba05ae9674f218c053b9c540bd8720b63845 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 25 Aug 2019 05:36:21 -0500
-Subject: [PATCH 018/184] rtc: sun6i: Use wake IRQ instead of device PM ops
+Subject: [PATCH 018/183] rtc: sun6i: Use wake IRQ instead of device PM ops
 
 Since the RTC has a single IRQ, we can use the generic wake IRQ
 implementation instead of defining our own device PM ops. This has the

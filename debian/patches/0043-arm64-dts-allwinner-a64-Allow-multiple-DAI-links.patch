@@ -1,7 +1,7 @@
-From 519d8dfb5fca710666268af5ced7ce16f7a926dd Mon Sep 17 00:00:00 2001
+From 48961343d617ce215367b4605e6703ce0456daa3 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 043/184] arm64: dts: allwinner: a64: Allow multiple DAI links
+Subject: [PATCH 043/183] arm64: dts: allwinner: a64: Allow multiple DAI links
 
 simple-audio-card supports either a single DAI link at the top level, or
 subnodes with one or more DAI links. To use the secondary AIFs on the
@@ -14,7 +14,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 14 insertions(+), 9 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 4267d1f25ab6..e081676329b4 100644
+index 32800a0564e9..ae76cad64c3c 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 @@ -157,12 +157,10 @@ scpi_protocol: scpi {

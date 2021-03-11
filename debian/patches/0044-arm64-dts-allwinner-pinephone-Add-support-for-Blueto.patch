@@ -1,7 +1,7 @@
-From 455a59ab5c86a9775d778b0291f3f8c224e963fd Mon Sep 17 00:00:00 2001
+From d0a84892d5491d35d97bdfcfeabf1a2fd088e35c Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Thu, 6 Feb 2020 23:49:27 -0600
-Subject: [PATCH 044/184] arm64: dts: allwinner: pinephone: Add support for
+Subject: [PATCH 044/183] arm64: dts: allwinner: pinephone: Add support for
  Bluetooth audio
 
 The PinePhone has a Bluetooth chip with its PCM interface connected to

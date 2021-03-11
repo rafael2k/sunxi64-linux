@@ -1,7 +1,7 @@
-From 90c320b13183b5ae1e6c801f6dd9814c503edd32 Mon Sep 17 00:00:00 2001
+From 2ece694f091d58306bb64adf2568eae205f5b94b Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 8 Jun 2020 00:11:06 +0200
-Subject: [PATCH 095/184] phy: allwinner: sun4i-usb: Add support for
+Subject: [PATCH 095/183] phy: allwinner: sun4i-usb: Add support for
  usb_role_switch
 
 This allow controlling the usb0 data role from a typec port driver.

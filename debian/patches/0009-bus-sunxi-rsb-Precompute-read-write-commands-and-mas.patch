@@ -1,7 +1,7 @@
-From 85963beae4ae2d2e78bf45d0d7a40de97ada950c Mon Sep 17 00:00:00 2001
+From d1d6593c0adc8ee08b32522c0e7009d5fad7bc15 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 21:49:29 -0600
-Subject: [PATCH 009/184] bus: sunxi-rsb: Precompute read/write commands and
+Subject: [PATCH 009/183] bus: sunxi-rsb: Precompute read/write commands and
  mask
 
 Since we know the size of the transfer at context creation time, go

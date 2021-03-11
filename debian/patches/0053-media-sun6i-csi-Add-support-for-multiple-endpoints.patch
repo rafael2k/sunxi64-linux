@@ -1,7 +1,7 @@
-From 397789207817857530d38183ea68f419d304cd0e Mon Sep 17 00:00:00 2001
+From b0a240da0296c49ade915900b5b2005d5d96dec7 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 17 Aug 2020 22:49:38 +0200
-Subject: [PATCH 053/184] media: sun6i-csi: Add support for multiple endpoints
+Subject: [PATCH 053/183] media: sun6i-csi: Add support for multiple endpoints
 
 Devices like tablets and phones can have multiple sensors attached
 to the parallel camera interface bus. Add support for switching

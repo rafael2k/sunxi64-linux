@@ -1,7 +1,7 @@
-From 84b0774767de46774acbbdaa4829eda22ae829ee Mon Sep 17 00:00:00 2001
+From 7e5e72f60b8af9a71c8cccba3c026a241956bdc1 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sat, 30 Sep 2017 02:30:39 +0200
-Subject: [PATCH 057/184] dt-bindings: media: Add bindings for Himax HM5065
+Subject: [PATCH 057/183] dt-bindings: media: Add bindings for Himax HM5065
  camera sensor
 
 HM5065 is 5MP CMOS sensor...

@@ -1,7 +1,7 @@
-From 18babdf35f624df44f5b641ccb0d7bc77073c687 Mon Sep 17 00:00:00 2001
+From 5266af08c497d7dbfe6a3e442d23c1db79becefa Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 040/184] ASoC: dt-bindings: sun8i-codec: Increase
+Subject: [PATCH 040/183] ASoC: dt-bindings: sun8i-codec: Increase
  #sound-dai-cells
 
 Increase sound-dai-cells to 1 to allow using the DAIs in the codec

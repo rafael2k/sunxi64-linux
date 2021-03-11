@@ -1,7 +1,7 @@
-From 37e5f46a0c43e44f5b43bd059b9397552d51e626 Mon Sep 17 00:00:00 2001
+From 00f4253fdc65a7b6390d184011a9a79428d684c2 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 032/184] ASoC: sun8i-codec: Add AIF, ADC, and DAC volume
+Subject: [PATCH 032/183] ASoC: sun8i-codec: Add AIF, ADC, and DAC volume
  controls
 
 This allows changing the volume of each digital input/output

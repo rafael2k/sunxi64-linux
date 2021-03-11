@@ -1,7 +1,7 @@
-From cc991237d410491d29c0334d3f65e866cf40f651 Mon Sep 17 00:00:00 2001
+From 9b06e6e95e993124a1479e30861b0a3528337a2c Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <icenowy@aosc.io>
 Date: Wed, 17 Jun 2020 08:39:18 +0800
-Subject: [PATCH 072/184] clk: sunxi-ng: add support for rate resetting
+Subject: [PATCH 072/183] clk: sunxi-ng: add support for rate resetting
  notifier
 
 In some situaitons, we will want a clock rate be kept while its parent

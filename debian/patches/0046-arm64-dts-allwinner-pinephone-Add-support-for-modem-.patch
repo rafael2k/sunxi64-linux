@@ -1,7 +1,7 @@
-From 5f04931316c6b5414212755fc3c902ac33a12050 Mon Sep 17 00:00:00 2001
+From acac0ebb4dcb5d4faed8381822d7ee3fb7412e8c Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Wed, 5 Feb 2020 23:14:27 -0600
-Subject: [PATCH 046/184] arm64: dts: allwinner: pinephone: Add support for
+Subject: [PATCH 046/183] arm64: dts: allwinner: pinephone: Add support for
  modem audio
 
 The PinePhone has a Quectel EG25-G modem (a variant of the EC25) with

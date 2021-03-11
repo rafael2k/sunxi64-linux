@@ -1,7 +1,7 @@
-From 42cfb1d9144dada76e88ec956340d1c086ed6946 Mon Sep 17 00:00:00 2001
+From 881a4b205f2b2de03aed601d6e43540de77f7f99 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 26 Sep 2020 20:56:18 -0500
-Subject: [PATCH 038/184] ASoC: sun8i-codec: Enable bus clock at STANDBY and
+Subject: [PATCH 038/183] ASoC: sun8i-codec: Enable bus clock at STANDBY and
  higher bias
 
 For codec variants that have a bus clock, that clock must be running to

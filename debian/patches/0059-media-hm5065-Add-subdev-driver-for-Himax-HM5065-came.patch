@@ -1,7 +1,7 @@
-From 40f6017c003ff9f5c374191e46200a6c875abeda Mon Sep 17 00:00:00 2001
+From e5af879c41e52b22ff24df71c0a99aa985de3e18 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sat, 30 Sep 2017 02:39:48 +0200
-Subject: [PATCH 059/184] media: hm5065: Add subdev driver for Himax HM5065
+Subject: [PATCH 059/183] media: hm5065: Add subdev driver for Himax HM5065
  camera sensor
 
 HM5065 is 5MP CMOS sensor. This driver implements support for
@@ -22,10 +22,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  create mode 100644 drivers/media/i2c/hm5065.c
 
 diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-index 2b9d81e4794a..068a556fe679 100644
+index 6eed3209ee2d..346322f710e4 100644
 --- a/drivers/media/i2c/Kconfig
 +++ b/drivers/media/i2c/Kconfig
-@@ -1273,6 +1273,15 @@ config VIDEO_S5C73M3
+@@ -1274,6 +1274,15 @@ config VIDEO_S5C73M3
  	  This is a V4L2 sensor driver for Samsung S5C73M3
  	  8 Mpixel camera.
  

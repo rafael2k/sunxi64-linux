@@ -1,7 +1,7 @@
-From 0827bc32d246f582b8c61b316f94772b2fe33243 Mon Sep 17 00:00:00 2001
+From 1b336bb3d9f817b9240ef16aa7b26fde89e9e668 Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <pantelis.antoniou@konsulko.com>
 Date: Wed, 4 Dec 2013 19:32:00 +0200
-Subject: [PATCH 142/184] OF: DT-Overlay configfs interface
+Subject: [PATCH 142/183] OF: DT-Overlay configfs interface
 
 Add a runtime interface to using configfs for generic device tree overlay
 usage. With it its possible to use device tree overlays without having
