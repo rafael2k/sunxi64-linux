@@ -19,11 +19,12 @@ Rules-Requires-Root: no
 
 Package: linux-image-5.11-sunxi64
 Architecture: arm64
+Pre-Depends:
+ mobian-pinephone-tweaks (>= 0.52) | mobian-pinetab-tweaks (>= 0.12),
 Depends:
  initramfs-tools,
  kmod,
  linux-base,
- mobian-pinephone-tweaks (>= 0.52) | mobian-pinetab-tweaks (>= 0.12),
 Description: Linux 5.11 for Allwinner A64 devices
  The linux kernel, modules and corresponding other files for Allwinner A64
  devices such as the PinePhone and PineTab.
