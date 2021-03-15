@@ -1,7 +1,7 @@
 From ee03ceb6391d804da28e96f5f76d0453f417c063 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 29 Dec 2019 20:23:28 -0600
-Subject: [PATCH 005/183] clk: Implement protected-clocks for all OF clock
+Subject: [PATCH 005/185] clk: Implement protected-clocks for all OF clock
  providers
 
 This is a generic implementation of the "protected-clocks" property from
@@ -203,5 +203,5 @@ index 2d801900cad5..367a0f036b13 100644
  
  #endif
 -- 
-2.30.0
+2.30.1
 

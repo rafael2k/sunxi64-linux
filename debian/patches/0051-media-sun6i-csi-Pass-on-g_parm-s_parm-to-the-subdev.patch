@@ -1,7 +1,7 @@
 From 42c9db54cf68c41b460e8204ecb384444a8b50ff Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sat, 8 Dec 2018 06:12:47 +0100
-Subject: [PATCH 051/183] media: sun6i-csi: Pass on g_parm/s_parm to the subdev
+Subject: [PATCH 051/185] media: sun6i-csi: Pass on g_parm/s_parm to the subdev
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
@@ -52,5 +52,5 @@ index b6c8be9cc0c9..52a2b2bc3bcb 100644
  	.vidioc_querybuf		= vb2_ioctl_querybuf,
  	.vidioc_qbuf			= vb2_ioctl_qbuf,
 -- 
-2.30.0
+2.30.1
 

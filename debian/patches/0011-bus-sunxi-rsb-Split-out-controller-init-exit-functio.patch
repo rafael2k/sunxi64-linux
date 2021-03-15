@@ -1,7 +1,7 @@
 From 5eb73e75efe212fe911ab8a5dd809099f27fb692 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 22:36:04 -0600
-Subject: [PATCH 011/183] bus: sunxi-rsb: Split out controller init/exit
+Subject: [PATCH 011/185] bus: sunxi-rsb: Split out controller init/exit
  functions
 
 This separates the resource acquisition from the hardware initialization
@@ -217,5 +217,5 @@ index e67be95c0660..1795ad7f0bfe 100644
  	return 0;
  }
 -- 
-2.30.0
+2.30.1
 

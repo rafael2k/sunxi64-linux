@@ -1,7 +1,7 @@
 From 48961343d617ce215367b4605e6703ce0456daa3 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 043/183] arm64: dts: allwinner: a64: Allow multiple DAI links
+Subject: [PATCH 043/185] arm64: dts: allwinner: a64: Allow multiple DAI links
 
 simple-audio-card supports either a single DAI link at the top level, or
 subnodes with one or more DAI links. To use the secondary AIFs on the
@@ -58,5 +58,5 @@ index 32800a0564e9..ae76cad64c3c 100644
  	};
  
 -- 
-2.30.0
+2.30.1
 

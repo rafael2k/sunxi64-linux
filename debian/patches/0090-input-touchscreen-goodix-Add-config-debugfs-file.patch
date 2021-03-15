@@ -1,7 +1,7 @@
 From d44819d3c32be4ea4eab42ee513c10f8b95bab63 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 22 Jun 2020 17:17:09 +0200
-Subject: [PATCH 090/183] input: touchscreen: goodix: Add config debugfs file
+Subject: [PATCH 090/185] input: touchscreen: goodix: Add config debugfs file
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
@@ -66,5 +66,5 @@ index c682b028f0a2..05c6ce1026ca 100644
  }
  
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From bb7453a1c34294784c9abb6c08f79da65235d907 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:02:19 +0100
-Subject: [PATCH 107/183] usb: typec: anx7688: Allow to send empty firmware
+Subject: [PATCH 107/185] usb: typec: anx7688: Allow to send empty firmware
  message
 
 Some messages don't have payload.
@@ -35,5 +35,5 @@ index bfb5ea4f065a..3a7b2d25e286 100644
          for (i = 0; i < data_len + 2; i++)
                  pdo[data_len + 2] -= pdo[i];
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 57899b6692871398d54411956cc8ee6172174366 Mon Sep 17 00:00:00 2001
 From: Marius Gripsgard <marius@ubports.com>
 Date: Wed, 27 May 2020 20:39:52 +0200
-Subject: [PATCH 099/183] usb: musb: sunxi: Handle MUSB_ULPI_BUSCONTROL
+Subject: [PATCH 099/185] usb: musb: sunxi: Handle MUSB_ULPI_BUSCONTROL
 
 sunxi does not support setting ULPI buscontrol, it's used to set PHY to
 use external vBus. This stubs out MUSB_ULPI_BUSCONTROL to be able to
@@ -39,5 +39,5 @@ index f3f76f2ac63f..9e47796f3429 100644
  		case SUNXI_MUSB_TXFUNCADDR:
  		case SUNXI_MUSB_TXHUBADDR:
 -- 
-2.30.0
+2.30.1
 

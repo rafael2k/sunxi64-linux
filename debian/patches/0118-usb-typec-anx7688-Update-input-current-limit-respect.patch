@@ -1,7 +1,7 @@
 From 61f664a682e176ae60d34995af6006fa49ef2f65 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 06:11:11 +0100
-Subject: [PATCH 118/183] usb: typec: anx7688: Update input current limit
+Subject: [PATCH 118/185] usb: typec: anx7688: Update input current limit
  respecting PD SRC_CAPs
 
 Previously the limit was bumped solely based on CC pins, which is not
@@ -461,5 +461,5 @@ index 89ecdc844000..39c817e0235f 100644
  
  	if (test_bit(ANX7688_F_CONNECTED, anx7688->flags))
 -- 
-2.30.0
+2.30.1
 

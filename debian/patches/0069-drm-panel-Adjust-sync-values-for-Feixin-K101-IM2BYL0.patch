@@ -1,7 +1,7 @@
 From 935d9e8892bdebd9c99a5ca5f822b1110ae76837 Mon Sep 17 00:00:00 2001
 From: Marius Gripsgard <marius@ubports.com>
 Date: Thu, 6 Aug 2020 01:09:47 +0200
-Subject: [PATCH 069/183] drm/panel:Adjust sync values for Feixin K101-IM2BYL02
+Subject: [PATCH 069/185] drm/panel:Adjust sync values for Feixin K101-IM2BYL02
  panel
 
 This adjusts sync values according to the datasheet
@@ -35,5 +35,5 @@ index 0145129d7c66..534dd7414d42 100644
  	.width_mm	= 135,
  	.height_mm	= 217,
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 53f105f904a7d33109ddf5a43f01d64994f1b17e Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 25 Aug 2019 05:35:08 -0500
-Subject: [PATCH 015/183] irqchip/sun6i-r: Use a stacked irqchip driver
+Subject: [PATCH 015/185] irqchip/sun6i-r: Use a stacked irqchip driver
 
 The R_INTC in the A31 and newer sun8i/sun50i SoCs is more similar to the
 original sun4i interrupt controller than the sun7i/sun9i NMI controller.
@@ -380,5 +380,5 @@ index a412b5d5d0fa..9f2bd0c5d289 100644
  					struct device_node *parent)
  {
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 78a25c8e7d553b63ff6c15f0627c1100de40474e Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 29 Feb 2020 01:04:33 -0600
-Subject: [PATCH 025/183] power: supply: axp20x_battery: Monitor battery health
+Subject: [PATCH 025/185] power: supply: axp20x_battery: Monitor battery health
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -113,5 +113,5 @@ index 2ace16c2bc55..30a9bc7daf87 100644
  		int vmin = info.voltage_min_design_uv;
  		int ccc = info.constant_charge_current_max_ua;
 -- 
-2.30.0
+2.30.1
 

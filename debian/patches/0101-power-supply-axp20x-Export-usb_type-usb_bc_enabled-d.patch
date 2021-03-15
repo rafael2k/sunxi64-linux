@@ -1,7 +1,7 @@
 From 6c9dd8833c294e51ef26cf9222116cb23d70ca8a Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 22 Jun 2020 02:31:10 +0200
-Subject: [PATCH 101/183] power: supply: axp20x: Export usb_type,
+Subject: [PATCH 101/185] power: supply: axp20x: Export usb_type,
  usb_bc_enabled, dcp current limit
 
 Rename CURRENT_MAX to USB_DCP_INPUT_CURRENT_LIMIT, since that's what
@@ -267,5 +267,5 @@ index 8aaffde95a20..2c5183cbc77f 100644
  };
  
 -- 
-2.30.0
+2.30.1
 

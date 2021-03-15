@@ -1,7 +1,7 @@
 From b9fda29a01e4b9444e4607d26eac9e53ca5718a8 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Fri, 24 Jan 2020 18:24:22 +0100
-Subject: [PATCH 062/183] media: sun6i-csi: Make the video device respect user
+Subject: [PATCH 062/185] media: sun6i-csi: Make the video device respect user
  passed bytesperline
 
 WIP!!!
@@ -60,5 +60,5 @@ index e8b7a7b9e048..9f98d264f926 100644
  
  	if (pixfmt->field == V4L2_FIELD_ANY)
 -- 
-2.30.0
+2.30.1
 

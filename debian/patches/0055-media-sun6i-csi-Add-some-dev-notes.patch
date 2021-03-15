@@ -1,7 +1,7 @@
 From 6e7ee2c9fae17338f678922661d99a2f7b6cb208 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 26 Jan 2020 00:40:55 +0100
-Subject: [PATCH 055/183] media: sun6i-csi: Add some dev notes
+Subject: [PATCH 055/185] media: sun6i-csi: Add some dev notes
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
@@ -22,5 +22,5 @@ index a813304df2d3..e8b7a7b9e048 100644
  			     struct v4l2_input *inp)
  {
 -- 
-2.30.0
+2.30.1
 

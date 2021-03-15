@@ -1,7 +1,7 @@
 From 315ec2534ed71461b644f723a7c0a546b5a27168 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 01:51:09 +0100
-Subject: [PATCH 113/183] usb: typec: anx7688: Rename pdo -> pkt to make it
+Subject: [PATCH 113/185] usb: typec: anx7688: Rename pdo -> pkt to make it
  less confusing
 
 Also clean make logging use base 16 command formatting, because
@@ -110,5 +110,5 @@ index 4794018c9175..64e4a8c10f36 100644
  }
  
 -- 
-2.30.0
+2.30.1
 

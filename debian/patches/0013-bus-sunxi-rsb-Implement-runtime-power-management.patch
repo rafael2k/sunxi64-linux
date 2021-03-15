@@ -1,7 +1,7 @@
 From bf13ea45d6070a099401310d876659c0c44b5ebd Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Wed, 1 Jan 2020 00:10:40 -0600
-Subject: [PATCH 013/183] bus: sunxi-rsb: Implement runtime power management
+Subject: [PATCH 013/185] bus: sunxi-rsb: Implement runtime power management
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -123,5 +123,5 @@ index 19b8ee47a47a..cbfbee32e15e 100644
  }
  
 -- 
-2.30.0
+2.30.1
 

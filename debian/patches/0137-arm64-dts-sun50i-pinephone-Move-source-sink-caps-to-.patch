@@ -1,0 +1,62 @@
+From bfa33e7e8b54f817890dffa9d3b70a78aba0594e Mon Sep 17 00:00:00 2001
+From: Ondrej Jirman <megous@megous.com>
+Date: Mon, 30 Nov 2020 01:53:38 +0100
+Subject: [PATCH 137/185] arm64: dts: sun50i-pinephone: Move source/sink-caps
+ to DT
+
+This is device specific information and doesn't belong to the driver.
+
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ .../dts/allwinner/sun50i-a64-pinephone.dtsi   | 23 +++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+index 8cee16a58a1f..0a1f99d440e7 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -11,6 +11,7 @@
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/leds/common.h>
+ #include <dt-bindings/pwm/pwm.h>
++#include <dt-bindings/usb/pd.h>
+ 
+ / {
+ 	aliases {
+@@ -264,11 +265,33 @@ anx7688: hdmi-bridge@28 {
+ 
+ 		avdd10-supply = <&reg_anx_vdd1v0>;
+ 		dvdd10-supply = <&reg_anx_vdd1v0>;
++		/* This is for the HW hack variant, but will also work for non-modified version. */
+ 		avdd18-supply = <&reg_ldo_io1>;
+ 		dvdd18-supply = <&reg_ldo_io1>;
+ 		vconn-supply = <&reg_vconn5v0>;
+ 		hdmi_vt-supply = <&reg_dldo1>;
++
++		source-caps = <
++			PDO_FIXED(5000, 500, PDO_FIXED_DATA_SWAP | PDO_FIXED_USB_COMM | PDO_FIXED_DUAL_ROLE)
++		>;
++
++		sink-caps = <
++			PDO_FIXED(5000, 3000, PDO_FIXED_DATA_SWAP | PDO_FIXED_USB_COMM | PDO_FIXED_DUAL_ROLE)
++		>;
++
++		/*
++		 * ANX7688 can't enable/disable USB-5V <-> DCIN switch by
++		 * itself, and PMIC's N_VBUSEN is not connected anywhere either,
++		 * so we need to configure everything in software:
++		 *
++		 * - get the VBUS status from ANX7688 via I2C
++		 * - configure PMIC to let it know vbus drive status (via
++		 *   reg_drivevbus)
++		 * - enable VBUS switch and USB-5V regulator (via reg_vbus
++		 *   and reg_usb_5v)
++		 */
+ 		vbus-supply = <&reg_usb0_vbus>;
++		vbus_in-supply = <&usb_power_supply>;
+ 
+ 		port {
+ 			typec0_drd_sw: endpoint {
+-- 
+2.30.1
+

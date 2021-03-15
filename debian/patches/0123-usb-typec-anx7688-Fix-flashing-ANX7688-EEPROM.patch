@@ -1,7 +1,7 @@
 From a7c1c99262daf561c635e9d2e7135bd0362b9cd7 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 15 Feb 2021 12:54:44 +0100
-Subject: [PATCH 123/183] usb: typec: anx7688: Fix flashing ANX7688 EEPROM
+Subject: [PATCH 123/185] usb: typec: anx7688: Fix flashing ANX7688 EEPROM
 
 Some timings needed to be tuned up. Apparently it's not enough to
 wait for write done register flag, but we need to wait for another
@@ -61,5 +61,5 @@ index b5b519de0ca7..49ecbf641ab8 100644
                  memset(buf, 0, sizeof buf);
                  memcpy(buf, fw->data + addr, min_t(unsigned, fw->size - addr, sizeof buf));
 -- 
-2.30.0
+2.30.1
 

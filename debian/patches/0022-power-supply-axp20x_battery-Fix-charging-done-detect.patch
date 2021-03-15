@@ -1,7 +1,7 @@
 From 443280b95069f3a97f08cdc9fd460e251d885f3e Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 29 Feb 2020 00:55:09 -0600
-Subject: [PATCH 022/183] power: supply: axp20x_battery: Fix charging done
+Subject: [PATCH 022/185] power: supply: axp20x_battery: Fix charging done
  detection
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
@@ -37,5 +37,5 @@ index e84b6e4da14a..24cb8f031e8b 100644
  			return 0;
  		}
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 18cf8d9a804fb0f86858ceb94f5f8ce2e4a35379 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 8 Jun 2020 00:15:04 +0200
-Subject: [PATCH 097/183] regulator: axp20x: Add support for vin-supply for
+Subject: [PATCH 097/185] regulator: axp20x: Add support for vin-supply for
  drivevbus
 
 When drivevbus is used to control some regulator via the N_VBUSEN
@@ -58,5 +58,5 @@ index d260c442b788..7017eee0c2a4 100644
  			dev_err(&pdev->dev, "Failed to register drivevbus\n");
  			return PTR_ERR(rdev);
 -- 
-2.30.0
+2.30.1
 

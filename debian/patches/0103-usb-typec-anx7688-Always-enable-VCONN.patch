@@ -1,7 +1,7 @@
 From cae7a5003551f62bd59b79526c3b1efdff4feeb6 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 16 Jun 2020 14:34:52 +0200
-Subject: [PATCH 103/183] usb: typec: anx7688: Always enable VCONN
+Subject: [PATCH 103/185] usb: typec: anx7688: Always enable VCONN
 
 This is to avoid cabledet issues caused by leakage through VCONN
 chargepump in PP 1.2a when the cable is unplugged.
@@ -25,5 +25,5 @@ index 3d2dd309d63a..0b6d3804fa96 100644
  #define ANX7688_VBUS_INDEX (ANX7688_NUM_SUPPLIES - 1)
  
 -- 
-2.30.0
+2.30.1
 

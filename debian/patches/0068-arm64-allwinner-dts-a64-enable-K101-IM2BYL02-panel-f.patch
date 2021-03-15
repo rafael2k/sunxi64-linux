@@ -1,7 +1,7 @@
 From 914643cb06ee833eeaf7b06ed5d9199916272d91 Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <icenowy@aosc.io>
 Date: Mon, 20 Jul 2020 01:11:34 +0800
-Subject: [PATCH 068/183] arm64: allwinner: dts: a64: enable K101-IM2BYL02
+Subject: [PATCH 068/185] arm64: allwinner: dts: a64: enable K101-IM2BYL02
  panel for PineTab
 
 Newer PineTab may switch to K101-IM2BYL02.
@@ -32,5 +32,5 @@ index 91470928bc47..a87790df94b3 100644
  	};
  };
 -- 
-2.30.0
+2.30.1
 

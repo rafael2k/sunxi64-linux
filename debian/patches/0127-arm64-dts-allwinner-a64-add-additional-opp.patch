@@ -1,0 +1,31 @@
+From cdb6ba0d292efeea93544b7b5b95019b0801500a Mon Sep 17 00:00:00 2001
+From: Marius Gripsgard <marius@ubports.com>
+Date: Thu, 27 Feb 2020 21:21:25 +0530
+Subject: [PATCH 127/185] arm64: dts: allwinner: a64: add additional opp
+
+Signed-off-by: Bhushan Shah <bshah@kde.org>
+Signed-off-by: Marius Gripsgard <marius@ubports.com>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi
+index 578c37490d90..bde0a41efe97 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-cpu-opp.dtsi
+@@ -8,6 +8,12 @@ cpu0_opp_table: opp_table0 {
+ 		compatible = "operating-points-v2";
+ 		opp-shared;
+ 
++                opp-480000000 {
++                        opp-hz = /bits/ 64 <480000000>;
++                        opp-microvolt = <1040000>;
++                        clock-latency-ns = <244144>; /* 8 32k periods */
++                };
++
+ 		opp-648000000 {
+ 			opp-hz = /bits/ 64 <648000000>;
+ 			opp-microvolt = <1040000>;
+-- 
+2.30.1
+

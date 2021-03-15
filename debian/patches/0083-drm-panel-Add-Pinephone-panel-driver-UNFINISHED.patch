@@ -1,7 +1,7 @@
 From e2cb2c8293220410e25ec8d943c6bff09a7bbeb2 Mon Sep 17 00:00:00 2001
 From: Marius Gripsgard <marius@ubports.com>
 Date: Thu, 21 Mar 2019 22:14:21 +0100
-Subject: [PATCH 083/183] drm/panel: Add Pinephone panel driver (UNFINISHED)
+Subject: [PATCH 083/185] drm/panel: Add Pinephone panel driver (UNFINISHED)
 
 Signed-off-by: Marius Gripsgard <marius@ubports.com>
 Signed-off-by: Bhushan Shah <bshah@kde.org>
@@ -576,5 +576,5 @@ index 000000000000..0f2f8d9de90f
 +MODULE_DESCRIPTION("pinephone MIPI-DSI LCD panel with jd9365da controller");
 +MODULE_LICENSE("GPL");
 -- 
-2.30.0
+2.30.1
 

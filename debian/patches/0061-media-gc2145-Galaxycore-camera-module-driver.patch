@@ -1,7 +1,7 @@
 From 11f85411b674ba35a29d3655155b4bb17c478def Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 23 Jun 2020 19:51:18 +0200
-Subject: [PATCH 061/183] media: gc2145: Galaxycore camera module driver
+Subject: [PATCH 061/185] media: gc2145: Galaxycore camera module driver
 
 WIP!
 
@@ -2298,5 +2298,5 @@ index 000000000000..40a50ee17fd3
 +MODULE_DESCRIPTION("GC2145 Camera Subdev Driver");
 +MODULE_LICENSE("GPL");
 -- 
-2.30.0
+2.30.1
 

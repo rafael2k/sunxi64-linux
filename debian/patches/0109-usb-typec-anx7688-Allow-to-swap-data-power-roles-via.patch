@@ -1,7 +1,7 @@
 From 95c6b867a600744de17453ab0acc239c985a38b3 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:04:54 +0100
-Subject: [PATCH 109/183] usb: typec: anx7688: Allow to swap data/power roles
+Subject: [PATCH 109/185] usb: typec: anx7688: Allow to swap data/power roles
  via sysfs
 
 This implements requests to swap the roles.
@@ -52,5 +52,5 @@ index 149c2fe3e8e5..be41481b648b 100644
  
  /*
 -- 
-2.30.0
+2.30.1
 

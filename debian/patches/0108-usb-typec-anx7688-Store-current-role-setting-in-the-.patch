@@ -1,7 +1,7 @@
 From f04976d34502267ffaf285fafa0792ea27974a6d Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:04:02 +0100
-Subject: [PATCH 108/183] usb: typec: anx7688: Store current role setting in
+Subject: [PATCH 108/185] usb: typec: anx7688: Store current role setting in
  the device struct
 
 It's not accessible from the typec_port object, wtf?
@@ -74,5 +74,5 @@ index 3a7b2d25e286..149c2fe3e8e5 100644
          ret = devm_request_irq(dev, irq_cabledet, anx7688_irq_plug_handler,
                                 IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
 -- 
-2.30.0
+2.30.1
 

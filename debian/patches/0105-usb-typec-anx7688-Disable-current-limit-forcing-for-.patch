@@ -1,7 +1,7 @@
 From 1dd2e860785721ea9828dcb70104ed3a68897048 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 1 Sep 2020 17:45:06 +0200
-Subject: [PATCH 105/183] usb: typec: anx7688: Disable current limit forcing
+Subject: [PATCH 105/185] usb: typec: anx7688: Disable current limit forcing
  for now
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
@@ -24,5 +24,5 @@ index c14da4da0e01..8b4d20f1b3ae 100644
  						POWER_SUPPLY_PROP_INPUT_CURRENT_LIMIT,
  						&psy_val);
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From ac8a6f8f3d43a9b68928b1a7d9f44e7e952bca5f Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 12 Jan 2020 20:32:15 -0600
-Subject: [PATCH 017/183] arm64: dts: allwinner: a64: Move wakeup-capable IRQs
+Subject: [PATCH 017/185] arm64: dts: allwinner: a64: Move wakeup-capable IRQs
  to r_intc
 
 All IRQs that can be used to wake up the system must be routed through
@@ -52,5 +52,5 @@ index 2a4699a2abe7..84190e8be3f2 100644
  			clock-names = "apb", "hosc", "losc";
  			gpio-controller;
 -- 
-2.30.0
+2.30.1
 

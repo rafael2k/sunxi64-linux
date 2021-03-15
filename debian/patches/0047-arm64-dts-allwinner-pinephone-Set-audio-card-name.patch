@@ -1,7 +1,7 @@
 From b325a5fdc950c634331fc69a13ff6905ef2a6be8 Mon Sep 17 00:00:00 2001
 From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
 Date: Fri, 3 Apr 2020 17:13:55 +0200
-Subject: [PATCH 047/183] arm64: dts: allwinner: pinephone: Set audio card name
+Subject: [PATCH 047/185] arm64: dts: allwinner: pinephone: Set audio card name
 
 Add the "PinePhone" name to the sound card: this will make
 upstreaming an ALSA UCM config easier as we can use a unique name.
@@ -28,5 +28,5 @@ index fffe5dc6b6a8..5d67eeaf2ac7 100644
  	simple-audio-card,widgets = "Microphone", "Headset Microphone",
  				    "Microphone", "Internal Microphone",
 -- 
-2.30.0
+2.30.1
 

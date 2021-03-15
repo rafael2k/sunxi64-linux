@@ -1,7 +1,7 @@
 From e98841f571acbd8446d766beca585947f7984673 Mon Sep 17 00:00:00 2001
 From: Luca Weiss <luca@z3ntu.xyz>
 Date: Sat, 11 Apr 2020 00:54:56 +0200
-Subject: [PATCH 085/183] panel: jd9365da: drop drm_device from drm_panel
+Subject: [PATCH 085/185] panel: jd9365da: drop drm_device from drm_panel
 
 ---
  drivers/gpu/drm/panel/panel-pinephone-jd9365da.c | 2 +-
@@ -21,5 +21,5 @@ index 558b2e0f87be..8e111c9691d6 100644
  		DRM_DEV_ERROR(&ctx->dsi->dev, "failed to add mode %ux%ux@%u\n",
  			      pinephone_default_mode.hdisplay,
 -- 
-2.30.0
+2.30.1
 

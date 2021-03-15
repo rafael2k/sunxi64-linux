@@ -1,7 +1,7 @@
 From 7bcd25b982363ec376bd004a605243a84e6d4249 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:09:11 +0100
-Subject: [PATCH 111/183] usb: typec: anx7688: We may not want try_src
+Subject: [PATCH 111/185] usb: typec: anx7688: We may not want try_src
 
 Try_src makes it needlessly harder to connect two pinephones together.
 
@@ -24,5 +24,5 @@ index 0b3dd40e6c6d..044786e00378 100644
  		goto err_vconoff;
  
 -- 
-2.30.0
+2.30.1
 

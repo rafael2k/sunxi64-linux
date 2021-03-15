@@ -1,7 +1,7 @@
 From b1fa965cf3241b9f6f4002089864ec0d6fb69e78 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Thu, 13 Feb 2020 15:37:25 +0100
-Subject: [PATCH 102/183] usb: typec: anx7688: Add driver for ANX7688 USB-C
+Subject: [PATCH 102/185] usb: typec: anx7688: Add driver for ANX7688 USB-C
  HDMI bridge
 
 The driver is now ready for some testing with more USB-C devices.
@@ -1833,5 +1833,5 @@ index 000000000000..3d2dd309d63a
 +MODULE_AUTHOR("Ondrej Jirman <megous@megous.com>");
 +MODULE_DESCRIPTION("Analogix ANX7688 USB-C DisplayPort bridge");
 -- 
-2.30.0
+2.30.1
 

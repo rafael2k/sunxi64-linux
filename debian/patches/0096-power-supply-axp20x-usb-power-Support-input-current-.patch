@@ -1,7 +1,7 @@
 From 0d7fe01848b653af2dd04a36d9714061156a7b5d Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 14 Nov 2017 02:09:43 +0100
-Subject: [PATCH 096/183] power: supply: axp20x-usb-power: Support input
+Subject: [PATCH 096/185] power: supply: axp20x-usb-power: Support input
  current limit
 
 Allow to set input current limit directly when autodetection fails
@@ -184,5 +184,5 @@ index fd5957c042da..00967b50f33f 100644
  /* Interrupt */
  #define AXP152_IRQ1_EN			0x40
 -- 
-2.30.0
+2.30.1
 

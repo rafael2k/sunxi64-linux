@@ -1,7 +1,7 @@
 From f55b3d987e2ab02e44c6f5048a42165a407a3095 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:23:17 +0100
-Subject: [PATCH 112/183] usb: typec: anx7688: Inform about vconn/power role
+Subject: [PATCH 112/185] usb: typec: anx7688: Inform about vconn/power role
  changes
 
 For FW/HW observability.
@@ -56,5 +56,5 @@ index 044786e00378..4794018c9175 100644
  		ret = usb_role_switch_set_role(anx7688->role_sw,
  					       dr_dfp ? USB_ROLE_HOST : USB_ROLE_DEVICE);
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From b0492989c2f6fd15054b49db9564ab3f3d3fddfe Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 26 Jan 2020 00:28:10 +0100
-Subject: [PATCH 066/183] media: ov5640: Don't powerup the sensor during driver
+Subject: [PATCH 066/185] media: ov5640: Don't powerup the sensor during driver
  probe
 
 It causes autofocus clicking during boot on some devices, and
@@ -86,5 +86,5 @@ index 5431b5b28244..7d826035c071 100644
  	if (ret)
  		goto entity_cleanup;
 -- 
-2.30.0
+2.30.1
 

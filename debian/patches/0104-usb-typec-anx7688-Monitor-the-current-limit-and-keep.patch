@@ -1,7 +1,7 @@
 From f3a6f92558d8c38930e18af3caa4075f99258f34 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Thu, 27 Aug 2020 18:23:32 +0200
-Subject: [PATCH 104/183] usb: typec: anx7688: Monitor the current limit, and
+Subject: [PATCH 104/185] usb: typec: anx7688: Monitor the current limit, and
  keep it if AXP resets it
 
 Power supply can sometimes change the input current limit by itself,
@@ -89,5 +89,5 @@ index 0b6d3804fa96..c14da4da0e01 100644
  					POWER_SUPPLY_PROP_USB_TYPE,
  					&psy_val);
 -- 
-2.30.0
+2.30.1
 

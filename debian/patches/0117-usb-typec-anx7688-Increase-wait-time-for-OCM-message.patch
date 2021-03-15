@@ -1,7 +1,7 @@
 From 7f9ddcfe7a4740988eaca1116ffe2219a65d57f4 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 06:00:55 +0100
-Subject: [PATCH 117/183] usb: typec: anx7688: Increase wait time for OCM
+Subject: [PATCH 117/185] usb: typec: anx7688: Increase wait time for OCM
  messages
 
 When bumping i2c clock, this got too tight for initial FW startup.
@@ -27,5 +27,5 @@ index a8e420e05367..89ecdc844000 100644
                  if (ret <= 0)
                          return ret;
 -- 
-2.30.0
+2.30.1
 

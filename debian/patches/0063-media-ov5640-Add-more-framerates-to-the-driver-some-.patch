@@ -1,7 +1,7 @@
 From bebf67954f17b3f7a7274287ea77e8ed8a840cfe Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Fri, 24 Jan 2020 18:25:12 +0100
-Subject: [PATCH 063/183] media: ov5640: Add more framerates to the driver
+Subject: [PATCH 063/185] media: ov5640: Add more framerates to the driver
  (some of them even work!)
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
@@ -52,5 +52,5 @@ index 14f3afa7721a..a549ff2bc88a 100644
  
  	if (fi->numerator == 0) {
 -- 
-2.30.0
+2.30.1
 

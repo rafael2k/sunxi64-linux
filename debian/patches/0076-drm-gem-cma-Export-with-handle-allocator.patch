@@ -1,7 +1,7 @@
 From 43fc46f67043713a34eb6475fd1d2b46def6b2e6 Mon Sep 17 00:00:00 2001
 From: Maxime Ripard <maxime.ripard@free-electrons.com>
 Date: Mon, 7 Dec 2015 09:33:28 +0100
-Subject: [PATCH 076/183] drm: gem: cma: Export with handle allocator
+Subject: [PATCH 076/185] drm: gem: cma: Export with handle allocator
 
 Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
 ---
@@ -46,5 +46,5 @@ index 5605c1b8f779..c43b76973033 100644
  extern const struct vm_operations_struct drm_gem_cma_vm_ops;
  
 -- 
-2.30.0
+2.30.1
 

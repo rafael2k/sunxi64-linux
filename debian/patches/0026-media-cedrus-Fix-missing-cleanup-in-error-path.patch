@@ -1,7 +1,7 @@
 From bb16cc6e35cd46032c7b30a9d99e1d8592fdfb50 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 5 Apr 2020 21:16:40 -0500
-Subject: [PATCH 026/183] media: cedrus: Fix missing cleanup in error path
+Subject: [PATCH 026/185] media: cedrus: Fix missing cleanup in error path
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -23,5 +23,5 @@ index 7bd9291c8d5f..8af3af74a43f 100644
  	mutex_unlock(&dev->dev_mutex);
  
 -- 
-2.30.0
+2.30.1
 

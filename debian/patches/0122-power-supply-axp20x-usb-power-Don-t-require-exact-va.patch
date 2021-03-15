@@ -1,7 +1,7 @@
 From e7c77d034a4be0ba21c2b6cabacbcc4340a88efe Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 05:58:12 +0100
-Subject: [PATCH 122/183] power: supply: axp20x-usb-power: Don't require exact
+Subject: [PATCH 122/185] power: supply: axp20x-usb-power: Don't require exact
  values for input current limit
 
 Available values are not enumerable, and usb type-c driver needs
@@ -78,5 +78,5 @@ index 2c5183cbc77f..e72b1116f5f2 100644
  	return regmap_update_bits(power->regmap,
  				  AXP813_CHRG_CTRL3,
 -- 
-2.30.0
+2.30.1
 

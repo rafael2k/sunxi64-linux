@@ -1,7 +1,7 @@
 From 371642dc211ed04c05d9a95545575767dbce6808 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 01:55:31 +0100
-Subject: [PATCH 115/183] usb: typec: anx7688: Implement more complete
+Subject: [PATCH 115/185] usb: typec: anx7688: Implement more complete
  command/PDO dumping
 
 The more we see, the more we'll know.
@@ -139,5 +139,5 @@ index ad60e6a011ee..62538a42c9aa 100644
  		dev_info(anx7688->dev, "received unknown message 0x%02x\n", cmd);
  		break;
 -- 
-2.30.0
+2.30.1
 

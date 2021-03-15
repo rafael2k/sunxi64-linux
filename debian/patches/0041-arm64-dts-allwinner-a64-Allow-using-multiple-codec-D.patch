@@ -1,7 +1,7 @@
 From d13425630a8f1dc2dca737f14804fe38f25c39e8 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 041/183] arm64: dts: allwinner: a64: Allow using multiple
+Subject: [PATCH 041/185] arm64: dts: allwinner: a64: Allow using multiple
  codec DAIs
 
 Increase #sound-dai-cells on the digital codec to allow using the other
@@ -35,5 +35,5 @@ index 27267d4590ff..3a12f86affbd 100644
  				     "allwinner,sun8i-a33-codec";
  			reg = <0x01c22e00 0x600>;
 -- 
-2.30.0
+2.30.1
 

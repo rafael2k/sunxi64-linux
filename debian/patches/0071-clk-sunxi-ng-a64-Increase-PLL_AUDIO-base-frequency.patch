@@ -1,7 +1,7 @@
 From 8fd68dc871957d669f55a65939e1b0dec9e22033 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sun, 19 Jul 2020 17:10:15 -0500
-Subject: [PATCH 071/183] clk: sunxi-ng: a64: Increase PLL_AUDIO base frequency
+Subject: [PATCH 071/185] clk: sunxi-ng: a64: Increase PLL_AUDIO base frequency
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -83,5 +83,5 @@ index 149cfde817cb..bd54a2f4a852 100644
  	writel(0x515, reg + SUN50I_A64_PLL_MIPI_REG);
  
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 9b06e6e95e993124a1479e30861b0a3528337a2c Mon Sep 17 00:00:00 2001
 From: Icenowy Zheng <icenowy@aosc.io>
 Date: Wed, 17 Jun 2020 08:39:18 +0800
-Subject: [PATCH 072/183] clk: sunxi-ng: add support for rate resetting
+Subject: [PATCH 072/185] clk: sunxi-ng: add support for rate resetting
  notifier
 
 In some situaitons, we will want a clock rate be kept while its parent
@@ -76,5 +76,5 @@ index 04e7a12200a2..09a468c2ab9b 100644
  		    const struct sunxi_ccu_desc *desc);
  
 -- 
-2.30.0
+2.30.1
 

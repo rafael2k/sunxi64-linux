@@ -1,7 +1,7 @@
 From 9de52d50e8964865cb5f539b455590ebf9c86a37 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 05:59:55 +0100
-Subject: [PATCH 116/183] usb: typec: anx7688: Move around locking a bit
+Subject: [PATCH 116/185] usb: typec: anx7688: Move around locking a bit
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
@@ -53,5 +53,5 @@ index 62538a42c9aa..a8e420e05367 100644
  
  static int anx7688_i2c_probe(struct i2c_client *client,
 -- 
-2.30.0
+2.30.1
 

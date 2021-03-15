@@ -1,7 +1,7 @@
 From fd47d9e5bc92b25fdd2318f9de022d242cc9edc3 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 18 Jul 2020 17:18:23 -0500
-Subject: [PATCH 019/183] dt-bindings: sram: Add ARM SCP SRAM compatible
+Subject: [PATCH 019/185] dt-bindings: sram: Add ARM SCP SRAM compatible
 
 As of commit a90b15e0ad72 ("Documentation: bindings: decouple juno
 specific details from generic binding"), the SCPI binding in
@@ -29,5 +29,5 @@ index 19d116ff9ddc..757f4c61492d 100644
              - rockchip,rk3066-smp-sram
              - samsung,exynos4210-sysram
 -- 
-2.30.0
+2.30.1
 

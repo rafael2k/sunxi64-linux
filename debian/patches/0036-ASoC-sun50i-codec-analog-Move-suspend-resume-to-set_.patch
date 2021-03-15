@@ -1,7 +1,7 @@
 From 29ed5a3e23ad31b294d5e1674417a0c51228e5ed Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 26 Sep 2020 21:39:27 -0500
-Subject: [PATCH 036/183] ASoC: sun50i-codec-analog: Move suspend/resume to
+Subject: [PATCH 036/185] ASoC: sun50i-codec-analog: Move suspend/resume to
  set_bias_level
 
 With idle_bias_on and suspend_bias_off, there are bias level transitions
@@ -68,5 +68,5 @@ index 400283b67c82..1c892ab99a8c 100644
  
  static const struct of_device_id sun50i_codec_analog_of_match[] = {
 -- 
-2.30.0
+2.30.1
 

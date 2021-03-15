@@ -1,7 +1,7 @@
 From 00f4253fdc65a7b6390d184011a9a79428d684c2 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 17 Feb 2020 21:37:13 -0600
-Subject: [PATCH 032/183] ASoC: sun8i-codec: Add AIF, ADC, and DAC volume
+Subject: [PATCH 032/185] ASoC: sun8i-codec: Add AIF, ADC, and DAC volume
  controls
 
 This allows changing the volume of each digital input/output
@@ -123,5 +123,5 @@ index 180442c62be1..d5705664845b 100644
  	.num_dapm_widgets	= ARRAY_SIZE(sun8i_codec_dapm_widgets),
  	.dapm_routes		= sun8i_codec_dapm_routes,
 -- 
-2.30.0
+2.30.1
 

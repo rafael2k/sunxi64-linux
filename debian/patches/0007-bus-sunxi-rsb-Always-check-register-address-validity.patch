@@ -1,7 +1,7 @@
 From 163d7ac8acf63143bac67f5f3600427939984551 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 21:56:59 -0600
-Subject: [PATCH 007/183] bus: sunxi-rsb: Always check register address
+Subject: [PATCH 007/185] bus: sunxi-rsb: Always check register address
  validity
 
 The register address was already validated for read operations before
@@ -29,5 +29,5 @@ index 1bb00a959c67..5cb4c92ec708 100644
  }
  
 -- 
-2.30.0
+2.30.1
 

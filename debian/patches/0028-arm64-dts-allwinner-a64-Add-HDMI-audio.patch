@@ -1,7 +1,7 @@
 From ec425c65296ae798a494d26b7c016b1c666e31e6 Mon Sep 17 00:00:00 2001
 From: Marcus Cooper <codekipper@gmail.com>
 Date: Sat, 4 Jul 2020 13:38:59 +0200
-Subject: [PATCH 028/183] arm64: dts: allwinner: a64: Add HDMI audio
+Subject: [PATCH 028/185] arm64: dts: allwinner: a64: Add HDMI audio
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -54,5 +54,5 @@ index e2f60688cc9b..27267d4590ff 100644
  				     "allwinner,sun8i-a83t-dw-hdmi";
  			reg = <0x01ee0000 0x10000>;
 -- 
-2.30.0
+2.30.1
 

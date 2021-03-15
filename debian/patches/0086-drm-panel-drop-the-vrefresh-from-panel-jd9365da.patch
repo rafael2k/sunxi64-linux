@@ -1,7 +1,7 @@
 From 885ccf4019ca921cb1883f529419a311487b90fa Mon Sep 17 00:00:00 2001
 From: Bhushan Shah <bshah@kde.org>
 Date: Fri, 11 Sep 2020 14:24:55 +0530
-Subject: [PATCH 086/183] drm/panel: drop the vrefresh from panel jd9365da
+Subject: [PATCH 086/185] drm/panel: drop the vrefresh from panel jd9365da
 
 Signed-off-by: Bhushan Shah <bshah@kde.org>
 ---
@@ -34,5 +34,5 @@ index 8e111c9691d6..3d60fb99ebb1 100644
  	}
  
 -- 
-2.30.0
+2.30.1
 

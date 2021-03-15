@@ -1,7 +1,7 @@
 From 4c1ccc3aa01af8bf7d38005d9285f99473ce95da Mon Sep 17 00:00:00 2001
 From: Luca Weiss <luca@z3ntu.xyz>
 Date: Sat, 11 Apr 2020 00:54:29 +0200
-Subject: [PATCH 084/183] panel: jd9365da: add drm_connector argument to
+Subject: [PATCH 084/185] panel: jd9365da: add drm_connector argument to
  get_modes()
 
 ---
@@ -36,5 +36,5 @@ index 0f2f8d9de90f..558b2e0f87be 100644
  	return 1;
  }
 -- 
-2.30.0
+2.30.1
 

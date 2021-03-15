@@ -1,7 +1,7 @@
 From bfc374fbeb5a93d2912b5dc3de0fd2b754c195de Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 06:13:20 +0100
-Subject: [PATCH 121/183] usb: typec: anx7688: Add more docs to the driver
+Subject: [PATCH 121/185] usb: typec: anx7688: Add more docs to the driver
 
 Kinda useful.
 
@@ -56,5 +56,5 @@ index 63dd6ab421b0..b5b519de0ca7 100644
  
  #include <linux/debugfs.h>
 -- 
-2.30.0
+2.30.1
 

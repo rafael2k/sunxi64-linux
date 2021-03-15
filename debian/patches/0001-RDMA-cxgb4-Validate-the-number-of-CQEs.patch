@@ -1,7 +1,7 @@
 From 71753cfd91b8d3ca49e2a2fa56f6f70071e14d48 Mon Sep 17 00:00:00 2001
 From: Kamal Heib <kamalheib1@gmail.com>
 Date: Sun, 8 Nov 2020 15:20:07 +0200
-Subject: [PATCH 001/183] RDMA/cxgb4: Validate the number of CQEs
+Subject: [PATCH 001/185] RDMA/cxgb4: Validate the number of CQEs
 
 [ Upstream commit 6d8285e604e0221b67bd5db736921b7ddce37d00 ]
 
@@ -32,5 +32,5 @@ index 44c2416588d4..13bc168d28ff 100644
  		return -EINVAL;
  
 -- 
-2.30.0
+2.30.1
 

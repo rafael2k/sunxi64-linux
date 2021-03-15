@@ -1,7 +1,7 @@
 From 610dcd7b563de06d7f38a56c4304cf3d8745e766 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:01:41 +0100
-Subject: [PATCH 106/183] usb: typec: anx7688: Move snk/src_caps to the struct
+Subject: [PATCH 106/185] usb: typec: anx7688: Move snk/src_caps to the struct
 
 So that they can be accessed later from the PWR_OBJ_REQ handler.
 Also they can now be possibly read from DT if needed.
@@ -94,5 +94,5 @@ index 8b4d20f1b3ae..bfb5ea4f065a 100644
                  anx7688->supplies[i].supply = anx7688_supply_names[i];
          ret = devm_regulator_bulk_get(dev, ANX7688_NUM_SUPPLIES,
 -- 
-2.30.0
+2.30.1
 

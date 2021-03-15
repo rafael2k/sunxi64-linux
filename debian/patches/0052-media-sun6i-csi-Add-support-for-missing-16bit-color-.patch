@@ -1,7 +1,7 @@
 From 4fa6a46b62e7372d5d1a8fcf2fbfc19071f7867b Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 17 Dec 2018 20:38:41 +0100
-Subject: [PATCH 052/183] media: sun6i-csi: Add support for missing 16bit color
+Subject: [PATCH 052/185] media: sun6i-csi: Add support for missing 16bit color
  formats
 
 CSI engine will not try to reorder the color parts, so this is safe
@@ -27,5 +27,5 @@ index c49ed480bed5..3e9c31f8ec04 100644
  
  	default:
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 030bc28be1f9eca871023aac7ae9cc330020083e Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 15:10:32 -0600
-Subject: [PATCH 006/183] arm64: dts: allwinner: a64: Protect SCP clocks
+Subject: [PATCH 006/185] arm64: dts: allwinner: a64: Protect SCP clocks
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -29,5 +29,5 @@ index 57786fc120c3..2a4699a2abe7 100644
  			#reset-cells = <1>;
  		};
 -- 
-2.30.0
+2.30.1
 

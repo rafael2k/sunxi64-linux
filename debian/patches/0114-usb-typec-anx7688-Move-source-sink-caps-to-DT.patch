@@ -1,7 +1,7 @@
 From 083a29342871d229b3481d903eae8b4eeaeb2de5 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 01:53:38 +0100
-Subject: [PATCH 114/183] usb: typec: anx7688: Move source/sink-caps to DT
+Subject: [PATCH 114/185] usb: typec: anx7688: Move source/sink-caps to DT
 
 This is device specific information and doesn't belong to the driver.
 
@@ -50,5 +50,5 @@ index 64e4a8c10f36..ad60e6a011ee 100644
          for (i = 0; i < ANX7688_NUM_SUPPLIES; i++)
                  anx7688->supplies[i].supply = anx7688_supply_names[i];
 -- 
-2.30.0
+2.30.1
 

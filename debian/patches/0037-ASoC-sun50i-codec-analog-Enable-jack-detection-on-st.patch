@@ -1,7 +1,7 @@
 From 92c336d23b655f611d2ed0334eb385955b39dd83 Mon Sep 17 00:00:00 2001
 From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
 Date: Thu, 24 Sep 2020 23:01:57 -0500
-Subject: [PATCH 037/183] ASoC: sun50i-codec-analog: Enable jack detection on
+Subject: [PATCH 037/185] ASoC: sun50i-codec-analog: Enable jack detection on
  startup
 
 This commit adds the necessary setup to enable jack detection on startup
@@ -91,5 +91,5 @@ index 1c892ab99a8c..b5de3cbd2062 100644
  	default:
  		break;
 -- 
-2.30.0
+2.30.1
 

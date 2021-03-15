@@ -1,7 +1,7 @@
 From 024e76fd0265e349b2569cf6035592e025367557 Mon Sep 17 00:00:00 2001
 From: Martijn Braam <martijn@brixit.nl>
 Date: Wed, 7 Oct 2020 17:33:43 +0200
-Subject: [PATCH 093/183] media: ov5640: set default ae target lower
+Subject: [PATCH 093/185] media: ov5640: set default ae target lower
 
 The OV5640 tries to overexpose all photos by about 1 stop. This makes
 the exposure target one stop lower.
@@ -23,5 +23,5 @@ index e28698b7170c..65ab69f6b71a 100644
  	/* optional indication of physical rotation of sensor */
  	ret = fwnode_property_read_u32(dev_fwnode(&client->dev), "rotation",
 -- 
-2.30.0
+2.30.1
 

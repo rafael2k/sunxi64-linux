@@ -1,7 +1,7 @@
 From 881a4b205f2b2de03aed601d6e43540de77f7f99 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 26 Sep 2020 20:56:18 -0500
-Subject: [PATCH 038/183] ASoC: sun8i-codec: Enable bus clock at STANDBY and
+Subject: [PATCH 038/185] ASoC: sun8i-codec: Enable bus clock at STANDBY and
  higher bias
 
 For codec variants that have a bus clock, that clock must be running to
@@ -129,5 +129,5 @@ index d5705664845b..afb14986c03f 100644
  
  static const struct of_device_id sun8i_codec_of_match[] = {
 -- 
-2.30.0
+2.30.1
 

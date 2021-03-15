@@ -1,7 +1,7 @@
 From e0e5601511db0fbc2400a7f13ab022e03d53829d Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sat, 30 Sep 2017 21:31:35 +0200
-Subject: [PATCH 060/183] MAINTAINERS: Add entry for Himax HM5065
+Subject: [PATCH 060/185] MAINTAINERS: Add entry for Himax HM5065
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
@@ -26,5 +26,5 @@ index bfc1b86e3e73..01595eb79075 100644
  M:	Jes Sorensen <jes@trained-monkey.org>
  L:	linux-hippi@sunsite.dk
 -- 
-2.30.0
+2.30.1
 

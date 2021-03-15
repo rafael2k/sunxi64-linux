@@ -1,7 +1,7 @@
 From dc923f05161706c1ac74d0ec9b2a70612869a7ae Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Wed, 23 Sep 2020 00:13:54 -0500
-Subject: [PATCH 035/183] arm64: dts: allwinner: pinephone: Enable internal
+Subject: [PATCH 035/185] arm64: dts: allwinner: pinephone: Enable internal
  HMIC bias
 
 Revisions 1.0 and 1.1 of the PinePhone mainboard do not have an external
@@ -39,5 +39,5 @@ index c9b9f6e9ee8c..be2e328b248e 100644
 +	allwinner,internal-bias-resistor;
 +};
 -- 
-2.30.0
+2.30.1
 

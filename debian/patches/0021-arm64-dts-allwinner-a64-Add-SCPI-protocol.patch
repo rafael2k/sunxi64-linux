@@ -1,7 +1,7 @@
 From 751fc535504572ced11c04cbae1bb635b9d64c3c Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 14 Dec 2019 20:52:53 -0600
-Subject: [PATCH 021/183] arm64: dts: allwinner: a64: Add SCPI protocol
+Subject: [PATCH 021/185] arm64: dts: allwinner: a64: Add SCPI protocol
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -47,5 +47,5 @@ index 84190e8be3f2..e2f60688cc9b 100644
  				compatible = "mmio-sram";
  				reg = <0x00018000 0x28000>;
 -- 
-2.30.0
+2.30.1
 

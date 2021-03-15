@@ -1,7 +1,7 @@
 From e822e1d3a6d1d1e908c8a537fe1aabfff546b091 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 22:09:08 -0600
-Subject: [PATCH 008/183] bus: sunxi-rsb: Use devm_platform_ioremap_resource
+Subject: [PATCH 008/185] bus: sunxi-rsb: Use devm_platform_ioremap_resource
 
 This simplifies the code and removes the need for a "struct resource".
 
@@ -34,5 +34,5 @@ index 5cb4c92ec708..2be6a27cf568 100644
  		return PTR_ERR(rsb->regs);
  
 -- 
-2.30.0
+2.30.1
 

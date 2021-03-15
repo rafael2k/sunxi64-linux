@@ -1,7 +1,7 @@
 From 5512a07910e143e01b4b3e275eb9435c5cc22958 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 06:13:03 +0100
-Subject: [PATCH 120/183] usb: typec: anx7688: Loudly report connection failure
+Subject: [PATCH 120/185] usb: typec: anx7688: Loudly report connection failure
 
 Kinda useful.
 
@@ -23,5 +23,5 @@ index 0db7d93c41f7..63dd6ab421b0 100644
  #endif
  }
 -- 
-2.30.0
+2.30.1
 

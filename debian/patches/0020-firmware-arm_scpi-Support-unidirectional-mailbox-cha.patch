@@ -1,7 +1,7 @@
 From 3554d2f2bad0ad1c236e7a2f767016cb0e66d077 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Tue, 5 Mar 2019 22:02:41 -0600
-Subject: [PATCH 020/183] firmware: arm_scpi: Support unidirectional mailbox
+Subject: [PATCH 020/185] firmware: arm_scpi: Support unidirectional mailbox
  channels
 
 Some mailbox controllers have only unidirectional channels, so we need a
@@ -124,5 +124,5 @@ index d0dee37ad522..97f4cc2a2875 100644
  	}
  
 -- 
-2.30.0
+2.30.1
 

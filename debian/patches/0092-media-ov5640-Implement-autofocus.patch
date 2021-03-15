@@ -1,7 +1,7 @@
 From d800e5ad23b34998c214e942c786b51a4c12e3c5 Mon Sep 17 00:00:00 2001
 From: Martijn Braam <martijn@brixit.nl>
 Date: Mon, 28 Sep 2020 14:26:11 +0200
-Subject: [PATCH 092/183] media: ov5640: Implement autofocus
+Subject: [PATCH 092/185] media: ov5640: Implement autofocus
 
 The autofocus functionality needs a firmware blob loaded into the
 internal microcontroller.
@@ -405,5 +405,5 @@ index 7d826035c071..e28698b7170c 100644
  	sensor->sd.ctrl_handler = hdl;
  	return 0;
 -- 
-2.30.0
+2.30.1
 

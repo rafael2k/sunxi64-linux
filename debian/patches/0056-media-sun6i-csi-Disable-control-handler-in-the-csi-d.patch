@@ -1,7 +1,7 @@
 From 32a61e245d93d5b91b0198eb4ce6d4b47c051f8b Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 28 Jan 2020 17:36:52 +0100
-Subject: [PATCH 056/183] media: sun6i-csi: Disable control handler in the csi
+Subject: [PATCH 056/185] media: sun6i-csi: Disable control handler in the csi
  driver
 
 This somehow makes controls on subdev0 appear on subdev1 that
@@ -45,5 +45,5 @@ index ab2f813e6c48..01ff2e1ae667 100644
  	v4l2_async_notifier_cleanup(&csi->notifier);
  	media_device_cleanup(&csi->media_dev);
 -- 
-2.30.0
+2.30.1
 

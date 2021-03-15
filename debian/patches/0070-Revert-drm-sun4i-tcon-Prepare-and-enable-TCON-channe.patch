@@ -1,7 +1,7 @@
 From 9bec87c6b3d85b7bdd660d84387f8fcd3fc9d63f Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Tue, 7 Apr 2020 23:11:43 -0500
-Subject: [PATCH 070/183] Revert "drm/sun4i: tcon: Prepare and enable TCON
+Subject: [PATCH 070/185] Revert "drm/sun4i: tcon: Prepare and enable TCON
  channel 0 clock at init"
 
 This reverts commit b14e945bda8ae227d1bf2b1837c0c4a61721cd1a.
@@ -30,5 +30,5 @@ index 9f06dec0fc61..409b5c11ee12 100644
  }
  
 -- 
-2.30.0
+2.30.1
 

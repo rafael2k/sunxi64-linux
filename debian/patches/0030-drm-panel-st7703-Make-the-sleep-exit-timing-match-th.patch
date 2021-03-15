@@ -1,7 +1,7 @@
 From 800d177fbf227a3df82cb001f5c418f2decc3f13 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Thu, 16 Jul 2020 14:37:52 +0200
-Subject: [PATCH 030/183] drm/panel: st7703: Make the sleep exit timing match
+Subject: [PATCH 030/185] drm/panel: st7703: Make the sleep exit timing match
  the spec
 
 The driver seemed to try to make the total cumulative time of all delays
@@ -52,5 +52,5 @@ index b30510b1696a..c9b81dc00429 100644
  	ret = mipi_dsi_dcs_set_display_on(dsi);
  	if (ret)
 -- 
-2.30.0
+2.30.1
 

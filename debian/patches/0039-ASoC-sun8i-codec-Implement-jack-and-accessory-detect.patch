@@ -1,7 +1,7 @@
 From 07995dc835eac98a39da6cc09e76df0a22de3d33 Mon Sep 17 00:00:00 2001
 From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
 Date: Fri, 25 Sep 2020 20:28:14 -0500
-Subject: [PATCH 039/183] ASoC: sun8i-codec: Implement jack and accessory
+Subject: [PATCH 039/185] ASoC: sun8i-codec: Implement jack and accessory
  detection
 
 Add support for the jack detection functionality in the A64 variant,
@@ -401,5 +401,5 @@ index afb14986c03f..6128d861df90 100644
  
  static const struct of_device_id sun8i_codec_of_match[] = {
 -- 
-2.30.0
+2.30.1
 

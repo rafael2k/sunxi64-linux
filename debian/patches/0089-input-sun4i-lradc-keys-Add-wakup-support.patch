@@ -1,7 +1,7 @@
 From b53020eca8ce3b9b7a875e9513514058c388cc0e Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 22 Oct 2019 00:15:41 +0200
-Subject: [PATCH 089/183] input: sun4i-lradc-keys: Add wakup support
+Subject: [PATCH 089/185] input: sun4i-lradc-keys: Add wakup support
 
 Allow the driver to wakeup the system on key press.
 
@@ -65,5 +65,5 @@ index 4a796bed48ac..bba679d7b54b 100644
  }
  
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 9d1ddb4c8cf2ca6daf49a7319fcd06ea73f65041 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Sun, 29 Nov 2020 06:06:58 +0100
-Subject: [PATCH 110/183] usb: typec: anx7688: Prepare to handle messages from
+Subject: [PATCH 110/185] usb: typec: anx7688: Prepare to handle messages from
  the FW better
 
 Parse and print everything relevant in more detail for easier observation
@@ -266,5 +266,5 @@ index be41481b648b..0b3dd40e6c6d 100644
  	}
  
 -- 
-2.30.0
+2.30.1
 

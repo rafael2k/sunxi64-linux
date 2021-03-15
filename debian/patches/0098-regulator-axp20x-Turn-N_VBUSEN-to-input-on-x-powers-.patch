@@ -1,7 +1,7 @@
 From 10d06a1e18af3c0656bea7a27ae255b1be5bc3a9 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Tue, 9 Jun 2020 22:00:36 +0200
-Subject: [PATCH 098/183] regulator: axp20x: Turn N_VBUSEN to input on
+Subject: [PATCH 098/185] regulator: axp20x: Turn N_VBUSEN to input on
  x-powers,sense-vbus-en
 
 When x-powers,sense-vbus-en is present on the PMIC DT node, force
@@ -50,5 +50,5 @@ index 7017eee0c2a4..21752e4bfd38 100644
  		struct regulator_desc *new_desc;
  		bool drivevbus_vin = false;
 -- 
-2.30.0
+2.30.1
 

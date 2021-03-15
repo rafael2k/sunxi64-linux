@@ -1,7 +1,7 @@
 From 711b6315047147863fa2cba8308ec11f28515999 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Mon, 30 Dec 2019 17:12:42 -0600
-Subject: [PATCH 010/183] bus: sunxi-rsb: Move OF match table
+Subject: [PATCH 010/185] bus: sunxi-rsb: Move OF match table
 
 For some reason, this driver's OF match table was placed above the
 probe/remove functions, far away from the platform_driver definition.
@@ -44,5 +44,5 @@ index 57dab32eb43d..e67be95c0660 100644
  	.probe = sunxi_rsb_probe,
  	.remove	= sunxi_rsb_remove,
 -- 
-2.30.0
+2.30.1
 

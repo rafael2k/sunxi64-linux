@@ -1,7 +1,7 @@
 From 4d2a9a5e04f5319759307bb0ba1a6ad221574482 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 29 Feb 2020 01:01:58 -0600
-Subject: [PATCH 023/183] mfd: axp20x: Add battery IRQ resources
+Subject: [PATCH 023/185] mfd: axp20x: Add battery IRQ resources
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
@@ -98,5 +98,5 @@ index aa59496e4376..542f01e347ed 100644
  		.name		= "axp20x-ac-power-supply",
  		.of_compatible	= "x-powers,axp813-ac-power-supply",
 -- 
-2.30.0
+2.30.1
 

@@ -1,7 +1,7 @@
 From 882ae3d69a0fbf09e7c5245179b7a64448aeab15 Mon Sep 17 00:00:00 2001
 From: Ondrej Jirman <megous@megous.com>
 Date: Mon, 30 Nov 2020 06:12:29 +0100
-Subject: [PATCH 119/183] usb: typec: anx7688: Kill the load upon receiving
+Subject: [PATCH 119/185] usb: typec: anx7688: Kill the load upon receiving
  hard reset
 
 FW likes to send hard resets for bullshit reasons, so only kill the load
@@ -43,5 +43,5 @@ index 39c817e0235f..0db7d93c41f7 100644
  
  	case ANX7688_OCM_MSG_RESTART:
 -- 
-2.30.0
+2.30.1
 

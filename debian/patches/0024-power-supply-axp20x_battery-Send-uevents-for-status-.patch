@@ -1,7 +1,7 @@
 From 9c7e4f987b24d03fa2e35d129cfb57bf74fcf914 Mon Sep 17 00:00:00 2001
 From: Samuel Holland <samuel@sholland.org>
 Date: Sat, 29 Feb 2020 01:04:17 -0600
-Subject: [PATCH 024/183] power: supply: axp20x_battery: Send uevents for
+Subject: [PATCH 024/185] power: supply: axp20x_battery: Send uevents for
  status changes
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
@@ -133,5 +133,5 @@ index 24cb8f031e8b..2ace16c2bc55 100644
  	},
  };
 -- 
-2.30.0
+2.30.1
 
