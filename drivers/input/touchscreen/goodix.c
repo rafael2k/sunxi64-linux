@@ -57,6 +57,35 @@ struct goodix_chip_id {
 	const struct goodix_chip_data *data;
 };
 
+#define GOODIX_ID_MAX_LEN	4 //O
+
+struct goodix_ts_data {
+	struct i2c_client *client;
+	struct input_dev *input_dev;
+	const struct goodix_chip_data *chip;
+	struct touchscreen_properties prop;
+	unsigned int max_touch_num;
+	unsigned int int_trigger_type;
+	struct regulator *avdd28;
+	struct regulator *vddio;
+	struct gpio_desc *gpiod_int;
+	struct gpio_desc *gpiod_rst;
+	int gpio_count;
+	int gpio_int_idx;
+	char id[GOODIX_ID_MAX_LEN + 1];
+	u16 version;
+	const char *cfg_name;
+	bool reset_controller_at_probe;
+	bool load_cfg_from_disk;
+	struct completion firmware_loading_complete;
+	unsigned long irq_flags;
+	enum goodix_irq_pin_access_method irq_pin_access_method;
+	unsigned int contact_size;
+	u8 config[GOODIX_CONFIG_MAX_LENGTH];
+	unsigned short keymap[GOODIX_MAX_KEYS];
+	bool poweroff_in_suspend;
+};//O
+
 static int goodix_check_cfg_8(struct goodix_ts_data *ts,
 			      const u8 *cfg, int len);
 static int goodix_check_cfg_16(struct goodix_ts_data *ts,
@@ -1133,6 +1162,7 @@ static void goodix_disable_regulators(void *arg)
 static int goodix_ts_probe(struct i2c_client *client,
 			   const struct i2c_device_id *id)
 {
+	struct device_node *np = client->dev.of_node;
 	struct goodix_ts_data *ts;
 	const char *cfg_name;
 	int error;
@@ -1152,6 +1182,7 @@ static int goodix_ts_probe(struct i2c_client *client,
 	i2c_set_clientdata(client, ts);
 	init_completion(&ts->firmware_loading_complete);
 	ts->contact_size = GOODIX_CONTACT_SIZE;
+	ts->poweroff_in_suspend = of_property_read_bool(np, "poweroff-in-suspend");
 
 	error = goodix_get_gpio_config(ts);
 	if (error)
@@ -1261,6 +1292,15 @@ static int __maybe_unused goodix_suspend(struct device *dev)
 	if (ts->load_cfg_from_disk)
 		wait_for_completion(&ts->firmware_loading_complete);
 
+	if (ts->poweroff_in_suspend) {
+		goodix_free_irq(ts);
+		goodix_irq_direction_output(ts, 0);
+		gpiod_direction_output(ts->gpiod_rst, 0);
+		regulator_disable(ts->avdd28);
+		regulator_disable(ts->vddio);
+		return 0;
+	}
+
 	/* We need gpio pins to suspend/resume */
 	if (ts->irq_pin_access_method == IRQ_PIN_ACCESS_NONE) {
 		disable_irq(client->irq);
@@ -1305,6 +1345,32 @@ static int __maybe_unused goodix_resume(struct device *dev)
 	struct goodix_ts_data *ts = i2c_get_clientdata(client);
 	u8 config_ver;
 	int error;
+
+	if (ts->poweroff_in_suspend) {
+		error = regulator_enable(ts->avdd28);
+		if (error) {
+			dev_err(dev, "Regulator avdd28 enable failed.\n");
+			return error;
+		}
+
+		error = regulator_enable(ts->vddio);
+		if (error) {
+			dev_err(dev, "Regulator vddio enable failed.\n");
+			return error;
+		}
+
+		error = goodix_reset(ts);
+		if (error) {
+			dev_err(dev, "Controller reset failed.\n");
+			return error;
+		}
+
+		error = goodix_request_irq(ts);
+		if (error)
+			return error;
+
+		return 0;
+	}
 
 	if (ts->irq_pin_access_method == IRQ_PIN_ACCESS_NONE) {
 		enable_irq(client->irq);
