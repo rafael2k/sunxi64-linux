@@ -785,3 +785,4 @@ struct platform_driver sun8i_hdmi_phy_driver = {
 		.of_match_table = sun8i_hdmi_phy_of_table,
 	},
 };
+module_platform_driver(sun8i_hdmi_phy_driver);
