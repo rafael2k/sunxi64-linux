@@ -1,0 +1,28 @@
+From: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Date: Wed, 26 May 2021 09:16:25 +0200
+Subject: pine64_defconfig: re-enable LEDs
+
+---
+ arch/arm64/configs/pine64_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index 877ca38..e1f97ef 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -303,7 +303,6 @@ CONFIG_DEVTMPFS_MOUNT=y
+ CONFIG_FW_LOADER_COMPRESS=y
+ # CONFIG_ALLOW_DEV_COREDUMP is not set
+ CONFIG_OF_OVERLAY=y
+-CONFIG_OF_CONFIGFS=y
+ CONFIG_ZRAM=m
+ CONFIG_ZRAM_WRITEBACK=y
+ CONFIG_ZRAM_MEMORY_TRACKING=y
+@@ -670,6 +669,7 @@ CONFIG_MMC_SDHCI_PLTFM=y
+ CONFIG_MMC_SDHCI_OF_ARASAN=y
+ CONFIG_MMC_DW=y
+ CONFIG_MMC_SUNXI=y
++CONFIG_NEW_LEDS=y
+ CONFIG_LEDS_CLASS=y
+ CONFIG_LEDS_CLASS_FLASH=y
+ CONFIG_LEDS_CLASS_MULTICOLOR=y

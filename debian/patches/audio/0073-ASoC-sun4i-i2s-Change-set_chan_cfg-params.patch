@@ -1,0 +1,99 @@
+From: =?utf-8?b?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Sun, 11 Oct 2020 22:22:11 +0200
+Subject: [PATCH 024/194] ASoC: sun4i-i2s: Change set_chan_cfg() params
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+As slots and slot_width can be set manually using set_tdm().
+These values are then kept in sun4i_i2s struct.
+So we need to check if these values are set or not.
+
+This is not done actually and will trigger a bug.
+For example, if we set to the simple soundcard in the device-tree
+dai-tdm-slot-width = <32> and then start a stream using S16_LE,
+currently we would calculate BCLK for 32-bit slots, but program
+lrck_period for 16-bit slots, making the sample rate double what we
+expected.
+
+To fix this, we need to check if these values are set or not but as
+this logic is already done by the caller. Avoid duplicating this
+logic and just pass the required values as params to set_chan_cfg().
+
+Suggested-by: Samuel Holland <samuel@sholland.org>
+Signed-off-by: Clément Péron <peron.clem@gmail.com>
+---
+ sound/soc/sunxi/sun4i-i2s.c | 25 +++++++++----------------
+ 1 file changed, 9 insertions(+), 16 deletions(-)
+
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index a994b5c..5c5db04 100644
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -162,8 +162,9 @@ struct sun4i_i2s_quirks {
+ 	unsigned long (*get_bclk_parent_rate)(const struct sun4i_i2s *);
+ 	s8	(*get_sr)(const struct sun4i_i2s *, int);
+ 	s8	(*get_wss)(const struct sun4i_i2s *, int);
+-	int	(*set_chan_cfg)(const struct sun4i_i2s *,
+-				const struct snd_pcm_hw_params *);
++	int	(*set_chan_cfg)(const struct sun4i_i2s *i2s,
++				unsigned int channels,	unsigned int slots,
++				unsigned int slot_width);
+ 	int	(*set_fmt)(const struct sun4i_i2s *, unsigned int);
+ };
+ 
+@@ -399,10 +400,9 @@ static s8 sun8i_i2s_get_sr_wss(const struct sun4i_i2s *i2s, int width)
+ }
+ 
+ static int sun4i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
+-				  const struct snd_pcm_hw_params *params)
++				  unsigned int channels, unsigned int slots,
++				  unsigned int slot_width)
+ {
+-	unsigned int channels = params_channels(params);
+-
+ 	/* Map the channels for playback and capture */
+ 	regmap_write(i2s->regmap, SUN4I_I2S_TX_CHAN_MAP_REG, 0x76543210);
+ 	regmap_write(i2s->regmap, SUN4I_I2S_RX_CHAN_MAP_REG, 0x00003210);
+@@ -419,15 +419,11 @@ static int sun4i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
+ }
+ 
+ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
+-				  const struct snd_pcm_hw_params *params)
++				  unsigned int channels, unsigned int slots,
++				  unsigned int slot_width)
+ {
+-	unsigned int channels = params_channels(params);
+-	unsigned int slots = channels;
+ 	unsigned int lrck_period;
+ 
+-	if (i2s->slots)
+-		slots = i2s->slots;
+-
+ 	/* Map the channels for playback and capture */
+ 	regmap_write(i2s->regmap, SUN8I_I2S_TX_CHAN_MAP_REG, 0x76543210);
+ 	regmap_write(i2s->regmap, SUN8I_I2S_RX_CHAN_MAP_REG, 0x76543210);
+@@ -450,13 +446,10 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
+ 	switch (i2s->format & SND_SOC_DAIFMT_FORMAT_MASK) {
+ 	case SND_SOC_DAIFMT_DSP_A:
+ 	case SND_SOC_DAIFMT_DSP_B:
+-		lrck_period = params_physical_width(params) * slots;
+-		break;
+-
+ 	case SND_SOC_DAIFMT_LEFT_J:
+ 	case SND_SOC_DAIFMT_RIGHT_J:
+ 	case SND_SOC_DAIFMT_I2S:
+-		lrck_period = params_physical_width(params);
++		lrck_period = slot_width * slots;
+ 		break;
+ 
+ 	default:
+@@ -492,7 +485,7 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
+ 	if (i2s->slot_width)
+ 		slot_width = i2s->slot_width;
+ 
+-	ret = i2s->variant->set_chan_cfg(i2s, params);
++	ret = i2s->variant->set_chan_cfg(i2s, channels, slots, slot_width);
+ 	if (ret < 0) {
+ 		dev_err(dai->dev, "Invalid channel configuration\n");
+ 		return ret;
