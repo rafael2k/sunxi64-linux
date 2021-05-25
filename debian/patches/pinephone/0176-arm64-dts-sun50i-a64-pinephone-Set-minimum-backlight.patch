@@ -1,0 +1,68 @@
+From: Ondrej Jirman <megous@megous.com>
+Date: Mon, 7 Jun 2021 20:23:52 +0200
+Subject: arm64: dts: sun50i-a64-pinephone: Set minimum backlight duty cycle
+ to 10%
+
+Instead of creating our own table, use existing lth_brightness
+functionality in the pwm_bl driver.
+
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ .../boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts      | 16 +---------------
+ .../boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts      | 16 +---------------
+ 2 files changed, 2 insertions(+), 30 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+index 3b99563..38a4d8c 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+@@ -21,21 +21,7 @@ &axp803 {
+ 
+ &backlight {
+ 	power-supply = <&reg_ldo_io0>;
+-	/*
+-	 * PWM backlight circuit on this PinePhone revision was changed since
+-	 * 1.0, and the lowest PWM duty cycle that doesn't lead to backlight
+-	 * being off is around 20%. Duty cycle for the lowest brightness level
+-	 * also varries quite a bit between individual boards, so the lowest
+-	 * value here was chosen as a safe default.
+-	 */
+-	brightness-levels = <
+-		392  413  436  468
+-		512  571  647  742
+-		857  995  1159 1349
+-		1568 1819 2103 2423
+-		2779 3176 3614 4096>;
+-	num-interpolated-steps = <50>;
+-	default-brightness-level = <400>;
++	lth-brightness = <10>;
+ };
+ 
+ &codec_analog {
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
+index 665ad4b..eb0d33c 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
+@@ -27,21 +27,7 @@ &axp803 {
+ 
+ &backlight {
+ 	power-supply = <&reg_ldo_io0>;
+-	/*
+-	 * PWM backlight circuit on this PinePhone revision was changed since 1.0,
+-	 * and the lowest PWM duty cycle that doesn't lead to backlight being off
+-	 * is around 10%. Duty cycle for the lowest brightness level also varries
+-	 * quite a bit between individual boards, so the lowest value here was
+-	 * chosen as a safe default.
+-	 */
+-	brightness-levels = <
+-		392  413  436  468
+-		512  571  647  742
+-		857  995  1159 1349
+-		1568 1819 2103 2423
+-		2779 3176 3614 4096>;
+-	num-interpolated-steps = <50>;
+-	default-brightness-level = <400>;
++	lth-brightness = <10>;
+ };
+ 
+ &lis3mdl {
