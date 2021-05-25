@@ -1,0 +1,22 @@
+From: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Date: Sat, 12 Dec 2020 12:15:59 +0100
+Subject: [PATCH 190/194] pine64_defconfig: enable PPP modules
+
+Fixes #17
+---
+ arch/arm64/configs/pine64_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index 3cef45d..e7cb901 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -396,6 +396,8 @@ CONFIG_STMMAC_ETH=m
+ CONFIG_MDIO_DEVICE=y
+ CONFIG_LED_TRIGGER_PHY=y
+ CONFIG_REALTEK_PHY=m
++CONFIG_PPP=m
++CONFIG_PPP_ASYNC=m
+ CONFIG_USB_NET_DRIVERS=m
+ CONFIG_USB_PEGASUS=m
+ CONFIG_USB_RTL8150=m

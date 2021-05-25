@@ -1,0 +1,44 @@
+From: Icenowy Zheng <icenowy@aosc.io>
+Date: Sun, 30 Jun 2019 22:45:34 +0800
+Subject: [PATCH 134/194] arm64: allwinner: a64: dts: fix LRADC compatible
+
+The LRADC reference voltage of A64 is 2.0V, and AVCC is 3.0V. So the
+internal voltage divider is 2/3 (the A10 value), not 3/4 (the A83T
+value).
+
+Fix the compatible string of the A64 LRADC.
+
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+[Samuel: Update DT binding]
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ .../devicetree/bindings/input/allwinner,sun4i-a10-lradc-keys.yaml       | 2 +-
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi                           | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/input/allwinner,sun4i-a10-lradc-keys.yaml b/Documentation/devicetree/bindings/input/allwinner,sun4i-a10-lradc-keys.yaml
+index d74f200..6584da0 100644
+--- a/Documentation/devicetree/bindings/input/allwinner,sun4i-a10-lradc-keys.yaml
++++ b/Documentation/devicetree/bindings/input/allwinner,sun4i-a10-lradc-keys.yaml
+@@ -17,7 +17,7 @@ properties:
+       - const: allwinner,sun8i-a83t-r-lradc
+       - items:
+           - const: allwinner,sun50i-a64-lradc
+-          - const: allwinner,sun8i-a83t-r-lradc
++          - const: allwinner,sun4i-a10-lradc-keys
+ 
+   reg:
+     maxItems: 1
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 0dc3c85..8cf5b71 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -872,7 +872,7 @@ spdif: spdif@1c21000 {
+ 
+ 		lradc: lradc@1c21800 {
+ 			compatible = "allwinner,sun50i-a64-lradc",
+-				     "allwinner,sun8i-a83t-r-lradc";
++				     "allwinner,sun4i-a10-lradc-keys";
+ 			reg = <0x01c21800 0x400>;
+ 			interrupt-parent = <&r_intc>;
+ 			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
