@@ -1,0 +1,50 @@
+From: Icenowy Zheng <icenowy@aosc.io>
+Date: Tue, 9 Apr 2019 05:35:09 +0800
+Subject: [PATCH 145/194] arm64: allwinner: a64: dts: add PineTab board
+
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
+index 91d27bc..204e16d 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
+@@ -185,6 +185,8 @@ &dphy {
+ 
+ &dsi {
+ 	vcc-dsi-supply = <&reg_dldo1>;
++	#address-cells = <1>;
++	#size-cells = <0>;
+ 	status = "okay";
+ 
+ 	panel@0 {
+@@ -225,7 +227,15 @@ &i2c0_pins {
+ &i2c1 {
+ 	status = "okay";
+ 
+-	/* TODO: add Bochs BMA223 accelerometer here */
++	bma223@18 {
++		compatible = "bosch,bma223", "bosch,bma222e";
++		reg = <0x18>;
++		interrupt-parent = <&pio>;
++		interrupts = <7 5 IRQ_TYPE_LEVEL_HIGH>; /* PH5 */
++		mount-matrix = "0", "-1", "0",
++			       "-1", "0", "0",
++			       "0", "0", "-1";
++	};
+ };
+ 
+ &lradc {
+@@ -291,6 +301,10 @@ &ohci0 {
+ 	status = "okay";
+ };
+ 
++&ohci1 {
++	status = "okay";
++};
++
+ &pwm {
+ 	status = "okay";
+ };
