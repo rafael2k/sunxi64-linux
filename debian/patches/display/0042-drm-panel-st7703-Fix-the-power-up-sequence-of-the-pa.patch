@@ -1,0 +1,62 @@
+From: Ondrej Jirman <megous@megous.com>
+Date: Thu, 16 Jul 2020 14:37:53 +0200
+Subject: [PATCH 042/194] drm/panel: st7703: Fix the power up sequence of the
+ panel
+
+The datasheet specifies that it's better to keep reset asserted
+while powering up the supplies, and that IOVCC should be enabled
+first.
+
+There also needs to be a delay after enabling the supplies and
+before deasserting the reset. The datasheet specifies 1ms after
+the supplies reach the required voltage. Use 10-20ms to also
+give the power supplies some time to reach the required voltage,
+too.
+
+This fixes intermittent panel initialization failures and screen
+corruption during resume from sleep on PinePhone.
+
+Reported-by: Samuel Holland <samuel@sholland.org>
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ drivers/gpu/drm/panel/panel-sitronix-st7703.c | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/gpu/drm/panel/panel-sitronix-st7703.c b/drivers/gpu/drm/panel/panel-sitronix-st7703.c
+index 9a34368..6b4be77 100644
+--- a/drivers/gpu/drm/panel/panel-sitronix-st7703.c
++++ b/drivers/gpu/drm/panel/panel-sitronix-st7703.c
+@@ -425,21 +425,25 @@ static int st7703_prepare(struct drm_panel *panel)
+ 		return 0;
+ 
+ 	dev_dbg(ctx->dev, "Resetting the panel\n");
+-	ret = regulator_enable(ctx->vcc);
+-	if (ret < 0) {
+-		dev_err(ctx->dev, "Failed to enable vcc supply: %d\n", ret);
+-		return ret;
+-	}
++	gpiod_set_value_cansleep(ctx->reset_gpio, 1);
++
+ 	ret = regulator_enable(ctx->iovcc);
+ 	if (ret < 0) {
+ 		dev_err(ctx->dev, "Failed to enable iovcc supply: %d\n", ret);
+ 		goto disable_vcc;
+ 	}
+ 
+-	gpiod_set_value_cansleep(ctx->reset_gpio, 1);
+-	usleep_range(20, 40);
++	ret = regulator_enable(ctx->vcc);
++	if (ret < 0) {
++		dev_err(ctx->dev, "Failed to enable vcc supply: %d\n", ret);
++		return ret;
++	}
++
++	/* Give power supplies time to stabilize before deasserting reset. */
++	usleep_range(10000, 20000);
++
+ 	gpiod_set_value_cansleep(ctx->reset_gpio, 0);
+-	msleep(20);
++	usleep_range(15000, 20000);
+ 
+ 	ctx->prepared = true;
+ 
