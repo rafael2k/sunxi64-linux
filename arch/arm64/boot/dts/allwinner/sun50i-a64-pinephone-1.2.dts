@@ -18,6 +18,7 @@
 &anx7688 {
 	reset-gpios = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
 	avdd33-supply = <&reg_dcdc1>;
+	vbus-supply = <&reg_vcc5v0>;
 };
 
 &axp803 {
