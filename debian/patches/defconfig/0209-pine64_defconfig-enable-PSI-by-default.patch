@@ -1,0 +1,21 @@
+From: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Date: Wed, 22 Sep 2021 19:27:36 +0200
+Subject: pine64_defconfig: enable PSI by default
+
+This is required by waydroid
+---
+ arch/arm64/configs/pine64_defconfig | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index c5b7371..fc58224 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -16,7 +16,6 @@ CONFIG_TASK_DELAY_ACCT=y
+ CONFIG_TASK_XACCT=y
+ CONFIG_TASK_IO_ACCOUNTING=y
+ CONFIG_PSI=y
+-CONFIG_PSI_DEFAULT_DISABLED=y
+ CONFIG_IKCONFIG=y
+ CONFIG_IKCONFIG_PROC=y
+ CONFIG_MEMCG=y

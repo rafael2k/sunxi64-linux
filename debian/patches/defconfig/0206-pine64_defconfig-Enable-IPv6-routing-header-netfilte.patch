@@ -1,0 +1,25 @@
+From: undef <gitlab@undef.tools>
+Date: Sun, 13 Jun 2021 00:33:57 +0000
+Subject: pine64_defconfig: Enable IPv6 components for firewall frontends
+
+This should allow firewall management software such as UFW and Firewalld
+to work on Mobian.
+
+Note, Firewalld requires setting `IPv6_rpfilter=no` to work.
+---
+ arch/arm64/configs/pine64_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index 5343681..91761cf 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -246,6 +246,8 @@ CONFIG_IP6_NF_TARGET_REJECT=m
+ CONFIG_IP6_NF_MANGLE=m
+ CONFIG_IP6_NF_NAT=m
+ CONFIG_IP6_NF_TARGET_MASQUERADE=m
++CONFIG_IP6_NF_MATCH_RT=m
++CONFIG_IP6_NF_MATCH_HL=m
+ CONFIG_NF_TABLES_BRIDGE=m
+ CONFIG_NFT_BRIDGE_META=m
+ CONFIG_NFT_BRIDGE_REJECT=m
