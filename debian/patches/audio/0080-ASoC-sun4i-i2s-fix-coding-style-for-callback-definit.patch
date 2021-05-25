@@ -1,0 +1,41 @@
+From: =?utf-8?b?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Sun, 11 Oct 2020 22:22:18 +0200
+Subject: [PATCH 031/194] ASoC: sun4i-i2s: fix coding-style for callback
+ definition
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Checkpatch script produces warning:
+WARNING: function definition argument 'const struct sun4i_i2s *'
+should also have an identifier name.
+
+Let's fix this by adding identifier name to get_bclk_parent_rate()
+and set_fmt() callback definition.
+
+Acked-by: Maxime Ripard <mripard@kernel.org>
+Signed-off-by: Clément Péron <peron.clem@gmail.com>
+---
+ sound/soc/sunxi/sun4i-i2s.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+index 6ce5107..2f13e0b 100644
+--- a/sound/soc/sunxi/sun4i-i2s.c
++++ b/sound/soc/sunxi/sun4i-i2s.c
+@@ -180,13 +180,13 @@ struct sun4i_i2s_quirks {
+ 	const struct sun4i_i2s_clk_div	*mclk_dividers;
+ 	unsigned int			num_mclk_dividers;
+ 
+-	unsigned long (*get_bclk_parent_rate)(const struct sun4i_i2s *);
++	unsigned long (*get_bclk_parent_rate)(const struct sun4i_i2s *i2s);
+ 	int	(*get_sr)(unsigned int width);
+ 	int	(*get_wss)(unsigned int width);
+ 	int	(*set_chan_cfg)(const struct sun4i_i2s *i2s,
+ 				unsigned int channels,	unsigned int slots,
+ 				unsigned int slot_width);
+-	int	(*set_fmt)(const struct sun4i_i2s *, unsigned int);
++	int	(*set_fmt)(const struct sun4i_i2s *i2s, unsigned int fmt);
+ };
+ 
+ struct sun4i_i2s {
