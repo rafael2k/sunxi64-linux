@@ -1,0 +1,28 @@
+From: Samuel Holland <samuel@sholland.org>
+Date: Sun, 12 Jan 2020 20:32:15 -0600
+Subject: [PATCH 013/194] arm64: dts: allwinner: a64: Move wakeup-capable IRQs
+ to r_intc
+
+All IRQs that can be used to wake up the system must be routed through
+r_intc, so they are visible to firmware while the system is suspended.
+
+For the A64, r_intc IRQ numbers are offset by 32 from the GIC IRQ
+numbers.
+
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 7e825db..5438af5 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -1298,6 +1298,7 @@ r_ir: ir@1f02000 {
+ 			clocks = <&r_ccu CLK_APB0_IR>, <&r_ccu CLK_IR>;
+ 			clock-names = "apb", "ir";
+ 			resets = <&r_ccu RST_APB0_IR>;
++			interrupt-parent = <&r_intc>;
+ 			interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
+ 			pinctrl-names = "default";
+ 			pinctrl-0 = <&r_ir_rx_pin>;
