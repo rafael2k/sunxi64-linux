@@ -1,0 +1,36 @@
+From: =?utf-8?q?Horia_Geant=C4=83?= <horia.geanta@nxp.com>
+Date: Wed, 28 Oct 2020 11:03:20 +0200
+Subject: [PATCH 164/194] crypto: arm/aes-neonbs - fix usage of cbc(aes)
+ fallback
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Loading the module deadlocks since:
+-local cbc(aes) implementation needs a fallback and
+-crypto API tries to find one but the request_module() resolves back to
+the same module
+
+Fix this by changing the module alias for cbc(aes) and
+using the NEED_FALLBACK flag when requesting for a fallback algorithm.
+
+Fixes: 00b99ad2bac2 ("crypto: arm/aes-neonbs - Use generic cbc encryption path")
+Signed-off-by: Horia Geantă <horia.geanta@nxp.com>
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+---
+ arch/arm/crypto/aes-neonbs-glue.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm/crypto/aes-neonbs-glue.c b/arch/arm/crypto/aes-neonbs-glue.c
+index 5c6cd3c..e43bc80 100644
+--- a/arch/arm/crypto/aes-neonbs-glue.c
++++ b/arch/arm/crypto/aes-neonbs-glue.c
+@@ -447,6 +447,8 @@ static struct skcipher_alg aes_algs[] = { {
+ 	.base.cra_module	= THIS_MODULE,
+ 	.base.cra_flags		= CRYPTO_ALG_INTERNAL |
+ 				  CRYPTO_ALG_NEED_FALLBACK,
++	.base.cra_init		= cbc_init,
++	.base.cra_exit		= cbc_exit,
+ 
+ 	.min_keysize		= AES_MIN_KEY_SIZE,
+ 	.max_keysize		= AES_MAX_KEY_SIZE,
