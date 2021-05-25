@@ -1,0 +1,55 @@
+From: Arnaud Ferraris <arnaud.ferraris@gmail.com>
+Date: Tue, 9 Feb 2021 09:45:37 +0100
+Subject: [PATCH 192/194] pine64_defconfig: add full support for A64 crypto
+ engine
+
+Fixes #20
+---
+ arch/arm64/configs/pine64_defconfig | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index e7cb901..353771d 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -61,11 +61,9 @@ CONFIG_ARCH_SUNXI=y
+ # CONFIG_SOCIONEXT_SYNQUACER_PREITS is not set
+ CONFIG_SCHED_MC=y
+ CONFIG_NR_CPUS=8
+-CONFIG_SECCOMP=y
+ CONFIG_KEXEC=y
+ CONFIG_KEXEC_FILE=y
+ # CONFIG_UNMAP_KERNEL_AT_EL0 is not set
+-# CONFIG_ARM64_SSBD is not set
+ CONFIG_ARM64_SW_TTBR0_PAN=y
+ # CONFIG_ARM64_TAGGED_ADDR_ABI is not set
+ CONFIG_COMPAT=y
+@@ -393,9 +391,9 @@ CONFIG_STMMAC_ETH=m
+ # CONFIG_NET_VENDOR_VIA is not set
+ # CONFIG_NET_VENDOR_WIZNET is not set
+ # CONFIG_NET_VENDOR_XILINX is not set
+-CONFIG_MDIO_DEVICE=y
+ CONFIG_LED_TRIGGER_PHY=y
+ CONFIG_REALTEK_PHY=m
++CONFIG_MDIO_DEVICE=y
+ CONFIG_PPP=m
+ CONFIG_PPP_ASYNC=m
+ CONFIG_USB_NET_DRIVERS=m
+@@ -484,7 +482,6 @@ CONFIG_PINCTRL_AXP209=y
+ CONFIG_GPIO_SYSFS=y
+ CONFIG_GPIO_PCA953X=y
+ CONFIG_GPIO_PCA953X_IRQ=y
+-CONFIG_POWER_AVS=y
+ CONFIG_POWER_RESET_GPIO=y
+ CONFIG_POWER_RESET_GPIO_RESTART=y
+ CONFIG_POWER_RESET_SYSCON=y
+@@ -839,6 +836,9 @@ CONFIG_CRYPTO_USER_API_RNG=m
+ CONFIG_CRYPTO_USER_API_AEAD=m
+ CONFIG_CRYPTO_DEV_SUN8I_CE=m
+ CONFIG_CRYPTO_DEV_SUN8I_CE_DEBUG=y
++CONFIG_CRYPTO_DEV_SUN8I_CE_HASH=y
++CONFIG_CRYPTO_DEV_SUN8I_CE_PRNG=y
++CONFIG_CRYPTO_DEV_SUN8I_CE_TRNG=y
+ # CONFIG_RAID6_PQ_BENCHMARK is not set
+ CONFIG_CRC_ITU_T=y
+ CONFIG_CRC7=y
