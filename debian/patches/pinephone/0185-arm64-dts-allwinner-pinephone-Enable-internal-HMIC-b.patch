@@ -11,7 +11,8 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
  arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts | 4 ++++
  arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts | 4 ++++
- 2 files changed, 8 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts | 4 ++++
+ 3 files changed, 12 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
 index 3d5a2ae..4b73025 100644
@@ -37,3 +38,18 @@ index c9b9f6e..be2e328 100644
 +&codec_analog {
 +	allwinner,internal-bias-resistor;
 +};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
+index e7cf9d8..8e4a2e0 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
+@@ -35,6 +35,10 @@ &backlight {
+ 	default-brightness-level = <500>;
+ };
+ 
++&codec_analog {
++	allwinner,internal-bias-resistor;
++};
++
+ &lis3mdl {
+ 	/*
+ 	 * Board revision 1.2 fixed routing of the interrupt to DRDY pin,
