@@ -97,10 +97,10 @@ index be2e328..7762ef8 100644
 -	allwinner,internal-bias-resistor;
 -};
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
-index ad3e4a6..3e0ec36 100644
+index eae8f14..c051e06 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
-@@ -52,6 +52,19 @@ &mmc1 {
+@@ -56,6 +56,19 @@ &mmc1 {
  	mmc-pwrseq = <&wifi_pwrseq>;
  };
  
