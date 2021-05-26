@@ -1,3 +1,9 @@
+linux-sunxi64 (5.10.39+sunxi64-5) unstable; urgency=medium
+
+  * d/patches: fix headset microphone on PP 1.2
+
+ -- Arnaud Ferraris <arnaud.ferraris@collabora.com>  Wed, 26 May 2021 11:47:33 +0200
+
 linux-sunxi64 (5.10.39+sunxi64-4) unstable; urgency=medium
 
   * Refresh on 5.10.39
