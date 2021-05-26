@@ -1,3 +1,12 @@
+linux-sunxi64 (5.10.39+sunxi64-4) unstable; urgency=medium
+
+  * Refresh on 5.10.39
+  * d/control: make tweaks packages Pre-Depends
+  * d/rules: default to parallel build
+  * debian: refresh patches and switch to quilt format
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Wed, 26 May 2021 09:17:29 +0200
+
 linux-sunxi64 (5.10.6+sunxi64-3) unstable; urgency=medium
 
   * pine64_defconfig: add full support for A64 crypto engine.
