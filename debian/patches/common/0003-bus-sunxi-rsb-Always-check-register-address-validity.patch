@@ -14,10 +14,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 3 insertions(+)
 
 diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index 1bb00a9..5cb4c92 100644
+index d46db13..d547bd9 100644
 --- a/drivers/bus/sunxi-rsb.c
 +++ b/drivers/bus/sunxi-rsb.c
-@@ -414,6 +414,9 @@ static int regmap_sunxi_rsb_reg_write(void *context, unsigned int reg,
+@@ -433,6 +433,9 @@ static int regmap_sunxi_rsb_reg_write(void *context, unsigned int reg,
  	struct sunxi_rsb_ctx *ctx = context;
  	struct sunxi_rsb_device *rdev = ctx->rdev;
  

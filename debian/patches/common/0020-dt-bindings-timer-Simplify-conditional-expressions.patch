@@ -1,0 +1,64 @@
+From: Samuel Holland <samuel@sholland.org>
+Date: Sun, 14 Mar 2021 20:03:05 -0500
+Subject: dt-bindings: timer: Simplify conditional expressions
+
+The sun4i timer IP block has a variable number of interrupts based on
+the compatible. Use enums to combine the two sections for the existing
+3-interrupt variants, and to simplify adding new compatible strings.
+
+Acked-by: Maxime Ripard <maxime@cerno.tech>
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ .../bindings/timer/allwinner,sun4i-a10-timer.yaml  | 25 ++++++----------------
+ 1 file changed, 7 insertions(+), 18 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/timer/allwinner,sun4i-a10-timer.yaml b/Documentation/devicetree/bindings/timer/allwinner,sun4i-a10-timer.yaml
+index 1c7cf32..3462598 100644
+--- a/Documentation/devicetree/bindings/timer/allwinner,sun4i-a10-timer.yaml
++++ b/Documentation/devicetree/bindings/timer/allwinner,sun4i-a10-timer.yaml
+@@ -34,8 +34,8 @@ allOf:
+   - if:
+       properties:
+         compatible:
+-          items:
+-            const: allwinner,sun4i-a10-timer
++          enum:
++            - allwinner,sun4i-a10-timer
+ 
+     then:
+       properties:
+@@ -46,8 +46,8 @@ allOf:
+   - if:
+       properties:
+         compatible:
+-          items:
+-            const: allwinner,sun8i-a23-timer
++          enum:
++            - allwinner,sun8i-a23-timer
+ 
+     then:
+       properties:
+@@ -58,20 +58,9 @@ allOf:
+   - if:
+       properties:
+         compatible:
+-          items:
+-            const: allwinner,sun8i-v3s-timer
+-
+-    then:
+-      properties:
+-        interrupts:
+-          minItems: 3
+-          maxItems: 3
+-
+-  - if:
+-      properties:
+-        compatible:
+-          items:
+-            const: allwinner,suniv-f1c100s-timer
++          enum:
++            - allwinner,sun8i-v3s-timer
++            - allwinner,suniv-f1c100s-timer
+ 
+     then:
+       properties:

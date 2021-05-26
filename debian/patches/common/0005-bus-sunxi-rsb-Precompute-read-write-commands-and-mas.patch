@@ -23,10 +23,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 44 insertions(+), 76 deletions(-)
 
 diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index 2be6a27..57dab32 100644
+index 346f3ff..05a3d0a 100644
 --- a/drivers/bus/sunxi-rsb.c
 +++ b/drivers/bus/sunxi-rsb.c
-@@ -311,41 +311,38 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
+@@ -316,29 +316,26 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
  	return 0;
  }
  
@@ -69,6 +69,10 @@ index 2be6a27..57dab32 100644
  		return -EINVAL;
 -	}
  
+ 	ret = pm_runtime_resume_and_get(rsb->dev);
+ 	if (ret)
+@@ -346,15 +343,15 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+ 
  	mutex_lock(&rsb->lock);
  
 -	writel(addr, rsb->regs + RSB_ADDR);
@@ -87,7 +91,7 @@ index 2be6a27..57dab32 100644
  
  unlock:
  	mutex_unlock(&rsb->lock);
-@@ -353,36 +350,24 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+@@ -365,29 +362,16 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
  	return ret;
  }
  
@@ -121,6 +125,10 @@ index 2be6a27..57dab32 100644
  		return -EINVAL;
 -	}
  
+ 	ret = pm_runtime_resume_and_get(rsb->dev);
+ 	if (ret)
+@@ -395,10 +379,11 @@ static int sunxi_rsb_write(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+ 
  	mutex_lock(&rsb->lock);
  
 -	writel(addr, rsb->regs + RSB_ADDR);
@@ -135,7 +143,7 @@ index 2be6a27..57dab32 100644
  	ret = _sunxi_rsb_run_xfer(rsb);
  
  	mutex_unlock(&rsb->lock);
-@@ -390,36 +375,6 @@ static int sunxi_rsb_write(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+@@ -409,36 +394,6 @@ static int sunxi_rsb_write(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
  	return ret;
  }
  
@@ -172,7 +180,7 @@ index 2be6a27..57dab32 100644
  static void regmap_sunxi_rsb_free_ctx(void *context)
  {
  	struct sunxi_rsb_ctx *ctx = context;
-@@ -439,13 +394,24 @@ static struct sunxi_rsb_ctx *regmap_sunxi_rsb_init_ctx(struct sunxi_rsb_device *
+@@ -458,13 +413,24 @@ static struct sunxi_rsb_ctx *regmap_sunxi_rsb_init_ctx(struct sunxi_rsb_device *
  		const struct regmap_config *config)
  {
  	struct sunxi_rsb_ctx *ctx;
@@ -197,7 +205,7 @@ index 2be6a27..57dab32 100644
  		return ERR_PTR(-EINVAL);
  	}
  
-@@ -454,7 +420,9 @@ static struct sunxi_rsb_ctx *regmap_sunxi_rsb_init_ctx(struct sunxi_rsb_device *
+@@ -473,7 +439,9 @@ static struct sunxi_rsb_ctx *regmap_sunxi_rsb_init_ctx(struct sunxi_rsb_device *
  		return ERR_PTR(-ENOMEM);
  
  	ctx->rdev = rdev;
