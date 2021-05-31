@@ -1,4 +1,4 @@
-Source: %DEB_SOURCE%
+Source: linux-%KREL%
 Section: kernel
 Priority: optional
 Maintainer: Arnaud Ferraris <arnaud.ferraris@gmail.com>
@@ -36,27 +36,9 @@ Description: Linux kernel headers for Allwinner A64 devices
  .
  This is useful for people who need to build external modules
 
-Package: linux-libc-dev
-Section: devel
-Provides: linux-kernel-headers
-Architecture: arm64
-Description: Linux support headers for userspace development
- This package provides userspaces headers from the Linux kernel.  These headers
- are used by the installed headers for GNU glibc and other system libraries.
-Multi-Arch: same
-
 Package: linux-image-%KREL%-dbg
 Section: debug
 Architecture: arm64
 Description: Linux kernel debugging symbols for Allwinner A64 devices
  This package will come in handy if you need to debug the kernel. It provides
  all the necessary debug symbols for the kernel and its modules.
-
-Package: linux-image-sunxi64
-Architecture: arm64
-Section: kernel
-Depends:
- linux-image-%KREL% (>= ${binary:Version}),
-Description: Linux kernel for Allwinner A64 devices
- This packages sole purpose is to depend on the latest Linux kernel and modules
- for use on Allwinner A64 devices such as the PinePhone and PineTab.
