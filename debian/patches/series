@@ -183,4 +183,5 @@ defconfig/0182-pine64_defconfig-enable-PPP-modules.patch
 defconfig/0183-pine64_defconfig-add-full-support-for-A64-crypto-eng.patch
 defconfig/0184-pine64_defconfig-add-support-for-more-squashfs-compr.patch
 defconfig/0185-pine64_defconfig-re-enable-LEDs.patch
-mobian/0186-builddeb-don-t-build-linux-libc-dev-package.patch
+defconfig/0186-Add-HDMI-audio-and-CEC-to-pine64-defconfig.patch
+mobian/0187-builddeb-don-t-build-linux-libc-dev-package.patch
