@@ -25,6 +25,7 @@ Depends:
  initramfs-tools,
  kmod,
  linux-base,
+Provides: wireguard-modules (= 1.0.0)
 Description: Linux %KREL_MAJOR% for Allwinner A64 devices
  The linux kernel, modules and corresponding other files for Allwinner A64
  devices such as the PinePhone and PineTab.

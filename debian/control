@@ -24,6 +24,7 @@ Depends:
  kmod,
  linux-base,
  mobian-pinephone-tweaks (>= 0.52) | mobian-pinetab-tweaks (>= 0.12),
+Provides: wireguard-modules (= 1.0.0)
 Description: Linux 5.10 for Allwinner A64 devices
  The linux kernel, modules and corresponding other files for Allwinner A64
  devices such as the PinePhone and PineTab.
