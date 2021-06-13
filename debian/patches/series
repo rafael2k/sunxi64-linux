@@ -221,3 +221,4 @@ defconfig/0220-pine64_defconfig-add-full-support-for-A64-crypto-eng.patch
 defconfig/0221-pine64_defconfig-add-support-for-more-squashfs-compr.patch
 defconfig/0222-pine64_defconfig-re-enable-LEDs.patch
 mobian/0223-builddeb-don-t-build-linux-libc-dev-package.patch
+defconfig/0224-pine64_defconfig-Enable-IPv6-routing-header-netfilte.patch
