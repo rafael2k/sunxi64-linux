@@ -1,3 +1,19 @@
+linux-5.13-sunxi64 (5.13+sunxi64-2) unstable; urgency=medium
+
+  [ Djhg2000 ]
+  * Add HDMI audio and CEC to pine64 defconfig
+
+  [ Arnaud Ferraris ]
+  * d/patches: refresh for 5.13
+
+  [ undef ]
+  * d/patches: add patch to enable IPv6 RT netfilter.
+
+  [ awaittrot ]
+  * d/control: Provide wireguard-modules
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Mon, 28 Jun 2021 22:41:59 +0200
+
 linux-5.13-sunxi64 (5.13~rc4+sunxi64-1) unstable; urgency=medium
 
   * Initial release
