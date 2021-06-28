@@ -1,3 +1,17 @@
+linux-5.10-sunxi64 (5.10.46+sunxi64-7) unstable; urgency=medium
+
+  [ undef ]
+  * d/patches: add patch to enable IPv6 RT netfilter.
+
+  [ Arnaud Ferraris ]
+  * d/patches: rename and reorder latest patches
+  * d/patches: rebase on 5.10.46
+
+  [ awaittrot ]
+  * d/control: Provide wireguard-modules
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Mon, 28 Jun 2021 21:55:09 +0200
+
 linux-5.10-sunxi64 (5.10.41+sunxi64-6) unstable; urgency=medium
 
   * Rebase on 5.10.41.
