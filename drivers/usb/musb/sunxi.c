@@ -441,8 +441,8 @@ static u8 sunxi_musb_readb(void __iomem *addr, u32 offset)
 
 			return readb(addr + SUNXI_MUSB_CONFIGDATA);
 		case MUSB_ULPI_BUSCONTROL:
-			dev_warn(sunxi_musb->controller->parent,
-				"sunxi-musb does not have ULPI bus control register\n");
+			dev_warn(sunxi_musb->controller->parent,//T
+				"sunxi-musb does not have ULPI bus control register\n");//T
 			return 0;
 		/* Offset for these is fixed by sunxi_musb_busctl_offset() */
 		case SUNXI_MUSB_TXFUNCADDR:
