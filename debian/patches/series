@@ -31,7 +31,6 @@ common/0030-arm64-dts-allwinner-a64-Sort-watchdog-node.patch
 common/0031-arm64-dts-allwinner-Add-sun4i-MMIO-timer-nodes.patch
 common/0032-arm64-sunxi-Build-the-sun4i-timer-driver.patch
 common/0033-arm64-dts-allwinner-a64-h5-Add-CPU-idle-states.patch
-common/0034-clocksource-arm_arch_timer-Improve-Allwinner-A64-tim.patch
 common/0035-arm64-dts-allwinner-Enforce-consistent-MMC-numbering.patch
 common/0036-input-goodix-Add-option-to-power-off-the-controller-.patch
 common/0037-input-goodix-Don-t-disable-regulators-during-suspend.patch
