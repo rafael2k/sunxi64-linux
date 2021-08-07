@@ -1,3 +1,9 @@
+linux-5.10-sunxi64 (5.10.56+sunxi64-9) unstable; urgency=medium
+
+  * Rebase on 5.10.56.
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Sat, 07 Aug 2021 13:56:28 +0200
+
 linux-5.10-sunxi64 (5.10.52+sunxi64-8) unstable; urgency=medium
 
   * d/patches: rebase on 5.10.52.
