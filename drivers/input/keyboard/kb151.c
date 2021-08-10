@@ -29,6 +29,7 @@ struct kb151 {
 	u8 row_shift;
 	u8 rows;
 	u8 cols;
+	u8 fn_state;
 	u8 buf_swap;
 	u8 buf[];
 };
@@ -55,7 +56,7 @@ static void kb151_update(struct i2c_client *client)
 		return;
 	}
 
-	dev_info(dev, "%02x | %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	dev_dbg(dev, "%02x | %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
 		new_buf[0], new_buf[1], new_buf[2], new_buf[3], new_buf[4], new_buf[5],
 		new_buf[6], new_buf[7], new_buf[8], new_buf[9], new_buf[10], new_buf[11],
 		new_buf[12]);
@@ -65,8 +66,6 @@ static void kb151_update(struct i2c_client *client)
 			crc, new_buf[0]);
 		return;
 	}
-	dev_info(dev, "Good scan data (%02x == %02x)\n",
-		crc, new_buf[0]);
 
 	for (col = 0; col < kb151->cols; ++col) {
 		u8 old = *(++old_buf);
@@ -74,14 +73,20 @@ static void kb151_update(struct i2c_client *client)
 		u8 changed = old ^ new;
 
 		for (row = 0; row < kb151->rows; ++row) {
-			int code = MATRIX_SCAN_CODE(row, col, kb151->row_shift);
 			u8 pressed = new & BIT(row);
+			u8 map_row = row + (kb151->fn_state ? kb151->rows : 0);
+			int code = MATRIX_SCAN_CODE(map_row, col, kb151->row_shift);
 
 			if (!(changed & BIT(row)))
 				continue;
 
 			dev_dbg(&client->dev, "row %u col %u %sed\n",
-				row, col, pressed ? "press" : "releas");
+				map_row, col, pressed ? "press" : "releas");
+			if (keymap[code] == KEY_FN) {
+				dev_dbg(&client->dev, "FN is now %s\n",
+					pressed ? "pressed" : "released");
+				kb151->fn_state = pressed;
+			} else
 			input_report_key(kb151->input, keymap[code], pressed);
 		}
 	}
@@ -151,7 +156,7 @@ static int kb151_probe(struct i2c_client *client)
 	struct device *dev = &client->dev;
 	u8 info[KB151_MATRIX_SIZE + 1];
 	unsigned int kb_rows, kb_cols;
-	unsigned int rows, cols;
+	unsigned int map_rows, map_cols;
 	struct kb151 *kb151;
 	int ret;
 
@@ -168,20 +173,20 @@ static int kb151_probe(struct i2c_client *client)
 		 info[KB151_FW_REVISION] & 0xf,
 		 info[KB151_FW_FEATURES]);
 
-	ret = matrix_keypad_parse_properties(dev, &rows, &cols);
+	ret = matrix_keypad_parse_properties(dev, &map_rows, &map_cols);
 	if (ret)
 		return ret;
 
 	kb_rows = info[KB151_MATRIX_SIZE] & 0xf;
 	kb_cols = info[KB151_MATRIX_SIZE] >> 4;
-	if (rows > kb_rows || cols != kb_cols) {
+	if (map_rows != 2 * kb_rows || map_cols != kb_cols) {
 		dev_err(dev, "Keyboard matrix is %ux%u, but key map is %ux%u\n",
-			kb_rows, kb_cols, rows, cols);
+			kb_rows, kb_cols, map_rows, map_cols);
 		return -EINVAL;
 	}
 
 	/* Allocate two buffers, and include space for the CRC. */
-	kb151 = devm_kzalloc(dev, struct_size(kb151, buf, 2 * (cols + 1)), GFP_KERNEL);
+	kb151 = devm_kzalloc(dev, struct_size(kb151, buf, 2 * (kb_cols + 1)), GFP_KERNEL);
 	if (!kb151)
 		return -ENOMEM;
 
@@ -189,9 +194,9 @@ static int kb151_probe(struct i2c_client *client)
 
 	crc8_populate_msb(kb151->crc_table, KB151_CRC8_POLYNOMIAL);
 
-	kb151->row_shift = get_count_order(cols);
-	kb151->rows = rows;
-	kb151->cols = cols;
+	kb151->row_shift = get_count_order(kb_cols);
+	kb151->rows = kb_rows;
+	kb151->cols = kb_cols;
 
 	kb151->input = devm_input_allocate_device(dev);
 	if (!kb151->input)
@@ -207,7 +212,7 @@ static int kb151_probe(struct i2c_client *client)
 
 	__set_bit(EV_REP, kb151->input->evbit);
 
-	ret = matrix_keypad_build_keymap(NULL, NULL, rows, cols,
+	ret = matrix_keypad_build_keymap(NULL, NULL, map_rows, map_cols,
 					 NULL, kb151->input);
 	if (ret)
 		return dev_err_probe(dev, ret, "Failed to build keymap\n");
