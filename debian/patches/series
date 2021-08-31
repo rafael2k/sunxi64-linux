@@ -173,4 +173,5 @@ defconfig/0185-pine64_defconfig-re-enable-LEDs.patch
 defconfig/0186-Add-HDMI-audio-and-CEC-to-pine64-defconfig.patch
 defconfig/0187-pine64_defconfig-Enable-IPv6-routing-header-netfilte.patch
 defconfig/0188-pine64_defconfig-Refresh-for-5.14-kernel.patch
-mobian/0189-builddeb-don-t-build-linux-libc-dev-package.patch
+defconfig/0189-pine64_defconfig-import-debian-config-options.patch
+mobian/0190-builddeb-don-t-build-linux-libc-dev-package.patch
