@@ -1,3 +1,9 @@
+linux-5.14-sunxi64 (5.14.0+sunxi64-2) unstable; urgency=medium
+
+  * d/patches: import debian config
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Wed, 01 Sep 2021 00:36:56 +0200
+
 linux-5.14-sunxi64 (5.14.0+sunxi64-1) unstable; urgency=medium
 
   * Initial release
