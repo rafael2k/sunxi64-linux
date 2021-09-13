@@ -1,3 +1,9 @@
+linux-5.14-sunxi64 (5.14.3+sunxi64-3) unstable; urgency=medium
+
+  * d/patches: revert switch to 'performance' as the default governor.
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Mon, 13 Sep 2021 12:01:40 +0200
+
 linux-5.14-sunxi64 (5.14.0+sunxi64-2) unstable; urgency=medium
 
   * d/patches: import debian config
