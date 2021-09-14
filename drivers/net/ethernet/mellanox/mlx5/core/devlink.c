@@ -818,6 +818,7 @@ int mlx5_devlink_register(struct devlink *devlink)
 	if (!mlx5_core_is_mp_slave(dev))
 		devlink_set_features(devlink, DEVLINK_F_RELOAD);
 
+	devlink_params_publish(devlink);
 	return 0;
 
 traps_reg_err:
@@ -830,6 +831,7 @@ auxdev_reg_err:
 
 void mlx5_devlink_unregister(struct devlink *devlink)
 {
+	devlink_params_unpublish(devlink);
 	mlx5_devlink_traps_unregister(devlink);
 	mlx5_devlink_auxdev_params_unregister(devlink);
 	devlink_params_unregister(devlink, mlx5_devlink_params,
