@@ -1,3 +1,10 @@
+linux-5.14-sunxi64 (5.14.7+sunxi64-4) unstable; urgency=medium
+
+  * Rebase on 5.14.7
+  * d/patches: enable PSI by default and renumber patches
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Wed, 22 Sep 2021 19:33:26 +0200
+
 linux-5.14-sunxi64 (5.14.3+sunxi64-3) unstable; urgency=medium
 
   * d/patches: revert switch to 'performance' as the default governor.
