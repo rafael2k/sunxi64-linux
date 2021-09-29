@@ -8,10 +8,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 36 insertions(+)
 
 diff --git a/drivers/mfd/axp20x.c b/drivers/mfd/axp20x.c
-index 4145a38..eecf517 100644
+index d0ac019..1c398ee 100644
 --- a/drivers/mfd/axp20x.c
 +++ b/drivers/mfd/axp20x.c
-@@ -178,6 +178,15 @@ static const struct resource axp20x_ac_power_supply_resources[] = {
+@@ -179,6 +179,15 @@ static const struct resource axp20x_ac_power_supply_resources[] = {
  	DEFINE_RES_IRQ_NAMED(AXP20X_IRQ_ACIN_OVER_V, "ACIN_OVER_V"),
  };
  
@@ -27,7 +27,7 @@ index 4145a38..eecf517 100644
  static const struct resource axp20x_pek_resources[] = {
  	DEFINE_RES_IRQ_NAMED(AXP20X_IRQ_PEK_RIS_EDGE, "PEK_DBR"),
  	DEFINE_RES_IRQ_NAMED(AXP20X_IRQ_PEK_FAL_EDGE, "PEK_DBF"),
-@@ -220,6 +229,23 @@ static const struct resource axp288_fuel_gauge_resources[] = {
+@@ -221,6 +230,23 @@ static const struct resource axp288_fuel_gauge_resources[] = {
  	DEFINE_RES_IRQ(AXP288_IRQ_WL1),
  };
  
@@ -51,7 +51,7 @@ index 4145a38..eecf517 100644
  static const struct resource axp803_pek_resources[] = {
  	DEFINE_RES_IRQ_NAMED(AXP803_IRQ_PEK_RIS_EDGE, "PEK_DBR"),
  	DEFINE_RES_IRQ_NAMED(AXP803_IRQ_PEK_FAL_EDGE, "PEK_DBF"),
-@@ -603,6 +629,8 @@ static const struct mfd_cell axp20x_cells[] = {
+@@ -604,6 +630,8 @@ static const struct mfd_cell axp20x_cells[] = {
  	}, {
  		.name		= "axp20x-battery-power-supply",
  		.of_compatible	= "x-powers,axp209-battery-power-supply",
@@ -60,7 +60,7 @@ index 4145a38..eecf517 100644
  	}, {
  		.name		= "axp20x-ac-power-supply",
  		.of_compatible	= "x-powers,axp202-ac-power-supply",
-@@ -634,6 +662,8 @@ static const struct mfd_cell axp221_cells[] = {
+@@ -635,6 +663,8 @@ static const struct mfd_cell axp221_cells[] = {
  	}, {
  		.name		= "axp20x-battery-power-supply",
  		.of_compatible	= "x-powers,axp221-battery-power-supply",
@@ -69,7 +69,7 @@ index 4145a38..eecf517 100644
  	}, {
  		.name		= "axp20x-usb-power-supply",
  		.of_compatible	= "x-powers,axp221-usb-power-supply",
-@@ -653,6 +683,8 @@ static const struct mfd_cell axp223_cells[] = {
+@@ -654,6 +684,8 @@ static const struct mfd_cell axp223_cells[] = {
  	}, {
  		.name		= "axp20x-battery-power-supply",
  		.of_compatible	= "x-powers,axp221-battery-power-supply",
@@ -78,7 +78,7 @@ index 4145a38..eecf517 100644
  	}, {
  		.name		= "axp20x-regulator",
  	}, {
-@@ -739,6 +771,8 @@ static const struct mfd_cell axp803_cells[] = {
+@@ -740,6 +772,8 @@ static const struct mfd_cell axp803_cells[] = {
  	}, {
  		.name		= "axp20x-battery-power-supply",
  		.of_compatible	= "x-powers,axp813-battery-power-supply",
@@ -87,7 +87,7 @@ index 4145a38..eecf517 100644
  	}, {
  		.name		= "axp20x-ac-power-supply",
  		.of_compatible	= "x-powers,axp813-ac-power-supply",
-@@ -796,6 +830,8 @@ static const struct mfd_cell axp813_cells[] = {
+@@ -797,6 +831,8 @@ static const struct mfd_cell axp813_cells[] = {
  	}, {
  		.name		= "axp20x-battery-power-supply",
  		.of_compatible	= "x-powers,axp813-battery-power-supply",

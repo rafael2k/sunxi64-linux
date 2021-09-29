@@ -14,10 +14,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  2 files changed, 144 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/mfd/axp20x.c b/drivers/mfd/axp20x.c
-index eecf517..f2ef88c 100644
+index 1c398ee..b7275a5 100644
 --- a/drivers/mfd/axp20x.c
 +++ b/drivers/mfd/axp20x.c
-@@ -208,6 +208,8 @@ static const struct resource axp22x_usb_power_supply_resources[] = {
+@@ -209,6 +209,8 @@ static const struct resource axp22x_usb_power_supply_resources[] = {
  static const struct resource axp803_usb_power_supply_resources[] = {
  	DEFINE_RES_IRQ_NAMED(AXP803_IRQ_VBUS_PLUGIN, "VBUS_PLUGIN"),
  	DEFINE_RES_IRQ_NAMED(AXP803_IRQ_VBUS_REMOVAL, "VBUS_REMOVAL"),

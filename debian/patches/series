@@ -175,4 +175,5 @@ defconfig/0174-pine64_defconfig-Enable-IPv6-routing-header-netfilte.patch
 defconfig/0175-pine64_defconfig-Refresh-for-5.14-kernel.patch
 defconfig/0176-pine64_defconfig-import-debian-config-options.patch
 defconfig/0177-pine64_defconfig-enable-PSI-by-default.patch
-mobian/0178-builddeb-don-t-build-linux-libc-dev-package.patch
+defconfig/0178-pine64_defconfig-reboot-immediately-on-panic.patch
+mobian/0179-builddeb-don-t-build-linux-libc-dev-package.patch
