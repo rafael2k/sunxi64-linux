@@ -1414,6 +1414,20 @@ static int amdgpu_dm_init(struct amdgpu_device *adev)
 
 	switch (adev->asic_type) {
 	case CHIP_CARRIZO:
+	case CHIP_RENOIR:
+		init_data.flags.gpu_vm_support = true;
+		switch (adev->dm.dmcub_fw_version) {
+		case 0: /* development */
+		case 0x1: /* linux-firmware.git hash 6d9f399 */
+		case 0x01000000: /* linux-firmware.git hash 9a0b0f4 */
+			init_data.flags.disable_dmcu = false;
+			break;
+		default:
+			init_data.flags.disable_dmcu = true;
+		}
+		break;
+	case CHIP_VANGOGH:
+	case CHIP_YELLOW_CARP:
 	case CHIP_STONEY:
 		init_data.flags.gpu_vm_support = true;
 		break;
@@ -6088,7 +6102,7 @@ static void apply_dsc_policy_for_stream(struct amdgpu_dm_connector *aconnector,
 	if (stream->link && stream->link->local_sink)
 		max_dsc_target_bpp_limit_override =
 			stream->link->local_sink->edid_caps.panel_patch.max_dsc_target_bpp_limit;
-	
+
 	/* Set DSC policy according to dsc_clock_en */
 	dc_dsc_policy_set_enable_dsc_when_not_needed(
 		aconnector->dsc_settings.dsc_force_enable == DSC_CLK_FORCE_ENABLE);
