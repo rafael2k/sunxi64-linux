@@ -1,5 +1,5 @@
-linux-5.15-sunxi64 (5.15+sunxi64-1) UNRELEASED; urgency=medium
+linux-5.15-sunxi64 (5.15.1+sunxi64-1) unstable; urgency=medium
 
   * Initial release
 
- -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Tue, 09 Feb 2021 01:49:56 +0100
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Thu, 11 Nov 2021 01:31:37 +0100
