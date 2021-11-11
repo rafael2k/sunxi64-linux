@@ -70,7 +70,7 @@ index d26fe5d..e21cfc7 100644
  	vin-supply = <&reg_vcc5v0>;
  	status = "okay";
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
-index 5b3d7de4..d92773c 100644
+index 636dd39..9a271b6 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
 @@ -15,6 +15,11 @@ wifi_pwrseq: wifi-pwrseq {
@@ -85,7 +85,7 @@ index 5b3d7de4..d92773c 100644
  &axp803 {
  	x-powers,sense-vbus-en;
  };
-@@ -58,6 +63,10 @@ &reg_anx_vdd1v0 {
+@@ -62,6 +67,10 @@ &reg_anx_vdd1v0 {
  };
  
  &reg_usb0_vbus {
