@@ -45,7 +45,7 @@ index c626821..b00eaab 100644
  	case V4L2_PIX_FMT_NV61:
  	case V4L2_PIX_FMT_YUV422P:
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index 07b2161..f5feb42 100644
+index 5ba3e29..9ac5f50 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 @@ -48,6 +48,8 @@ static const u32 supported_pixformats[] = {
