@@ -43,7 +43,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  create mode 100644 drivers/usb/typec/anx7688.c
 
 diff --git a/drivers/usb/typec/Kconfig b/drivers/usb/typec/Kconfig
-index a0418f2..4cf0469 100644
+index ab480f3..aa352eb 100644
 --- a/drivers/usb/typec/Kconfig
 +++ b/drivers/usb/typec/Kconfig
 @@ -52,6 +52,17 @@ source "drivers/usb/typec/ucsi/Kconfig"
