@@ -13,10 +13,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 2 insertions(+)
 
 diff --git a/drivers/bluetooth/hci_h5.c b/drivers/bluetooth/hci_h5.c
-index 59b7127..fc09f87 100644
+index d49a39d..c9b5433 100644
 --- a/drivers/bluetooth/hci_h5.c
 +++ b/drivers/bluetooth/hci_h5.c
-@@ -1098,6 +1098,8 @@ static const struct of_device_id rtl_bluetooth_of_match[] = {
+@@ -1100,6 +1100,8 @@ static const struct of_device_id rtl_bluetooth_of_match[] = {
  	  .data = (const void *)&h5_data_rtl8723bs },
  	{ .compatible = "realtek,rtl8723ds-bt",
  	  .data = (const void *)&h5_data_rtl8723bs },
