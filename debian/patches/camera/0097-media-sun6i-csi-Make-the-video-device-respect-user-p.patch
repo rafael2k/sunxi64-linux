@@ -32,7 +32,7 @@ index 01ff2e1..44e1841 100644
  		planar_offset[1] = -1;
  		planar_offset[2] = -1;
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index 3abf3ed..49e3d04 100644
+index b05fbe2..e7f280d 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 @@ -359,6 +359,7 @@ static int sun6i_video_try_fmt(struct sun6i_video *video,
