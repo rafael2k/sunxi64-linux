@@ -13,10 +13,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  create mode 100644 drivers/media/i2c/gc2145.c
 
 diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-index 08feb3e..b9503d0 100644
+index 6157e73e..ead851b 100644
 --- a/drivers/media/i2c/Kconfig
 +++ b/drivers/media/i2c/Kconfig
-@@ -1389,6 +1389,15 @@ config VIDEO_S5C73M3
+@@ -1390,6 +1390,15 @@ config VIDEO_S5C73M3
  	  This is a V4L2 sensor driver for Samsung S5C73M3
  	  8 Mpixel camera.
  
