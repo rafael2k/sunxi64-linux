@@ -27,7 +27,7 @@
 
 &backlight {
 	power-supply = <&reg_ldo_io0>;
-	lth-brightness = <10>;
+	lth-brightness = <12>;
 };
 
 &codec_analog {
