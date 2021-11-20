@@ -9,7 +9,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 25 insertions(+)
 
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index f5feb42..ee336f0 100644
+index 9ac5f50..7edd5e2 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 @@ -437,6 +437,28 @@ static int vidioc_s_input(struct file *file, void *fh, unsigned int i)
