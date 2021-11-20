@@ -1,3 +1,11 @@
+linux-5.15-sunxi64 (5.15.3+sunxi64-2) unstable; urgency=medium
+
+  * d/patches: re-enable internal mic bias on PP 1.2.
+  * d/patches: fix display init and backlight on PP.
+  * d/gbp.conf: use default `upstream/x.y.z` upstream tag format.
+
+ -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Sat, 20 Nov 2021 13:01:26 +0100
+
 linux-5.15-sunxi64 (5.15.1+sunxi64-1) unstable; urgency=medium
 
   * Initial release
