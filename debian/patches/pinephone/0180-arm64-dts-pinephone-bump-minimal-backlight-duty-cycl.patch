@@ -19,7 +19,7 @@ index af9f223..121bdc0 100644
  &backlight {
  	power-supply = <&reg_ldo_io0>;
 -	lth-brightness = <10>;
-+	lth-brightness = <11>;
++	lth-brightness = <12>;
  };
  
  &codec_analog {
@@ -32,7 +32,7 @@ index 5030d78..034be04 100644
  &backlight {
  	power-supply = <&reg_ldo_io0>;
 -	lth-brightness = <10>;
-+	lth-brightness = <11>;
++	lth-brightness = <12>;
  };
  
  &codec_analog {
