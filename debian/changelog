@@ -1,3 +1,10 @@
+linux-5.15-sunxi64 (5.15.4+sunxi64-4) unstable; urgency=medium
+
+  * Rebase on 5.15.4
+  * d/patches: increase minimum backlight duty cycle a bit more.
+
+ -- Arnaud Ferraris <arnaud.ferraris@collabora.com>  Thu, 25 Nov 2021 14:43:12 +0100
+
 linux-5.15-sunxi64 (5.15.3+sunxi64-2) unstable; urgency=medium
 
   * d/patches: re-enable internal mic bias on PP 1.2.
