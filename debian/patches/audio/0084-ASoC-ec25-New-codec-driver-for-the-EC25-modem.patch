@@ -15,10 +15,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  create mode 100644 sound/soc/codecs/ec25.c
 
 diff --git a/sound/soc/codecs/Kconfig b/sound/soc/codecs/Kconfig
-index 216cea0..2b7e410 100644
+index 326f2d6..102a353 100644
 --- a/sound/soc/codecs/Kconfig
 +++ b/sound/soc/codecs/Kconfig
-@@ -811,6 +811,9 @@ config SND_SOC_HDMI_CODEC
+@@ -828,6 +828,9 @@ config SND_SOC_HDMI_CODEC
  	select SND_PCM_IEC958
  	select HDMI
  
@@ -29,10 +29,10 @@ index 216cea0..2b7e410 100644
  	tristate "Everest Semi ES7134 CODEC"
  
 diff --git a/sound/soc/codecs/Makefile b/sound/soc/codecs/Makefile
-index 8dcea2c..bb3607f 100644
+index 9acfbcb..d5946bd 100644
 --- a/sound/soc/codecs/Makefile
 +++ b/sound/soc/codecs/Makefile
-@@ -87,6 +87,7 @@ snd-soc-da7219-objs := da7219.o da7219-aad.o
+@@ -89,6 +89,7 @@ snd-soc-da7219-objs := da7219.o da7219-aad.o
  snd-soc-da732x-objs := da732x.o
  snd-soc-da9055-objs := da9055.o
  snd-soc-dmic-objs := dmic.o
@@ -40,7 +40,7 @@ index 8dcea2c..bb3607f 100644
  snd-soc-es7134-objs := es7134.o
  snd-soc-es7241-objs := es7241.o
  snd-soc-es8316-objs := es8316.o
-@@ -418,6 +419,7 @@ obj-$(CONFIG_SND_SOC_DA7219)	+= snd-soc-da7219.o
+@@ -426,6 +427,7 @@ obj-$(CONFIG_SND_SOC_DA7219)	+= snd-soc-da7219.o
  obj-$(CONFIG_SND_SOC_DA732X)	+= snd-soc-da732x.o
  obj-$(CONFIG_SND_SOC_DA9055)	+= snd-soc-da9055.o
  obj-$(CONFIG_SND_SOC_DMIC)	+= snd-soc-dmic.o

@@ -66,4 +66,4 @@ index 9a34368..832c9ae 100644
 -	return ret;
  }
  
- static int st7703_get_modes(struct drm_panel *panel,
+ static const u32 mantix_bus_formats[] = {

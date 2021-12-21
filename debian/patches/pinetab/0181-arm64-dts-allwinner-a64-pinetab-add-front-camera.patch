@@ -8,10 +8,10 @@ Subject: [PATCH 095/194] arm64: dts: allwinner: a64: pinetab: add front
  1 file changed, 44 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
-index 7ef96f9ff..2b42c92 100644
+index adb0b28..2a7ebf0 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
-@@ -43,12 +43,35 @@ i2c-csi {
+@@ -54,12 +54,35 @@ i2c-csi {
  		#address-cells = <1>;
  		#size-cells = <0>;
  
@@ -51,7 +51,7 @@ index 7ef96f9ff..2b42c92 100644
  			clocks = <&ccu CLK_CSI_MCLK>;
  			clock-names = "xclk";
  
-@@ -60,7 +83,7 @@ ov5640: camera@3c {
+@@ -71,7 +94,7 @@ ov5640: camera@3c {
  
  			port {
  				ov5640_ep: endpoint {
@@ -60,7 +60,7 @@ index 7ef96f9ff..2b42c92 100644
  					bus-width = <8>;
  					hsync-active = <1>; /* Active high */
  					vsync-active = <0>; /* Active low */
-@@ -119,10 +142,15 @@ &cpu3 {
+@@ -130,10 +153,15 @@ &cpu3 {
  };
  
  &csi {
@@ -77,7 +77,7 @@ index 7ef96f9ff..2b42c92 100644
  			remote-endpoint = <&ov5640_ep>;
  			bus-width = <8>;
  			hsync-active = <1>; /* Active high */
-@@ -130,6 +158,16 @@ csi_ep: endpoint {
+@@ -141,6 +169,16 @@ csi_ep: endpoint {
  			data-active = <1>;  /* Active high */
  			pclk-sample = <1>;  /* Rising */
  		};

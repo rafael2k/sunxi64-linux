@@ -9,7 +9,6 @@ common/0008-firmware-arm_scpi-Support-unidirectional-mailbox-cha.patch
 common/0009-arm64-dts-allwinner-a64-Add-SCPI-protocol.patch
 common/0010-iio-adc-axp20x_adc-allow-to-set-TS-pin-to-GPADC-mode.patch
 common/0011-input-sun4i-lradc-keys-Add-wakup-support.patch
-common/0012-arm64-dts-allwinner-set-GPU-clock-to-432-MHz.patch
 common/0013-arm64-dts-allwinner-a64-add-additional-opp.patch
 common/0014-arm64-allwinner-a64-dts-fix-LRADC-compatible.patch
 common/0015-crypto-arm-aes-neonbs-fix-usage-of-cbc-aes-fallback.patch
@@ -22,7 +21,6 @@ common/0021-input-goodix-Don-t-disable-regulators-during-suspend.patch
 common/0022-mmc-sunxi-mmc-Remove-runtime-PM.patch
 common/0023-of-property-fw_devlink-Support-allwinner-sram-links.patch
 common/0024-pinctrl-sunxi-Fix-misleading-lockdep-deadlock-warnin.patch
-common/0025-PM-devfreq-strengthen-check-for-freq_table.patch
 common/0026-PM-devfreq-Do-not-require-devices-to-have-OPPs.patch
 common/0027-PM-devfreq-Drop-code-for-descending-freq_table.patch
 common/0028-PM-devfreq-Add-a-recommended-frequency-helper.patch
@@ -61,7 +59,6 @@ display/0060-drm-panel-Add-Pinephone-panel-driver-UNFINISHED.patch
 display/0061-panel-jd9365da-add-drm_connector-argument-to-get_mod.patch
 display/0062-panel-jd9365da-drop-drm_device-from-drm_panel.patch
 display/0063-drm-panel-drop-the-vrefresh-from-panel-jd9365da.patch
-display/0064-Bump-gpu-clock-to-500mHz.patch
 display/0065-drm-panel-st7703-Fix-xbd599-timings-to-make-refresh-.patch
 display/0066-drm-sun4i-decouple-TCON_DCLK_DIV-value-from-pll_mipi.patch
 display/0067-clk-sunxi-ng-sun50i-a64-Switch-parent-of-MIPI-DSI-to.patch
@@ -103,7 +100,6 @@ camera/0102-media-gc2145-Added-BGGR-bayer-mode.patch
 camera/0103-media-ov5640-Implement-autofocus.patch
 camera/0104-media-ov5640-set-default-ae-target-lower.patch
 usb/0105-phy-allwinner-sun4i-usb-Add-support-for-usb_role_swi.patch
-usb/0106-usb-musb-sunxi-Handle-MUSB_ULPI_BUSCONTROL.patch
 anx7688/0107-usb-typec-anx7688-Add-driver-for-ANX7688-USB-C-HDMI-.patch
 anx7688/0108-usb-typec-anx7688-Always-enable-VCONN.patch
 anx7688/0109-usb-typec-anx7688-Monitor-the-current-limit-and-keep.patch
@@ -133,8 +129,8 @@ anx7688/0132-usb-typec-anx7688-Properly-handle-system-suspend.patch
 anx7688/0133-usb-typec-anx7688-Return-error-from-probe-when-readi.patch
 anx7688/0134-usb-typec-anx7688-Add-support-for-i2c-bus-supply.patch
 anx7688/0135-usb-typec-anx7688-Export-HDMI-HPD-status-over-extcon.patch
-wireless/0136-Bluetooth-Add-new-quirk-for-broken-local-ext-feature.patch
 wireless/0137-Bluetooth-btrtl-add-support-for-the-RTL8723CS.patch
+wireless/0136-Bluetooth-Add-new-quirk-for-broken-local-ext-feature.patch
 wireless/0138-Bluetooth-hci_h5-Add-support-for-binding-RTL8723CS-w.patch
 wireless/0139-bluetooth-btrtl-Make-more-space-for-config-firmware-.patch
 wireless/0140-8723cs-Add-a-new-driver-v5.12.2-7-g2de5ec386.2020101.patch

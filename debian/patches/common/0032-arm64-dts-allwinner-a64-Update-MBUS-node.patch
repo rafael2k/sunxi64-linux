@@ -11,10 +11,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 022be9a..50bd320 100644
+index 57540a7..5ee0473 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -1185,8 +1185,14 @@ pwm: pwm@1c21400 {
+@@ -1199,8 +1199,14 @@ pwm: pwm@1c21400 {
  
  		mbus: dram-controller@1c62000 {
  			compatible = "allwinner,sun50i-a64-mbus";

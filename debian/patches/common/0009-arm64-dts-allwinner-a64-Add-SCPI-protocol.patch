@@ -8,10 +8,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 20 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 5438af5..755f5fc 100644
+index a5195f1..27083e0 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -130,6 +130,13 @@ psci {
+@@ -146,6 +146,13 @@ psci {
  		method = "smc";
  	};
  
@@ -25,7 +25,7 @@ index 5438af5..755f5fc 100644
  	sound: sound {
  		#address-cells = <1>;
  		#size-cells = <0>;
-@@ -344,6 +351,19 @@ syscon: syscon@1c00000 {
+@@ -360,6 +367,19 @@ syscon: syscon@1c00000 {
  			#size-cells = <1>;
  			ranges;
  

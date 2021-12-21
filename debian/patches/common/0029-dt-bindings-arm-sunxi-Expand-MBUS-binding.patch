@@ -17,10 +17,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 19 insertions(+), 1 deletion(-)
 
 diff --git a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-index e713a6f..e0c87ae 100644
+index 29c9961..c8a1830 100644
 --- a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
 +++ b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
-@@ -33,10 +33,26 @@ properties:
+@@ -34,10 +34,26 @@ properties:
        - allwinner,sun50i-a64-mbus
  
    reg:
@@ -48,7 +48,7 @@ index e713a6f..e0c87ae 100644
  
    dma-ranges:
      description:
-@@ -50,7 +66,9 @@ required:
+@@ -51,7 +67,9 @@ required:
    - "#interconnect-cells"
    - compatible
    - reg

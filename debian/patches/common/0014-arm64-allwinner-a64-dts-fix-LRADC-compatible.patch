@@ -30,10 +30,10 @@ index d74f200..6584da0 100644
    reg:
      maxItems: 1
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 0dc3c85..8cf5b71 100644
+index 27083e0..bbf39f8 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -872,7 +872,7 @@ spdif: spdif@1c21000 {
+@@ -888,7 +888,7 @@ spdif: spdif@1c21000 {
  
  		lradc: lradc@1c21800 {
  			compatible = "allwinner,sun50i-a64-lradc",
