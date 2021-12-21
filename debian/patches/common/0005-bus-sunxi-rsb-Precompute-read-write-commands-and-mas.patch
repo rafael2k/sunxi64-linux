@@ -23,7 +23,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 44 insertions(+), 76 deletions(-)
 
 diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index cf3a003..642c351 100644
+index 01ba161..0e00cf5 100644
 --- a/drivers/bus/sunxi-rsb.c
 +++ b/drivers/bus/sunxi-rsb.c
 @@ -314,29 +314,26 @@ static int _sunxi_rsb_run_xfer(struct sunxi_rsb *rsb)
