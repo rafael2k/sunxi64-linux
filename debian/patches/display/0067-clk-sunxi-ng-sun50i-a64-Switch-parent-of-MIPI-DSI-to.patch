@@ -13,7 +13,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 8 insertions(+)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-index 3e76c75..73c2a42 100644
+index 87d9147..5e9316b 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 @@ -950,6 +950,8 @@ static struct ccu_rate_reset_nb sun50i_a64_pll_video0_reset_tcon0_nb = {

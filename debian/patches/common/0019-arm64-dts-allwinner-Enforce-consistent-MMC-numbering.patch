@@ -27,7 +27,7 @@ index 7247cb1..022be9a 100644
  		#address-cells = <1>;
  		#size-cells = <1>;
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-index 1c416f6..4a6a066 100644
+index 02b6cf4..dca2f1b 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
 @@ -6,6 +6,12 @@
