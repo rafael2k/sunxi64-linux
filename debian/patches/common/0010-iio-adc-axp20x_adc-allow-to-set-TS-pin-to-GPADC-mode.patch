@@ -14,7 +14,7 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
  1 file changed, 6 insertions(+)
 
 diff --git a/drivers/iio/adc/axp20x_adc.c b/drivers/iio/adc/axp20x_adc.c
-index 3e0c0233..31d5658c 100644
+index df99f13..e13f9a6 100644
 --- a/drivers/iio/adc/axp20x_adc.c
 +++ b/drivers/iio/adc/axp20x_adc.c
 @@ -39,6 +39,7 @@
@@ -25,7 +25,7 @@ index 3e0c0233..31d5658c 100644
  
  #define AXP20X_ADC_CHANNEL(_channel, _name, _type, _reg)	\
  	{							\
-@@ -694,6 +695,11 @@ static int axp20x_probe(struct platform_device *pdev)
+@@ -682,6 +683,11 @@ static int axp20x_probe(struct platform_device *pdev)
  		regmap_update_bits(info->regmap, AXP20X_ADC_EN2,
  				   AXP20X_ADC_EN2_MASK, AXP20X_ADC_EN2_MASK);
  

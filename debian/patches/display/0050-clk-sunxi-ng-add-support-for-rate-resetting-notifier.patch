@@ -19,10 +19,10 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
  2 files changed, 34 insertions(+)
 
 diff --git a/drivers/clk/sunxi-ng/ccu_common.c b/drivers/clk/sunxi-ng/ccu_common.c
-index 2e20e65..c33d2de 100644
+index 88cb569..bc0bb32 100644
 --- a/drivers/clk/sunxi-ng/ccu_common.c
 +++ b/drivers/clk/sunxi-ng/ccu_common.c
-@@ -79,6 +79,28 @@ int ccu_pll_notifier_register(struct ccu_pll_nb *pll_nb)
+@@ -85,6 +85,28 @@ int ccu_pll_notifier_register(struct ccu_pll_nb *pll_nb)
  				     &pll_nb->clk_nb);
  }
  
@@ -48,11 +48,11 @@ index 2e20e65..c33d2de 100644
 +				     &rate_reset_nb->clk_nb);
 +}
 +
- int sunxi_ccu_probe(struct device_node *node, void __iomem *reg,
- 		    const struct sunxi_ccu_desc *desc)
- {
+ static int sunxi_ccu_probe(struct sunxi_ccu *ccu, struct device *dev,
+ 			   struct device_node *node, void __iomem *reg,
+ 			   const struct sunxi_ccu_desc *desc)
 diff --git a/drivers/clk/sunxi-ng/ccu_common.h b/drivers/clk/sunxi-ng/ccu_common.h
-index 04e7a12..09a468c 100644
+index 98a1834..4faee66 100644
 --- a/drivers/clk/sunxi-ng/ccu_common.h
 +++ b/drivers/clk/sunxi-ng/ccu_common.h
 @@ -63,6 +63,18 @@ struct ccu_pll_nb {
@@ -71,6 +71,6 @@ index 04e7a12..09a468c 100644
 +
 +int ccu_rate_reset_notifier_register(struct ccu_rate_reset_nb *rate_reset_nb);
 +
- int sunxi_ccu_probe(struct device_node *node, void __iomem *reg,
- 		    const struct sunxi_ccu_desc *desc);
- 
+ int devm_sunxi_ccu_probe(struct device *dev, void __iomem *reg,
+ 			 const struct sunxi_ccu_desc *desc);
+ void of_sunxi_ccu_probe(struct device_node *node, void __iomem *reg,
