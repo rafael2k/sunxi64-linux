@@ -18,7 +18,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  2 files changed, 9 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-index 01ff2e1..44e1841 100644
+index 12c2ddc..07db91a 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
 @@ -564,8 +564,7 @@ static void sun6i_csi_set_window(struct sun6i_csi_dev *sdev)
@@ -32,7 +32,7 @@ index 01ff2e1..44e1841 100644
  		planar_offset[1] = -1;
  		planar_offset[2] = -1;
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index b05fbe2..e7f280d 100644
+index e9e3e08..de8cfc3 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 @@ -359,6 +359,7 @@ static int sun6i_video_try_fmt(struct sun6i_video *video,
