@@ -1,3 +1,9 @@
+linux-5.15-sunxi64 (5.15.10+sunxi64-5) unstable; urgency=medium
+
+  * d/patches: rebase on 5.15.10.
+
+ -- Arnaud Ferraris <arnaud.ferraris@collabora.com>  Tue, 21 Dec 2021 13:47:03 +0100
+
 linux-5.15-sunxi64 (5.15.4+sunxi64-4) unstable; urgency=medium
 
   * Rebase on 5.15.4
