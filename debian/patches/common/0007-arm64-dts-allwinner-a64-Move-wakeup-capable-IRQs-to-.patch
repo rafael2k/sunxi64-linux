@@ -15,10 +15,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index 7e825db..5438af5 100644
+index 4887077..a5195f1 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-@@ -1298,6 +1298,7 @@ r_ir: ir@1f02000 {
+@@ -1315,6 +1315,7 @@ r_ir: ir@1f02000 {
  			clocks = <&r_ccu CLK_APB0_IR>, <&r_ccu CLK_IR>;
  			clock-names = "apb", "ir";
  			resets = <&r_ccu RST_APB0_IR>;

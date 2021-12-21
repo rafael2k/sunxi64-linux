@@ -41,7 +41,7 @@ index adec1b1..e75020a 100644
  
  static SIMPLE_DEV_PM_OPS(sun6i_rtc_pm_ops,
  	sun6i_rtc_suspend, sun6i_rtc_resume);
-@@ -735,6 +733,11 @@ static int sun6i_rtc_probe(struct platform_device *pdev)
+@@ -744,6 +742,11 @@ static int sun6i_rtc_probe(struct platform_device *pdev)
  	return 0;
  }
  
@@ -53,7 +53,7 @@ index adec1b1..e75020a 100644
  /*
   * As far as RTC functionality goes, all models are the same. The
   * datasheets claim that different models have different number of
-@@ -755,6 +758,7 @@ MODULE_DEVICE_TABLE(of, sun6i_rtc_dt_ids);
+@@ -764,6 +767,7 @@ MODULE_DEVICE_TABLE(of, sun6i_rtc_dt_ids);
  
  static struct platform_driver sun6i_rtc_driver = {
  	.probe		= sun6i_rtc_probe,
