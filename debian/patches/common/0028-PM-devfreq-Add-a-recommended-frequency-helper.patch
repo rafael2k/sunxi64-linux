@@ -17,10 +17,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  2 files changed, 27 insertions(+)
 
 diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 9606eab..ea1126c 100644
+index 003b415..2e2dee7 100644
 --- a/drivers/devfreq/devfreq.c
 +++ b/drivers/devfreq/devfreq.c
-@@ -1984,6 +1984,31 @@ subsys_initcall(devfreq_init);
+@@ -2010,6 +2010,31 @@ subsys_initcall(devfreq_init);
   * OPP framework.
   */
  

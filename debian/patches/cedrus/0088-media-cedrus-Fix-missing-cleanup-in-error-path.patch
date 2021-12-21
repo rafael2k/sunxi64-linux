@@ -8,10 +8,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 2 insertions(+)
 
 diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-index c0d005d..aab12fb 100644
+index c76fc97..72cf08f 100644
 --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
 +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-@@ -301,7 +301,9 @@ static int cedrus_open(struct file *file)
+@@ -354,7 +354,9 @@ static int cedrus_open(struct file *file)
  
  err_ctrls:
  	v4l2_ctrl_handler_free(&ctx->hdl);

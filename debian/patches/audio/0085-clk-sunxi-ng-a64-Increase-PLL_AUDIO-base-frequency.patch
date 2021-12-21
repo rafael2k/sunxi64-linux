@@ -9,7 +9,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 32 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-index 73c2a42..1a93e61 100644
+index 5e9316b..8102cce 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 @@ -47,15 +47,35 @@ static struct ccu_nkmp pll_cpux_clk = {
@@ -66,7 +66,7 @@ index 73c2a42..1a93e61 100644
  static CLK_FIXED_FACTOR_HWS(pll_audio_2x_clk, "pll-audio-2x",
  			    clk_parent_pll_audio,
  			    2, 1, CLK_SET_RATE_PARENT);
-@@ -964,10 +984,13 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
+@@ -962,10 +982,13 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
  	if (IS_ERR(reg))
  		return PTR_ERR(reg);
  

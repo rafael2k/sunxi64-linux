@@ -10,19 +10,20 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  3 files changed, 8 insertions(+)
 
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-index 27935f1..c49ed48 100644
+index fc96921..9a4b444 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_csi.c
-@@ -124,6 +124,9 @@ bool sun6i_csi_is_format_supported(struct sun6i_csi *csi,
+@@ -124,7 +124,10 @@ bool sun6i_csi_is_format_supported(struct sun6i_csi *csi,
  	case V4L2_PIX_FMT_VYUY:
  		return (mbus_code == MEDIA_BUS_FMT_VYUY8_2X8);
  
 +	case V4L2_PIX_FMT_RGB555:
 +		return mbus_code == MEDIA_BUS_FMT_RGB555_2X8_PADHI_LE;
+ 	case V4L2_PIX_FMT_NV12_16L16:
 +
- 	case V4L2_PIX_FMT_HM12:
  	case V4L2_PIX_FMT_NV12:
  	case V4L2_PIX_FMT_NV21:
+ 	case V4L2_PIX_FMT_NV16:
 @@ -509,6 +512,8 @@ static void sun6i_csi_set_window(struct sun6i_csi_dev *sdev)
  	case V4L2_PIX_FMT_YVYU:
  	case V4L2_PIX_FMT_UYVY:
@@ -54,6 +55,6 @@ index 5ba3e29..9ac5f50 100644
  	V4L2_PIX_FMT_VYUY,
 +	V4L2_PIX_FMT_RGB565,
 +	V4L2_PIX_FMT_RGB555,
- 	V4L2_PIX_FMT_HM12,
+ 	V4L2_PIX_FMT_NV12_16L16,
  	V4L2_PIX_FMT_NV12,
  	V4L2_PIX_FMT_NV21,
