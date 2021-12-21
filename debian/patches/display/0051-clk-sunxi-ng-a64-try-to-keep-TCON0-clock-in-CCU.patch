@@ -21,7 +21,7 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
  1 file changed, 25 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-index 149cfde..3e76c75 100644
+index 54f25c6..87d9147 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 @@ -528,8 +528,18 @@ static SUNXI_CCU_M_WITH_MUX_GATE(de_clk, "de", de_parents,
@@ -65,7 +65,7 @@ index 149cfde..3e76c75 100644
 +	val &= ~GENMASK(26, 24);
 +	writel(val | (0 << 24), reg + SUN50I_A64_TCON0_REG);
 +
- 	ret = sunxi_ccu_probe(pdev->dev.of_node, reg, &sun50i_a64_ccu_desc);
+ 	ret = devm_sunxi_ccu_probe(&pdev->dev, reg, &sun50i_a64_ccu_desc);
  	if (ret)
  		return ret;
 @@ -966,6 +985,10 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
