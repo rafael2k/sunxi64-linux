@@ -21,7 +21,7 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
  1 file changed, 25 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-index 149cfde..3e76c75 100644
+index 54f25c6..87d9147 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
 @@ -528,8 +528,18 @@ static SUNXI_CCU_M_WITH_MUX_GATE(de_clk, "de", de_parents,
@@ -55,8 +55,8 @@ index 149cfde..3e76c75 100644
 +
  static int sun50i_a64_ccu_probe(struct platform_device *pdev)
  {
- 	struct resource *res;
-@@ -955,6 +969,11 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
+ 	void __iomem *reg;
+@@ -953,6 +967,11 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
  
  	writel(0x515, reg + SUN50I_A64_PLL_MIPI_REG);
  
@@ -65,10 +65,10 @@ index 149cfde..3e76c75 100644
 +	val &= ~GENMASK(26, 24);
 +	writel(val | (0 << 24), reg + SUN50I_A64_TCON0_REG);
 +
- 	ret = sunxi_ccu_probe(pdev->dev.of_node, reg, &sun50i_a64_ccu_desc);
+ 	ret = devm_sunxi_ccu_probe(&pdev->dev, reg, &sun50i_a64_ccu_desc);
  	if (ret)
  		return ret;
-@@ -966,6 +985,10 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
+@@ -964,6 +983,10 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
  	ccu_mux_notifier_register(pll_cpux_clk.common.hw.clk,
  				  &sun50i_a64_cpu_nb);
  
