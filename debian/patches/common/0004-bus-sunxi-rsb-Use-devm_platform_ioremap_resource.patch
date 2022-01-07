@@ -10,7 +10,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 2 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index 396702d..cf3a003 100644
+index 3d73432..01ba161 100644
 --- a/drivers/bus/sunxi-rsb.c
 +++ b/drivers/bus/sunxi-rsb.c
 @@ -733,7 +733,6 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
