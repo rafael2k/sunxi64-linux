@@ -19,8 +19,6 @@ Rules-Requires-Root: no
 
 Package: linux-image-5.15-sunxi64
 Architecture: arm64
-Pre-Depends:
- mobian-pinephone-tweaks (>= 0.52) | mobian-pinetab-tweaks (>= 0.12),
 Depends:
  initramfs-tools,
  kmod,
