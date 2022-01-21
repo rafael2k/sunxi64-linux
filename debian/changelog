@@ -1,8 +1,9 @@
-linux-5.15-sunxi64 (5.15.14+sunxi64-6) unstable; urgency=medium
+linux-5.15-sunxi64 (5.15.15+sunxi64-1) unstable; urgency=medium
 
-  * d/patches: rebase on 5.15.14.
+  * d/patches: add patch for CVE-2022-0185
+  * d/patches: rebase on 5.15.15.
 
- -- Undef <debian@undef.tools>  Web, 12 Jan 2022 22:52:39 +0000
+ -- Undef <debian@undef.tools>  Thu, 20 Jan 2022 22:52:39 +0000
 
 linux-5.15-sunxi64 (5.15.13+sunxi64-6) unstable; urgency=medium
 
