@@ -1,5 +1,5 @@
-linux-5.15-sunxi64 (5.15+sunxi64-1) UNRELEASED; urgency=medium
+linux-5.16-sunxi64 (5.16.5+sunxi64-1) unstable; urgency=medium
 
   * Initial release
 
- -- Arnaud Ferraris <arnaud.ferraris@gmail.com>  Tue, 09 Feb 2021 01:49:56 +0100
+ -- Undef <debian@undef.tools>  Thu, 27 Jan 2022 08:44:06 +0000
