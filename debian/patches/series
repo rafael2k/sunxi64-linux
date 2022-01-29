@@ -212,3 +212,4 @@ defconfig/0211-pine64_defconfig-enable-Pine64-keyboard-case-and-re-.patch
 defconfig/0212-pine64_defconfig-compile-typec-support-built-in.patch
 mobian/0213-builddeb-don-t-build-linux-libc-dev-package.patch
 security/0214-vfs-fs_context-fix-up-param-length-parsing-in-legacy.patch
+debian/wireless-add-debian-wireless-regdb-certificates.patch
