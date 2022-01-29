@@ -9,10 +9,10 @@ Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
  2 files changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/drm_gem_cma_helper.c b/drivers/gpu/drm/drm_gem_cma_helper.c
-index 9d05674..67145ce 100644
+index 1e7e8cd..117231b 100644
 --- a/drivers/gpu/drm/drm_gem_cma_helper.c
 +++ b/drivers/gpu/drm/drm_gem_cma_helper.c
-@@ -162,7 +162,7 @@ EXPORT_SYMBOL_GPL(drm_gem_cma_create);
+@@ -165,7 +165,7 @@ EXPORT_SYMBOL_GPL(drm_gem_cma_create);
   * A struct drm_gem_cma_object * on success or an ERR_PTR()-encoded negative
   * error code on failure.
   */
@@ -21,7 +21,7 @@ index 9d05674..67145ce 100644
  drm_gem_cma_create_with_handle(struct drm_file *file_priv,
  			       struct drm_device *drm, size_t size,
  			       uint32_t *handle)
-@@ -189,6 +189,7 @@ drm_gem_cma_create_with_handle(struct drm_file *file_priv,
+@@ -192,6 +192,7 @@ drm_gem_cma_create_with_handle(struct drm_file *file_priv,
  
  	return cma_obj;
  }
