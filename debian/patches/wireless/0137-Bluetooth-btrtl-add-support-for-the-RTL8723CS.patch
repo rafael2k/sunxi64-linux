@@ -15,12 +15,12 @@ so add a quirk to indicate that these features are broken.
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- drivers/bluetooth/btrtl.c | 119 ++++++++++++++++++++++++++++++++++++++++++++--
+ drivers/bluetooth/btrtl.c | 126 +++++++++++++++++++++++++++++++++++++++++++---
  drivers/bluetooth/btrtl.h |   5 ++
- 2 files changed, 121 insertions(+), 3 deletions(-)
+ 2 files changed, 124 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/bluetooth/btrtl.c b/drivers/bluetooth/btrtl.c
-index 1f8afa0..fd293a9 100644
+index c2bdd1e..532c4d5 100644
 --- a/drivers/bluetooth/btrtl.c
 +++ b/drivers/bluetooth/btrtl.c
 @@ -17,7 +17,12 @@
