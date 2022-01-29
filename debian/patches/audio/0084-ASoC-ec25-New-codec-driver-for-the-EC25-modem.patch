@@ -15,10 +15,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  create mode 100644 sound/soc/codecs/ec25.c
 
 diff --git a/sound/soc/codecs/Kconfig b/sound/soc/codecs/Kconfig
-index 326f2d6..102a353 100644
+index 3a610ba..00db0c5 100644
 --- a/sound/soc/codecs/Kconfig
 +++ b/sound/soc/codecs/Kconfig
-@@ -828,6 +828,9 @@ config SND_SOC_HDMI_CODEC
+@@ -827,6 +827,9 @@ config SND_SOC_HDMI_CODEC
  	select SND_PCM_IEC958
  	select HDMI
  
