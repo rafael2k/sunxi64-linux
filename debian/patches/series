@@ -31,6 +31,7 @@ common/0030-PM-devfreq-Add-a-driver-for-the-sun8i-sun50i-MBUS.patch
 common/0031-clk-sunxi-ng-Export-CLK_DRAM-for-devfreq.patch
 common/0032-arm64-dts-allwinner-a64-Update-MBUS-node.patch
 common/0033-devfreq-sun8i-mbus-Set-default-minimum-frequency-for.patch
+common/0034-mmc-core-Wait-for-command-setting-Power-Off-Notifica.patch
 power/0034-power-supply-axp20x_battery-Fix-charging-done-detect.patch
 power/0035-mfd-axp20x-Add-battery-IRQ-resources.patch
 power/0036-power-supply-axp20x_battery-Send-uevents-for-status-.patch
