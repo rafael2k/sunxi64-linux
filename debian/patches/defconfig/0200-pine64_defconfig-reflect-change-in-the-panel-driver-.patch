@@ -1,0 +1,23 @@
+From: Bhushan Shah <bshah@kde.org>
+Date: Tue, 16 Jun 2020 20:46:35 +0530
+Subject: [PATCH 154/194] pine64_defconfig: reflect change in the panel driver
+ name
+
+Signed-off-by: Bhushan Shah <bhush94@gmail.com>
+---
+ arch/arm64/configs/pine64_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index 1e23cc5..bed906a 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -393,7 +393,7 @@ CONFIG_DRM_PANEL_SIMPLE=m
+ CONFIG_DRM_PANEL_FEIXIN_K101_IM2BA02=m
+ CONFIG_DRM_PANEL_FEIYANG_FY07024DI26A30D=m
+ CONFIG_DRM_PANEL_PINEPHONE_JD9365DA=m
+-CONFIG_DRM_PANEL_XINGBANGDA_XBD599=m
++CONFIG_DRM_PANEL_SITRONIX_ST7703=m
+ CONFIG_DRM_I2C_ADV7511=m
+ CONFIG_DRM_LIMA=m
+ CONFIG_FB=y

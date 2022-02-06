@@ -1,0 +1,60 @@
+From: Samuel Holland <samuel@sholland.org>
+Date: Tue, 8 Sep 2020 01:25:57 -0500
+Subject: [PATCH 059/194] ASoC: sun8i-codec: Add the AIF3 DAI, widgets,
+ and routes
+
+AIF3 has some differences from AIF1 and AIF2:
+ - It supports one channel only
+ - It supports master mode only
+ - It is not directly connected to any of the mixers; instead all audio
+   goes through a mux with AIF2.
+ - It does not have its own clock dividers; instead it reuses AIF2 BCLK
+   and LRCK. This means that when both AIF2 and AIF3 are active, they
+   must use the same sample rate and total frame width. Since AIF2 and
+   AIF3 are only used for codec2codec DAI links, constraints are not
+   applicable here; the only thing we can do when the rates don't match
+   is report an error.
+
+Make the necessary adjustments to support this AIF.
+
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ sound/soc/sunxi/sun8i-codec.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/sound/soc/sunxi/sun8i-codec.c b/sound/soc/sunxi/sun8i-codec.c
+index 518bfb7..784bc13 100644
+--- a/sound/soc/sunxi/sun8i-codec.c
++++ b/sound/soc/sunxi/sun8i-codec.c
+@@ -694,6 +694,31 @@ static struct snd_soc_dai_driver sun8i_codec_dais[] = {
+ 		.symmetric_channels	= true,
+ 		.symmetric_sample_bits	= true,
+ 	},
++	{
++		.name	= "sun8i-codec-aif3",
++		.id	= SUN8I_CODEC_AIF3,
++		.ops	= &sun8i_codec_dai_ops,
++		/* capture capabilities */
++		.capture = {
++			.stream_name	= "AIF3 Capture",
++			.channels_min	= 1,
++			.channels_max	= 1,
++			.rates		= SUN8I_CODEC_PCM_RATES,
++			.formats	= SUN8I_CODEC_PCM_FORMATS,
++			.sig_bits	= 24,
++		},
++		/* playback capabilities */
++		.playback = {
++			.stream_name	= "AIF3 Playback",
++			.channels_min	= 1,
++			.channels_max	= 1,
++			.rates		= SUN8I_CODEC_PCM_RATES,
++			.formats	= SUN8I_CODEC_PCM_FORMATS,
++		},
++		.symmetric_rate	= true,
++		.symmetric_channels	= true,
++		.symmetric_sample_bits	= true,
++	},
+ };
+ 
+ static int sun8i_codec_aif_event(struct snd_soc_dapm_widget *w,
