@@ -1,3 +1,10 @@
+linux-5.16-sunxi64 (5.16.9+sunxi64-1) unstable; urgency=medium
+
+  * Rebase on 5.16.9
+  * Update keyboard patches
+
+ -- Undef <debian@undef.tools>  Mon, 14 Feb 2022 07:57:29 +0000
+
 linux-5.16-sunxi64 (5.16.5+sunxi64-1) unstable; urgency=medium
 
   * Initial release
