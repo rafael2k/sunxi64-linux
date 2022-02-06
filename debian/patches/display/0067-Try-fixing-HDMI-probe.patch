@@ -1,0 +1,18 @@
+From: Saravana Kannan <saravanak@google.com>
+Date: Wed, 19 May 2021 14:03:29 -0700
+Subject: Try fixing HDMI probe.
+
+Signed-off-by: Saravana Kannan <saravanak@google.com>
+---
+ drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c b/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c
+index 5e2b017..9521a1d 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c
++++ b/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c
+@@ -787,3 +787,4 @@ struct platform_driver sun8i_hdmi_phy_driver = {
+ 		.of_match_table = sun8i_hdmi_phy_of_table,
+ 	},
+ };
++module_platform_driver(sun8i_hdmi_phy_driver);
