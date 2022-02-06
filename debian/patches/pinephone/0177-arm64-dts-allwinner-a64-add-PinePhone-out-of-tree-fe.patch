@@ -1,0 +1,314 @@
+From: Icenowy Zheng <icenowy@aosc.io>
+Date: Sat, 24 Aug 2019 23:45:39 +0800
+Subject: [PATCH 139/194] arm64: dts: allwinner: a64: add PinePhone
+ out-of-tree features
+
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ .../dts/allwinner/sun50i-a64-pinephone-1.0.dts     |  25 +++-
+ .../dts/allwinner/sun50i-a64-pinephone-1.1.dts     |  19 +++
+ .../dts/allwinner/sun50i-a64-pinephone-1.2.dts     |  13 ++
+ .../boot/dts/allwinner/sun50i-a64-pinephone.dtsi   | 148 +++++++++++++++++++++
+ 4 files changed, 202 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
+index c7f278f..0384eed 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
+@@ -10,11 +10,30 @@ / {
+ 	compatible = "pine64,pinephone-1.0", "pine64,pinephone", "allwinner,sun50i-a64";
+ };
+ 
+-&sgm3140 {
+-	enable-gpios = <&pio 2 3 GPIO_ACTIVE_HIGH>; /* PC3 */
+-	flash-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>; /* PD24 */
++&axp803 {
++	x-powers,drive-vbus-en;
+ };
+ 
+ &codec_analog {
+ 	allwinner,internal-bias-resistor;
+ };
++
++&reg_drivevbus {
++	vin-supply = <&reg_vcc5v0>;
++	status = "okay";
++};
++
++&reg_usb0_vbus {
++	gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
++	enable-active-high;
++	vin-supply = <&reg_drivevbus>;
++};
++
++&ring_indicator {
++	gpios = <&pio 1 2 GPIO_ACTIVE_LOW>; /* PB2 */
++};
++
++&sgm3140 {
++	enable-gpios = <&pio 2 3 GPIO_ACTIVE_HIGH>; /* PC3 */
++	flash-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>; /* PD24 */
++};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+index 723af64..d26fe5d 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+@@ -10,6 +10,10 @@ / {
+ 	compatible = "pine64,pinephone-1.1", "pine64,pinephone", "allwinner,sun50i-a64";
+ };
+ 
++&axp803 {
++	x-powers,drive-vbus-en;
++};
++
+ &backlight {
+ 	power-supply = <&reg_ldo_io0>;
+ 	/*
+@@ -33,6 +37,21 @@ &codec_analog {
+ 	allwinner,internal-bias-resistor;
+ };
+ 
++&reg_drivevbus {
++	vin-supply = <&reg_vcc5v0>;
++	status = "okay";
++};
++
++&reg_usb0_vbus {
++	gpio = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* PD6 */
++	enable-active-high;
++	vin-supply = <&reg_drivevbus>;
++};
++
++&ring_indicator {
++	gpios = <&pio 1 2 GPIO_ACTIVE_LOW>; /* PB2 */
++};
++
+ &sgm3140 {
+ 	enable-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>; /* PD24 */
+ 	flash-gpios = <&pio 2 3 GPIO_ACTIVE_HIGH>; /* PC3 */
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
+index 6b5fe6a..636dd39 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.2.dts
+@@ -56,6 +56,19 @@ &mmc1 {
+ 	mmc-pwrseq = <&wifi_pwrseq>;
+ };
+ 
++&reg_anx_vdd1v0 {
++	gpio = <&pio 3 11 GPIO_ACTIVE_HIGH>; /* PD11 */
++	enable-active-high;
++};
++
++&reg_usb0_vbus {
++	vin-supply = <&reg_vcc5v0>;
++};
++
++&ring_indicator {
++	gpios = <&r_pio 0 6 GPIO_ACTIVE_LOW>; /* PL6 */
++};
++
+ &sgm3140 {
+ 	enable-gpios = <&pio 3 24 GPIO_ACTIVE_HIGH>; /* PD24 */
+ 	flash-gpios = <&pio 2 3 GPIO_ACTIVE_HIGH>; /* PC3 */
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+index b8b7505..f15840c 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -7,6 +7,7 @@
+ #include "sun50i-a64-cpu-opp.dtsi"
+ 
+ #include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/gpio-keys.h>
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/leds/common.h>
+ #include <dt-bindings/pwm/pwm.h>
+@@ -39,6 +40,27 @@ ec25_codec: ec25-codec {
+ 		compatible = "quectel,ec25";
+ 	};
+ 
++	gpio-keys {
++		compatible = "gpio-keys";
++
++		ring_indicator: ring-indicator {
++			label = "Ring Indicator";
++			linux,can-disable;
++			linux,code = <KEY_WAKEUP>;
++			wakeup-event-action = <EV_ACT_ASSERTED>;
++			wakeup-source;
++		};
++	};
++
++	i2c_csi: i2c-csi {
++		compatible = "i2c-gpio";
++		sda-gpios = <&pio 4 13 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>; /* PE13 */
++		scl-gpios = <&pio 4 12 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>; /* PE12 */
++		i2c-gpio,delay-us = <3>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++	};
++
+ 	leds {
+ 		compatible = "gpio-leds";
+ 
+@@ -69,6 +91,30 @@ reg_ps: ps-regulator {
+ 		regulator-boot-on;
+ 	};
+ 
++	reg_anx_vdd1v0: anx-vdd1v0 {
++		compatible = "regulator-fixed";
++		regulator-name = "anx-vdd1v0";
++		regulator-min-microvolt = <1000000>;
++		regulator-max-microvolt = <1000000>;
++	};
++
++	reg_usb0_vbus: usb0-vbus {
++		compatible = "regulator-fixed";
++		regulator-name = "usb0-vbus";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	reg_vbat_bb: vbat-bb {
++		compatible = "regulator-fixed";
++		regulator-always-on;
++		regulator-name = "vbat-bb";
++		regulator-min-microvolt = <3500000>;
++		regulator-max-microvolt = <3500000>;
++		gpio = <&r_pio 0 7 GPIO_ACTIVE_HIGH>; /* PL7 */
++		enable-active-high;
++	};
++
+ 	reg_vbat_wifi: vbat-wifi {
+ 		compatible = "regulator-fixed";
+ 		regulator-min-microvolt = <3300000>;
+@@ -76,6 +122,24 @@ reg_vbat_wifi: vbat-wifi {
+ 		regulator-name = "vbat-wifi";
+ 	};
+ 
++	reg_vcc5v0: vcc5v0 {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		gpio = <&pio 3 8 GPIO_ACTIVE_HIGH>; /* PD8 */
++		enable-active-high;
++	};
++
++	reg_vconn5v0: vconn5v0 {
++		compatible = "regulator-fixed";
++		regulator-name = "vconn5v0";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		gpio = <&pio 3 9 GPIO_ACTIVE_HIGH>; /* PD9 */
++		enable-active-high;
++	};
++
+ 	sgm3140: led-controller {
+ 		compatible = "sgmicro,sgm3140";
+ 		vin-supply = <&reg_dcdc1>;
+@@ -127,6 +191,36 @@ &cpu3 {
+ 	cpu-supply = <&reg_dcdc2>;
+ };
+ 
++&csi {
++	pinctrl-0 = <&csi_pins>, <&csi_mclk_pin>;
++	status = "okay";
++
++	port {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		csi_ov5640_ep: endpoint@0 {
++			reg = <0>;
++			remote-endpoint = <&ov5640_ep>;
++			bus-width = <8>;
++			hsync-active = <1>; /* Active high */
++			vsync-active = <0>; /* Active low */
++			data-active = <1>;  /* Active high */
++			pclk-sample = <1>;  /* Rising */
++		};
++
++		csi_gc2145_ep: endpoint@1 {
++			reg = <1>;
++			remote-endpoint = <&gc2145_ep>;
++			bus-width = <8>;
++			hsync-active = <1>;
++			vsync-active = <1>;
++			data-active = <1>;
++			pclk-sample = <1>;
++		};
++	};
++};
++
+ &dai {
+ 	status = "okay";
+ };
+@@ -213,6 +307,56 @@ &i2c2 {
+ 	status = "okay";
+ };
+ 
++&i2c_csi {
++	gc2145: front-camera@3c {
++		compatible = "galaxycore,gc2145";
++		reg = <0x3c>;
++		clocks = <&ccu CLK_CSI_MCLK>;
++		clock-names = "xclk";
++
++		AVDD-supply = <&reg_dldo3>;
++		DVDD-supply = <&reg_aldo1>;
++		IOVDD-supply = <&reg_eldo3>;
++		reset-gpios = <&pio 4 16 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>; /* PE16 */
++		enable-gpios = <&pio 4 17 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>; /* PE17 */
++
++		port {
++			gc2145_ep: endpoint {
++				remote-endpoint = <&csi_gc2145_ep>;
++				bus-width = <8>;
++				hsync-active = <1>;
++				vsync-active = <1>;
++				data-active = <1>;
++				pclk-sample = <1>;
++			};
++		};
++	};
++
++	ov5640: rear-camera@4c {
++		compatible = "ovti,ov5640";
++		reg = <0x4c>;
++		clocks = <&ccu CLK_CSI_MCLK>;
++		clock-names = "xclk";
++
++		AVDD-supply = <&reg_dldo3>;
++		DOVDD-supply = <&reg_aldo1>; /* shared with AFVCC */
++		DVDD-supply = <&reg_eldo3>;
++		reset-gpios = <&pio 3 3 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>; /* PD3 */
++		powerdown-gpios = <&pio 2 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>; /* PC0 */
++
++		port {
++			ov5640_ep: endpoint {
++				remote-endpoint = <&csi_ov5640_ep>;
++				bus-width = <8>;
++				hsync-active = <1>; /* Active high */
++				vsync-active = <0>; /* Active low */
++				data-active = <1>;  /* Active high */
++				pclk-sample = <1>;  /* Rising */
++			};
++		};
++	};
++};
++
+ &lradc {
+ 	vref-supply = <&reg_aldo3>;
+ 	wakeup-source;
+@@ -315,6 +459,10 @@ axp803: pmic@3a3 {
+ 
+ #include "axp803.dtsi"
+ 
++&axp_adc {
++	x-powers,ts-as-gpadc;
++};
++
+ &battery_power_supply {
+ 	status = "okay";
+ };
