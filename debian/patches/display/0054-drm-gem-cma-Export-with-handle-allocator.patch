@@ -9,7 +9,7 @@ Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
  2 files changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/drm_gem_cma_helper.c b/drivers/gpu/drm/drm_gem_cma_helper.c
-index 9d05674..67145ce 100644
+index 6533efa..81185c0 100644
 --- a/drivers/gpu/drm/drm_gem_cma_helper.c
 +++ b/drivers/gpu/drm/drm_gem_cma_helper.c
 @@ -162,7 +162,7 @@ EXPORT_SYMBOL_GPL(drm_gem_cma_create);
