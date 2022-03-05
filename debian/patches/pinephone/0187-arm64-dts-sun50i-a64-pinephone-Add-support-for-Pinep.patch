@@ -7,14 +7,14 @@ the device tree.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
-index 575715b..b32f8d0 100644
+index 575715b..a4b1849 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
-@@ -386,6 +386,14 @@ accelerometer@68 {
+@@ -386,6 +386,15 @@ accelerometer@68 {
  /* Connected to pogo pins (external spring based pinheader for user addons) */
  &i2c2 {
  	status = "okay";
@@ -24,6 +24,7 @@ index 575715b..b32f8d0 100644
 +		reg = <0x15>;
 +		interrupt-parent = <&r_pio>;
 +		interrupts = <0 12 IRQ_TYPE_EDGE_FALLING>; /* PL12 */
++		vbat-supply = <&reg_vcc5v0>;
 +		wakeup-source;
 +	};
  };

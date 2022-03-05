@@ -52,7 +52,7 @@ index 0fa7ede..71d9d4a 100644
  	return ret;
  }
 diff --git a/include/linux/fb.h b/include/linux/fb.h
-index 3da9584..5ac24d0 100644
+index 02f362c..0c9b715 100644
 --- a/include/linux/fb.h
 +++ b/include/linux/fb.h
 @@ -137,6 +137,11 @@ struct fb_cursor_user {
