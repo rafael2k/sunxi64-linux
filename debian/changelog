@@ -1,3 +1,10 @@
+linux-5.16-sunxi64 (5.16.12+sunxi64-1) unstable; urgency=medium
+
+  * Rebase on 5.16.12
+  * Update keyboard and magnetometer patches
+
+ -- Undef <debian@undef.tools>  Sat, 05 Mar 2022 07:30:15 +0000
+
 linux-5.16-sunxi64 (5.16.9+sunxi64-1) unstable; urgency=medium
 
   * Rebase on 5.16.9
