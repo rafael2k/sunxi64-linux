@@ -8,6 +8,8 @@ KREL=5.15-sunxi64
 KREL_MAJOR=$(shell echo "${KREL}" | sed 's/\([0-9].[0-9]\+\).*/\1/')
 BUILD=$(MAKE) KERNELRELEASE=$(KREL)
 
+export DTC_FLAGS=-@
+
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 	BUILD += -j$(NUMJOBS)
