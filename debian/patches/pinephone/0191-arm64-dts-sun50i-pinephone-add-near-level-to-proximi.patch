@@ -1,0 +1,24 @@
+From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+Date: Mon, 7 Mar 2022 13:45:56 +0100
+Subject: arm64: dts: sun50i-pinephone: add "near level" to proximity sensor
+
+This will ease the task of userspace software without requiring
+additional configuration files.
+
+Signed-off-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+index 8b6c908..3507a46 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -498,6 +498,7 @@ light-sensor@48 {
+ 		reg = <0x48>;
+ 		interrupt-parent = <&pio>;
+ 		interrupts = <1 0 IRQ_TYPE_EDGE_FALLING>; /* PB0 */
++		proximity-near-level = <15>;
+ 	};
+ 
+ 	/* Accelerometer/gyroscope */
