@@ -1,0 +1,24 @@
+From: Bhushan Shah <bshah@kde.org>
+Date: Fri, 13 Mar 2020 11:06:30 +0530
+Subject: [PATCH 151/194] pine64_defconfig: enable support for accel sensor on
+ pinetab
+
+---
+ arch/arm64/configs/pine64_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
+index 740df71..6edf0e2 100644
+--- a/arch/arm64/configs/pine64_defconfig
++++ b/arch/arm64/configs/pine64_defconfig
+@@ -241,8 +241,10 @@ CONFIG_TOUCHSCREEN_ATMEL_MXT=m
+ CONFIG_TOUCHSCREEN_GOODIX=y
+ CONFIG_TOUCHSCREEN_EDT_FT5X06=m
+ CONFIG_INPUT_MISC=y
++CONFIG_INPUT_BMA150=m
+ CONFIG_INPUT_GPIO_VIBRA=y
+ CONFIG_INPUT_AXP20X_PEK=y
++CONFIG_INPUT_PWM_VIBRA=m
+ # CONFIG_SERIO_SERPORT is not set
+ CONFIG_SERIO_AMBAKMI=y
+ CONFIG_LEGACY_PTY_COUNT=16
