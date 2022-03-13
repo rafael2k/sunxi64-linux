@@ -8,10 +8,10 @@ Signed-off-by: Saravana Kannan <saravanak@google.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c b/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c
-index b64d93d..3e83078 100644
+index 5e2b017..9521a1d 100644
 --- a/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c
 +++ b/drivers/gpu/drm/sun4i/sun8i_hdmi_phy.c
-@@ -785,3 +785,4 @@ struct platform_driver sun8i_hdmi_phy_driver = {
+@@ -787,3 +787,4 @@ struct platform_driver sun8i_hdmi_phy_driver = {
  		.of_match_table = sun8i_hdmi_phy_of_table,
  	},
  };
