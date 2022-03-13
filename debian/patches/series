@@ -21,7 +21,6 @@ common/0020-input-goodix-Add-option-to-power-off-the-controller-.patch
 common/0021-input-goodix-Don-t-disable-regulators-during-suspend.patch
 common/0022-mmc-sunxi-mmc-Remove-runtime-PM.patch
 common/0023-of-property-fw_devlink-Support-allwinner-sram-links.patch
-common/0024-pinctrl-sunxi-Fix-misleading-lockdep-deadlock-warnin.patch
 common/0025-PM-devfreq-strengthen-check-for-freq_table.patch
 common/0026-PM-devfreq-Do-not-require-devices-to-have-OPPs.patch
 common/0027-PM-devfreq-Drop-code-for-descending-freq_table.patch
