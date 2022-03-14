@@ -1,3 +1,12 @@
+linux-5.16-sunxi64 (5.16.15+sunxi64-1) unstable; urgency=medium
+
+  * d/patches: rebase for 5.16.15
+
+  [ Arnaud ]
+  * d/patches add-proximity sensor "near level"
+
+ -- undef <debian@undef.tools>  Thu, 17 Mar 2022 00:15:03 +0000
+
 linux-5.16-sunxi64 (5.16.12+sunxi64-1) unstable; urgency=medium
 
   * Rebase on 5.16.12
