@@ -1,0 +1,49 @@
+From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+Date: Fri, 3 Apr 2020 17:13:55 +0200
+Subject: [PATCH 185/194] arm64: dts: allwinner: pinetab: enable jack
+ detection
+
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
+index c6010be..5c24d8e 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinetab.dts
+@@ -129,11 +129,13 @@ wifi_pwrseq: wifi_pwrseq {
+ };
+ 
+ &codec {
++	allwinner,inverted-jack-detection;
+ 	status = "okay";
+ };
+ 
+ &codec_analog {
+ 	cpvdd-supply = <&reg_eldo1>;
++	allwinner,internal-bias-resistor;
+ 	status = "okay";
+ };
+ 
+@@ -489,10 +491,11 @@ hdmi_out_con: endpoint {
+ 
+ &sound {
+ 	status = "okay";
++	simple-audio-card,name = "PineTab";
+ 	simple-audio-card,aux-devs = <&codec_analog>, <&speaker_amp>;
+ 	simple-audio-card,widgets = "Microphone", "Internal Microphone Left",
+ 				    "Microphone", "Internal Microphone Right",
+-				    "Headphone", "Headphone Jack",
++				    "Headphone", "Headphone",
+ 				    "Speaker", "Internal Speaker";
+ 	simple-audio-card,routing =
+ 			"Left DAC", "DACL",
+@@ -501,7 +504,7 @@ &sound {
+ 			"Speaker Amp INR", "LINEOUT",
+ 			"Internal Speaker", "Speaker Amp OUTL",
+ 			"Internal Speaker", "Speaker Amp OUTR",
+-			"Headphone Jack", "HP",
++			"Headphone", "HP",
+ 			"ADCL", "Left ADC",
+ 			"ADCR", "Right ADC",
+ 			"Internal Microphone Left", "MBIAS",
