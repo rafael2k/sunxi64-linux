@@ -10,7 +10,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  3 files changed, 18 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-index e3acf08..57540a7 100644
+index 7c8d327..cc6342e 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
 @@ -17,6 +17,12 @@ / {
@@ -27,7 +27,7 @@ index e3acf08..57540a7 100644
  		#address-cells = <1>;
  		#size-cells = <1>;
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-index 02b6cf4..dca2f1b 100644
+index 69d750d3..ad1dece 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
 @@ -6,6 +6,12 @@
@@ -44,7 +44,7 @@ index 02b6cf4..dca2f1b 100644
  		#address-cells = <1>;
  		#size-cells = <0>;
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 46ed529..3f2ef09 100644
+index fbe94ab..1303957 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
 @@ -16,6 +16,12 @@ / {
