@@ -13,10 +13,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 22 insertions(+)
 
 diff --git a/drivers/of/property.c b/drivers/of/property.c
-index a348348..2e0d379 100644
+index 8e90071..b55d665 100644
 --- a/drivers/of/property.c
 +++ b/drivers/of/property.c
-@@ -1350,6 +1350,27 @@ static struct device_node *parse_interrupts(struct device_node *np,
+@@ -1363,6 +1363,27 @@ static struct device_node *parse_interrupts(struct device_node *np,
  	return of_irq_parse_one(np, index, &sup_args) ? NULL : sup_args.np;
  }
  
@@ -44,7 +44,7 @@ index a348348..2e0d379 100644
  static const struct supplier_bindings of_supplier_bindings[] = {
  	{ .parse_prop = parse_clocks, },
  	{ .parse_prop = parse_interconnects, },
-@@ -1384,6 +1405,7 @@ static const struct supplier_bindings of_supplier_bindings[] = {
+@@ -1397,6 +1418,7 @@ static const struct supplier_bindings of_supplier_bindings[] = {
  	{ .parse_prop = parse_regulators, },
  	{ .parse_prop = parse_gpio, },
  	{ .parse_prop = parse_gpios, },
