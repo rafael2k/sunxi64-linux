@@ -1,0 +1,36 @@
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 11 Apr 2020 00:54:29 +0200
+Subject: [PATCH 112/194] panel: jd9365da: add drm_connector argument to
+ get_modes()
+
+---
+ drivers/gpu/drm/panel/panel-pinephone-jd9365da.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
+index 0f2f8d9..558b2e0 100644
+--- a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
++++ b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
+@@ -407,9 +407,9 @@ static const struct drm_display_mode pinephone_default_mode = {
+ 	.height_mm	= 130,
+ };
+ 
+-static int pinephone_get_modes(struct drm_panel *panel)
++static int pinephone_get_modes(struct drm_panel *panel,
++			       struct drm_connector *connector)
+ {
+-	struct drm_connector *connector = panel->connector;
+ 	struct pinephone *ctx = panel_to_pinephone(panel);
+ 	struct drm_display_mode *mode;
+ 
+@@ -425,8 +425,8 @@ static int pinephone_get_modes(struct drm_panel *panel)
+ 	drm_mode_set_name(mode);
+ 
+ 	drm_mode_probed_add(connector, mode);
+-	panel->connector->display_info.width_mm = mode->width_mm;
+-	panel->connector->display_info.height_mm = mode->height_mm;
++	connector->display_info.width_mm = mode->width_mm;
++	connector->display_info.height_mm = mode->height_mm;
+ 
+ 	return 1;
+ }
