@@ -4,7 +4,7 @@ include /usr/share/dpkg/pkg-info.mk
 
 srctree ?= .
 
-KREL=5.15-sunxi64
+KREL=5.17-sunxi64
 KREL_MAJOR=$(shell echo "${KREL}" | sed 's/\([0-9].[0-9]\+\).*/\1/')
 BUILD=$(MAKE) KERNELRELEASE=$(KREL)
 
