@@ -149,8 +149,8 @@ wireless/0148-8723cs-Fix-misleading-indentation.patch
 wireless/0149-8723cs-Fix-indentation.patch
 wireless/0150-8723cs-Fix-compile-warnings.patch
 wireless/0151-8723cs-Port-to-5.15.patch
-0152-8723cs-Clear-wowlan_last_wake_reason-prior-to-suspen.patch
-0153-8723cs-Forward-port-to-5.17.patch
+wireless/0152-8723cs-Clear-wowlan_last_wake_reason-prior-to-suspen.patch
+wireless/0153-8723cs-Forward-port-to-5.17.patch
 keyboard/0154-input-kb151-Add-a-driver-for-the-KB151-keyboard.patch
 keyboard/0155-power-supply-Add-a-driver-for-Injoinic-power-bank-ch.patch
 keyboard/0156-power-supply-ip5xxx-Allow-to-initialize-the-driver-w.patch
