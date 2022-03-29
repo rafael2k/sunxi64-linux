@@ -13,10 +13,10 @@ Signed-off-by: Martijn Braam <martijn@brixit.nl>
  create mode 100644 drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 
 diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
-index 0d379835..9dc67ec 100644
+index 42011d8..958e7f5 100644
 --- a/drivers/gpu/drm/panel/Kconfig
 +++ b/drivers/gpu/drm/panel/Kconfig
-@@ -344,6 +344,15 @@ config DRM_PANEL_PANASONIC_VVX10F034N00
+@@ -345,6 +345,15 @@ config DRM_PANEL_PANASONIC_VVX10F034N00
  	  WUXGA (1920x1200) Novatek NT1397-based DSI panel as found in some
  	  Xperia Z2 tablets
  
@@ -46,7 +46,7 @@ index bca4cc1..4e8eeb4 100644
  obj-$(CONFIG_DRM_PANEL_RAYDIUM_RM68200) += panel-raydium-rm68200.o
 diff --git a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 new file mode 100644
-index 00000000..0f2f8d9
+index 0000000..0f2f8d9
 --- /dev/null
 +++ b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 @@ -0,0 +1,524 @@

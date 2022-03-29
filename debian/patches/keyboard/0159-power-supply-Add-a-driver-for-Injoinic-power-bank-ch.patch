@@ -51,7 +51,7 @@ index 4e55a11aab..cec260c 100644
  obj-$(CONFIG_WM831X_POWER)	+= wm831x_power.o
 diff --git a/drivers/power/supply/ip5xxx_power.c b/drivers/power/supply/ip5xxx_power.c
 new file mode 100644
-index 00000000..676d0d5
+index 0000000..676d0d5
 --- /dev/null
 +++ b/drivers/power/supply/ip5xxx_power.c
 @@ -0,0 +1,569 @@
