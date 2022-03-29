@@ -63,7 +63,7 @@ index 54dd562..4a2c551 100644
  };
 diff --git a/include/uapi/drm/sun4i_drm.h b/include/uapi/drm/sun4i_drm.h
 new file mode 100644
-index 00000000..67b9dd4
+index 0000000..67b9dd4
 --- /dev/null
 +++ b/include/uapi/drm/sun4i_drm.h
 @@ -0,0 +1,29 @@
