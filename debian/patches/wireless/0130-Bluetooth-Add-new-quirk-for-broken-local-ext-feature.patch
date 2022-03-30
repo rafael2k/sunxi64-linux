@@ -16,13 +16,13 @@ Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
  2 files changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/include/net/bluetooth/hci.h b/include/net/bluetooth/hci.h
-index 35c073d..6f0a210 100644
+index 5cb095b..feff986 100644
 --- a/include/net/bluetooth/hci.h
 +++ b/include/net/bluetooth/hci.h
-@@ -255,6 +255,12 @@ enum {
- 	 * during the hdev->setup vendor callback.
+@@ -265,6 +265,12 @@ enum {
+ 	 * runtime suspend, because event filtering takes place there.
  	 */
- 	HCI_QUIRK_BROKEN_READ_TRANSMIT_POWER,
+ 	HCI_QUIRK_BROKEN_FILTER_CLEAR_ALL,
 +	/* When this quirk is set, max_page for local extended features
 +	 * is set to 1, even if controller reports higher number. Some
 +	 * controllers (e.g. RTL8723CS) report more pages, but they
