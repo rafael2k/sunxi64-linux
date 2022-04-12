@@ -8,7 +8,7 @@ Fixes #15
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
-index 10b2b42..3cef45d 100644
+index 10b2b426..3cef45d 100644
 --- a/arch/arm64/configs/pine64_defconfig
 +++ b/arch/arm64/configs/pine64_defconfig
 @@ -718,7 +718,7 @@ CONFIG_STAGING_MEDIA=y
