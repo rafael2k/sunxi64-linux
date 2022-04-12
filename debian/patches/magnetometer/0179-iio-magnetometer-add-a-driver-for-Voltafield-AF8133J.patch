@@ -17,7 +17,7 @@ Signed-off-by: Shoji Keita <awaittrot@shjk.jp>
  create mode 100644 drivers/iio/magnetometer/af8133j.c
 
 diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-index 74ad570..74c93b2 100644
+index 74ad5701c6..74c93b2 100644
 --- a/drivers/iio/magnetometer/Kconfig
 +++ b/drivers/iio/magnetometer/Kconfig
 @@ -6,6 +6,18 @@
@@ -53,7 +53,7 @@ index b9f45b7..9edffdc 100644
  obj-$(CONFIG_BMC150_MAGN) += bmc150_magn.o
 diff --git a/drivers/iio/magnetometer/af8133j.c b/drivers/iio/magnetometer/af8133j.c
 new file mode 100644
-index 0000000..2aa7cb0
+index 00000000..2aa7cb0
 --- /dev/null
 +++ b/drivers/iio/magnetometer/af8133j.c
 @@ -0,0 +1,352 @@

@@ -8,7 +8,7 @@ Fixes #16
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
-index 6827989..10b2b42 100644
+index 6827989..10b2b426 100644
 --- a/arch/arm64/configs/pine64_defconfig
 +++ b/arch/arm64/configs/pine64_defconfig
 @@ -161,6 +161,7 @@ CONFIG_IPV6_SIT=m
