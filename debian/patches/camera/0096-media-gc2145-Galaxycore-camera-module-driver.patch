@@ -44,7 +44,7 @@ index 83268f2..3916c28 100644
  obj-$(CONFIG_SDR_MAX2175) += max2175.o
 diff --git a/drivers/media/i2c/gc2145.c b/drivers/media/i2c/gc2145.c
 new file mode 100644
-index 0000000..b795322
+index 00000000..b795322
 --- /dev/null
 +++ b/drivers/media/i2c/gc2145.c
 @@ -0,0 +1,2247 @@

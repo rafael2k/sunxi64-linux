@@ -1,0 +1,67 @@
+From: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+Date: Mon, 11 Apr 2022 16:13:37 +0200
+Subject: iio: stk3310: Export near level property for proximity sensor
+
+Signed-off-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+---
+ drivers/iio/light/stk3310.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/drivers/iio/light/stk3310.c b/drivers/iio/light/stk3310.c
+index fc63856..78110e7 100644
+--- a/drivers/iio/light/stk3310.c
++++ b/drivers/iio/light/stk3310.c
+@@ -106,6 +106,7 @@ struct stk3310_data {
+ 	struct mutex lock;
+ 	bool als_enabled;
+ 	bool ps_enabled;
++	uint32_t ps_near_level;
+ 	u64 timestamp;
+ 	struct regmap *regmap;
+ 	struct regmap_field *reg_state;
+@@ -135,6 +136,25 @@ static const struct iio_event_spec stk3310_events[] = {
+ 	},
+ };
+ 
++static ssize_t stk3310_read_near_level(struct iio_dev *indio_dev,
++				       uintptr_t priv,
++				       const struct iio_chan_spec *chan,
++				       char *buf)
++{
++	struct stk3310_data *data = iio_priv(indio_dev);
++
++	return sprintf(buf, "%u\n", data->ps_near_level);
++}
++
++static const struct iio_chan_spec_ext_info stk3310_ext_info[] = {
++	{
++		.name = "nearlevel",
++		.shared = IIO_SEPARATE,
++		.read = stk3310_read_near_level,
++	},
++	{ /* sentinel */ }
++};
++
+ static const struct iio_chan_spec stk3310_channels[] = {
+ 	{
+ 		.type = IIO_LIGHT,
+@@ -151,6 +171,7 @@ static const struct iio_chan_spec stk3310_channels[] = {
+ 			BIT(IIO_CHAN_INFO_INT_TIME),
+ 		.event_spec = stk3310_events,
+ 		.num_event_specs = ARRAY_SIZE(stk3310_events),
++		.ext_info = stk3310_ext_info,
+ 	}
+ };
+ 
+@@ -581,6 +602,11 @@ static int stk3310_probe(struct i2c_client *client,
+ 	data = iio_priv(indio_dev);
+ 	data->client = client;
+ 	i2c_set_clientdata(client, indio_dev);
++
++	if (device_property_read_u32(&client->dev, "proximity-near-level",
++				     &data->ps_near_level))
++		data->ps_near_level = 0;
++
+ 	mutex_init(&data->lock);
+ 
+ 	ret = stk3310_regmap_init(data);
