@@ -9,7 +9,7 @@ the exposure target one stop lower.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/media/i2c/ov5640.c b/drivers/media/i2c/ov5640.c
-index 246563e..f01bf29 100644
+index 6f0d8e3..79630d2 100644
 --- a/drivers/media/i2c/ov5640.c
 +++ b/drivers/media/i2c/ov5640.c
 @@ -3355,7 +3355,7 @@ static int ov5640_probe(struct i2c_client *client)
