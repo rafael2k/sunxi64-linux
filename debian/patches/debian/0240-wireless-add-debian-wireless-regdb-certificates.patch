@@ -18,7 +18,7 @@ This hex dump is generated using:
 
 diff --git a/net/wireless/certs/debian.hex b/net/wireless/certs/debian.hex
 new file mode 100644
-index 0000000..c5ab03f
+index 00000000..c5ab03f
 --- /dev/null
 +++ b/net/wireless/certs/debian.hex
 @@ -0,0 +1,1426 @@
