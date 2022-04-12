@@ -17,7 +17,7 @@ Signed-off-by: Bhushan Shah <bshah@kde.org>
 
 diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
 new file mode 100644
-index 0000000..40fcca5
+index 00000000..40fcca5
 --- /dev/null
 +++ b/arch/arm64/configs/pine64_defconfig
 @@ -0,0 +1,564 @@
