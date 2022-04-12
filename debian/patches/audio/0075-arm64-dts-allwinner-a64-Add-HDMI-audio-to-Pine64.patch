@@ -14,7 +14,7 @@ Signed-off-by: Clément Péron <peron.clem@gmail.com>
  1 file changed, 8 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
-index 2accb5d..c2113a1 100644
+index 2accb5d..c2113a1e 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pine64.dts
 @@ -99,6 +99,10 @@ hdmi_out_con: endpoint {

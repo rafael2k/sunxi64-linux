@@ -10,7 +10,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 59 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-index e1211a5..e7652c2 100644
+index 25d58dcf..b0bd551 100644
 --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
 +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
 @@ -9,6 +9,7 @@
@@ -52,7 +52,7 @@ index e1211a5..e7652c2 100644
  		hdmi->phy_mask |= HDMI_PHY_RX_SENSE;
  	else
  		hdmi->phy_mask &= ~HDMI_PHY_RX_SENSE;
-@@ -3009,7 +3018,7 @@ static irqreturn_t dw_hdmi_irq(int irq, void *dev_id)
+@@ -3010,7 +3019,7 @@ static irqreturn_t dw_hdmi_irq(int irq, void *dev_id)
  		}
  	}
  
@@ -61,7 +61,7 @@ index e1211a5..e7652c2 100644
  		enum drm_connector_status status = phy_int_pol & HDMI_PHY_HPD
  						 ? connector_status_connected
  						 : connector_status_disconnected;
-@@ -3216,6 +3225,25 @@ static int dw_hdmi_parse_dt(struct dw_hdmi *hdmi)
+@@ -3217,6 +3226,25 @@ static int dw_hdmi_parse_dt(struct dw_hdmi *hdmi)
  	return 0;
  }
  
@@ -87,7 +87,7 @@ index e1211a5..e7652c2 100644
  struct dw_hdmi *dw_hdmi_probe(struct platform_device *pdev,
  			      const struct dw_hdmi_plat_data *plat_data)
  {
-@@ -3256,15 +3284,38 @@ struct dw_hdmi *dw_hdmi_probe(struct platform_device *pdev,
+@@ -3257,15 +3285,38 @@ struct dw_hdmi *dw_hdmi_probe(struct platform_device *pdev,
  	if (ret < 0)
  		return ERR_PTR(ret);
  
@@ -128,7 +128,7 @@ index e1211a5..e7652c2 100644
  	} else {
  		dev_dbg(hdmi->dev, "no ddc property found\n");
  	}
-@@ -3489,6 +3540,8 @@ struct dw_hdmi *dw_hdmi_probe(struct platform_device *pdev,
+@@ -3490,6 +3541,8 @@ struct dw_hdmi *dw_hdmi_probe(struct platform_device *pdev,
  	clk_disable_unprepare(hdmi->isfr_clk);
  err_res:
  	i2c_put_adapter(hdmi->ddc);
@@ -137,7 +137,7 @@ index e1211a5..e7652c2 100644
  
  	return ERR_PTR(ret);
  }
-@@ -3496,6 +3549,8 @@ EXPORT_SYMBOL_GPL(dw_hdmi_probe);
+@@ -3497,6 +3550,8 @@ EXPORT_SYMBOL_GPL(dw_hdmi_probe);
  
  void dw_hdmi_remove(struct dw_hdmi *hdmi)
  {
