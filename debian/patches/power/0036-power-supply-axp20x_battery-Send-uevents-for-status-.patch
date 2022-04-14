@@ -9,7 +9,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 53 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/power/supply/axp20x_battery.c b/drivers/power/supply/axp20x_battery.c
-index 7d45290..94d705b 100644
+index f5a6fdb..d01014a 100644
 --- a/drivers/power/supply/axp20x_battery.c
 +++ b/drivers/power/supply/axp20x_battery.c
 @@ -57,14 +57,22 @@
@@ -35,7 +35,7 @@ index 7d45290..94d705b 100644
  };
  
  struct axp20x_batt_ps {
-@@ -521,11 +529,31 @@ static const struct power_supply_desc axp20x_batt_ps_desc = {
+@@ -520,11 +528,31 @@ static const struct power_supply_desc axp20x_batt_ps_desc = {
  	.set_property = axp20x_battery_set_prop,
  };
  
@@ -67,7 +67,7 @@ index 7d45290..94d705b 100644
  };
  
  static const struct axp_data axp221_data = {
-@@ -534,6 +562,7 @@ static const struct axp_data axp221_data = {
+@@ -533,6 +561,7 @@ static const struct axp_data axp221_data = {
  	.has_fg_valid = true,
  	.get_max_voltage = axp22x_battery_get_max_voltage,
  	.set_max_voltage = axp22x_battery_set_max_voltage,
@@ -75,7 +75,7 @@ index 7d45290..94d705b 100644
  };
  
  static const struct axp_data axp813_data = {
-@@ -542,6 +571,7 @@ static const struct axp_data axp813_data = {
+@@ -541,6 +570,7 @@ static const struct axp_data axp813_data = {
  	.has_fg_valid = true,
  	.get_max_voltage = axp813_battery_get_max_voltage,
  	.set_max_voltage = axp20x_battery_set_max_voltage,
@@ -83,7 +83,7 @@ index 7d45290..94d705b 100644
  };
  
  static const struct of_device_id axp20x_battery_ps_id[] = {
-@@ -560,10 +590,13 @@ MODULE_DEVICE_TABLE(of, axp20x_battery_ps_id);
+@@ -559,10 +589,13 @@ MODULE_DEVICE_TABLE(of, axp20x_battery_ps_id);
  
  static int axp20x_power_probe(struct platform_device *pdev)
  {
@@ -97,7 +97,7 @@ index 7d45290..94d705b 100644
  
  	if (!of_device_is_available(pdev->dev.of_node))
  		return -ENODEV;
-@@ -637,6 +670,25 @@ static int axp20x_power_probe(struct platform_device *pdev)
+@@ -636,6 +669,25 @@ static int axp20x_power_probe(struct platform_device *pdev)
  		}
  	}
  
@@ -123,7 +123,7 @@ index 7d45290..94d705b 100644
  	/*
  	 * Update max CCC to a valid value if battery info is present or set it
  	 * to current register value by default.
-@@ -650,7 +702,7 @@ static int axp20x_power_probe(struct platform_device *pdev)
+@@ -649,7 +701,7 @@ static int axp20x_power_probe(struct platform_device *pdev)
  static struct platform_driver axp20x_batt_driver = {
  	.probe    = axp20x_power_probe,
  	.driver   = {
