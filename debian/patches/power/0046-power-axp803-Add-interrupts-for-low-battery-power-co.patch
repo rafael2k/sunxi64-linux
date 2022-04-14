@@ -25,10 +25,10 @@ index 6236e01..c949ccb 100644
  
  static const struct resource axp803_pek_resources[] = {
 diff --git a/drivers/power/supply/axp20x_battery.c b/drivers/power/supply/axp20x_battery.c
-index 1768868..d035be4 100644
+index 1f90d6a..1a815e0 100644
 --- a/drivers/power/supply/axp20x_battery.c
 +++ b/drivers/power/supply/axp20x_battery.c
-@@ -589,6 +589,8 @@ static const struct axp_irq_data axp813_irqs[] = {
+@@ -588,6 +588,8 @@ static const struct axp_irq_data axp813_irqs[] = {
  	{ "BATT_HEALTH_GOOD",		axp20x_battery_changed_irq },
  	{ "BATT_CHARGING",		axp20x_battery_changed_irq },
  	{ "BATT_CHARGING_DONE",		axp20x_battery_changed_irq },
