@@ -17,7 +17,7 @@ Signed-off-by: Kyungmin Park <kyungmin.park@samsung.com>
  2 files changed, 16 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/video/fbdev/core/fbmem.c b/drivers/video/fbdev/core/fbmem.c
-index 91145d9..40089d3 100644
+index 0371ad2..8bdd3ab 100644
 --- a/drivers/video/fbdev/core/fbmem.c
 +++ b/drivers/video/fbdev/core/fbmem.c
 @@ -1068,7 +1068,7 @@ int

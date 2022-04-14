@@ -9,7 +9,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 56 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/power/supply/axp20x_battery.c b/drivers/power/supply/axp20x_battery.c
-index 94d705b..1768868 100644
+index d01014a..1f90d6a 100644
 --- a/drivers/power/supply/axp20x_battery.c
 +++ b/drivers/power/supply/axp20x_battery.c
 @@ -82,6 +82,7 @@ struct axp20x_batt_ps {
@@ -20,7 +20,7 @@ index 94d705b..1768868 100644
  	/* Maximum constant charge current */
  	unsigned int max_ccc;
  	const struct axp_data	*data;
-@@ -255,7 +256,7 @@ static int axp20x_battery_get_prop(struct power_supply *psy,
+@@ -254,7 +255,7 @@ static int axp20x_battery_get_prop(struct power_supply *psy,
  			return 0;
  		}
  
@@ -29,7 +29,7 @@ index 94d705b..1768868 100644
  		break;
  
  	case POWER_SUPPLY_PROP_CONSTANT_CHARGE_CURRENT:
-@@ -538,6 +539,39 @@ static irqreturn_t axp20x_battery_changed_irq(int irq, void *devid)
+@@ -537,6 +538,39 @@ static irqreturn_t axp20x_battery_changed_irq(int irq, void *devid)
  	return IRQ_HANDLED;
  }
  
@@ -69,7 +69,7 @@ index 94d705b..1768868 100644
  static const struct axp_irq_data axp20x_irqs[] = {
  	{ "BATT_PLUGIN",		axp20x_battery_changed_irq },
  	{ "BATT_REMOVAL",		axp20x_battery_changed_irq },
-@@ -548,6 +582,24 @@ static const struct axp_irq_data axp20x_irqs[] = {
+@@ -547,6 +581,24 @@ static const struct axp_irq_data axp20x_irqs[] = {
  	{}
  };
  
@@ -94,7 +94,7 @@ index 94d705b..1768868 100644
  static const struct axp_data axp209_data = {
  	.ccc_scale = 100000,
  	.ccc_offset = 300000,
-@@ -571,7 +623,7 @@ static const struct axp_data axp813_data = {
+@@ -570,7 +622,7 @@ static const struct axp_data axp813_data = {
  	.has_fg_valid = true,
  	.get_max_voltage = axp813_battery_get_max_voltage,
  	.set_max_voltage = axp20x_battery_set_max_voltage,
@@ -103,7 +103,7 @@ index 94d705b..1768868 100644
  };
  
  static const struct of_device_id axp20x_battery_ps_id[] = {
-@@ -648,6 +700,8 @@ static int axp20x_power_probe(struct platform_device *pdev)
+@@ -647,6 +699,8 @@ static int axp20x_power_probe(struct platform_device *pdev)
  		return PTR_ERR(axp20x_batt->batt);
  	}
  
