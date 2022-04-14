@@ -46,7 +46,7 @@ index c813205..c816404 100644
  obj-$(CONFIG_DRM_PANEL_RAYDIUM_RM68200) += panel-raydium-rm68200.o
 diff --git a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 new file mode 100644
-index 00000000..0f2f8d9
+index 0000000..0f2f8d9
 --- /dev/null
 +++ b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 @@ -0,0 +1,524 @@
