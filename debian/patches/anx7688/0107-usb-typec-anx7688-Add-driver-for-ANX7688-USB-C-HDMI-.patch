@@ -78,7 +78,7 @@ index a0adb89..3ba7766 100644
  obj-$(CONFIG_TYPEC_STUSB160X) 	+= stusb160x.o
 diff --git a/drivers/usb/typec/anx7688.c b/drivers/usb/typec/anx7688.c
 new file mode 100644
-index 00000000..3d2dd30
+index 0000000..3d2dd30
 --- /dev/null
 +++ b/drivers/usb/typec/anx7688.c
 @@ -0,0 +1,1748 @@

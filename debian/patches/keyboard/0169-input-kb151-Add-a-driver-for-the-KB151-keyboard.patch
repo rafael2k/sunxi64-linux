@@ -52,7 +52,7 @@ index 1d689fd..87fda7b 100644
  obj-$(CONFIG_KEYBOARD_LM8333)		+= lm8333.o
 diff --git a/drivers/input/keyboard/kb151.c b/drivers/input/keyboard/kb151.c
 new file mode 100644
-index 00000000..bb6250e
+index 0000000..bb6250e
 --- /dev/null
 +++ b/drivers/input/keyboard/kb151.c
 @@ -0,0 +1,251 @@
