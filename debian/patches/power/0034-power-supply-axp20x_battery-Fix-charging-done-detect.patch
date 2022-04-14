@@ -9,7 +9,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/power/supply/axp20x_battery.c b/drivers/power/supply/axp20x_battery.c
-index 18a9db0..7d45290 100644
+index 335e12c..f5a6fdb 100644
 --- a/drivers/power/supply/axp20x_battery.c
 +++ b/drivers/power/supply/axp20x_battery.c
 @@ -34,6 +34,7 @@
@@ -20,7 +20,7 @@ index 18a9db0..7d45290 100644
  #define AXP20X_PWR_OP_BATT_PRESENT	BIT(5)
  #define AXP20X_PWR_OP_BATT_ACTIVATED	BIT(3)
  
-@@ -201,12 +202,12 @@ static int axp20x_battery_get_prop(struct power_supply *psy,
+@@ -200,12 +201,12 @@ static int axp20x_battery_get_prop(struct power_supply *psy,
  		break;
  
  	case POWER_SUPPLY_PROP_STATUS:
