@@ -1,3 +1,9 @@
+linux-5.17-sunxi64 (5.17.3+sunxi64-1) UNRELEASED; urgency=medium
+
+  * d/patches: rebase on 5.17.3
+
+ -- Mobot <invalid@mobian.org>  Thu, 14 Apr 2022 01:48:37 +0000
+
 linux-5.17-sunxi64 (5.17.1+sunxi64-1) unstable; urgency=medium
 
   * Rebase on 5.17.1

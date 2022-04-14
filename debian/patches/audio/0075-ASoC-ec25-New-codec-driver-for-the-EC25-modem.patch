@@ -15,10 +15,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  create mode 100644 sound/soc/codecs/ec25.c
 
 diff --git a/sound/soc/codecs/Kconfig b/sound/soc/codecs/Kconfig
-index d3e5ae8..fde9155 100644
+index 30c0038..fb6e9ca 100644
 --- a/sound/soc/codecs/Kconfig
 +++ b/sound/soc/codecs/Kconfig
-@@ -853,6 +853,9 @@ config SND_SOC_HDMI_CODEC
+@@ -858,6 +858,9 @@ config SND_SOC_HDMI_CODEC
  	select SND_PCM_IEC958
  	select HDMI
  
@@ -50,7 +50,7 @@ index ac7f209..14faf35 100644
  obj-$(CONFIG_SND_SOC_ES8316)    += snd-soc-es8316.o
 diff --git a/sound/soc/codecs/ec25.c b/sound/soc/codecs/ec25.c
 new file mode 100644
-index 00000000..5dc302d
+index 0000000..5dc302d
 --- /dev/null
 +++ b/sound/soc/codecs/ec25.c
 @@ -0,0 +1,95 @@

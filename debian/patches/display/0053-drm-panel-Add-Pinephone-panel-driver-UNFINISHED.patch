@@ -13,7 +13,7 @@ Signed-off-by: Martijn Braam <martijn@brixit.nl>
  create mode 100644 drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 
 diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
-index 9989a316..7aa619b 100644
+index 9989a31..7aa619b 100644
 --- a/drivers/gpu/drm/panel/Kconfig
 +++ b/drivers/gpu/drm/panel/Kconfig
 @@ -376,6 +376,15 @@ config DRM_PANEL_PANASONIC_VVX10F034N00
@@ -46,7 +46,7 @@ index d99fbbc..8e7e01f 100644
  obj-$(CONFIG_DRM_PANEL_RAYDIUM_RM68200) += panel-raydium-rm68200.o
 diff --git a/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 new file mode 100644
-index 00000000..0f2f8d9
+index 0000000..0f2f8d9
 --- /dev/null
 +++ b/drivers/gpu/drm/panel/panel-pinephone-jd9365da.c
 @@ -0,0 +1,524 @@
