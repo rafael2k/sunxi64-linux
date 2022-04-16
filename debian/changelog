@@ -1,4 +1,4 @@
-linux-5.15-sunxi64 (5.15.34+sunxi64-1) UNRELEASED; urgency=medium
+linux-5.15-sunxi64 (5.15.34+sunxi64-1) unstable; urgency=medium
 
   * d/patches: rebase on 5.15.34
 
