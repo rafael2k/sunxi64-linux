@@ -7,7 +7,7 @@ Subject: pine64_defconfig: enable Pine64 keyboard case and re-generate
  1 file changed, 4 insertions(+), 54 deletions(-)
 
 diff --git a/arch/arm64/configs/pine64_defconfig b/arch/arm64/configs/pine64_defconfig
-index 72ad1e9..57d6994 100644
+index 72ad1e9..d8cdb8b 100644
 --- a/arch/arm64/configs/pine64_defconfig
 +++ b/arch/arm64/configs/pine64_defconfig
 @@ -109,9 +109,6 @@ CONFIG_CPU_FREQ_GOV_CONSERVATIVE=m
@@ -38,14 +38,14 @@ index 72ad1e9..57d6994 100644
  CONFIG_GNSS=m
  CONFIG_GNSS_SIRF_SERIAL=m
  CONFIG_GNSS_UBX_SERIAL=m
-@@ -992,6 +991,7 @@ CONFIG_KEYBOARD_QT2160=m
- CONFIG_KEYBOARD_GPIO=y
- CONFIG_KEYBOARD_GPIO_POLLED=m
- CONFIG_KEYBOARD_MATRIX=m
-+CONFIG_KEYBOARD_KB151=m
+@@ -995,6 +994,7 @@ CONFIG_KEYBOARD_MATRIX=m
  CONFIG_KEYBOARD_LM8323=m
  CONFIG_KEYBOARD_MAX7359=m
  CONFIG_KEYBOARD_OPENCORES=m
++CONFIG_KEYBOARD_PINEPHONE=m
+ CONFIG_KEYBOARD_STOWAWAY=m
+ CONFIG_KEYBOARD_SUN4I_LRADC=m
+ # CONFIG_INPUT_MOUSE is not set
 @@ -1125,7 +1125,6 @@ CONFIG_BATTERY_BQ27XXX=m
  CONFIG_CHARGER_AXP20X=m
  CONFIG_BATTERY_AXP20X=m
