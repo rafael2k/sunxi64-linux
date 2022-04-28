@@ -11,7 +11,7 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
  1 file changed, 6 insertions(+)
 
 diff --git a/MAINTAINERS b/MAINTAINERS
-index cd0f68d..dc9b21e 100644
+index d9b2f17..c714522 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
 @@ -616,6 +616,12 @@ F:	drivers/iio/accel/adxl372.c

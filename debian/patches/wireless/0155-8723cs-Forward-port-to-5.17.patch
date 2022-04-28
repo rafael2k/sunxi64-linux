@@ -66,7 +66,7 @@ index 86572d7..7fbce22 100644
  	/* Tell the network stack we exist */
  
 diff --git a/drivers/staging/rtl8723cs/os_dep/linux/rtw_proc.c b/drivers/staging/rtl8723cs/os_dep/linux/rtw_proc.c
-index bfe65dbb..482916f 100644
+index bfe65db..482916f 100644
 --- a/drivers/staging/rtl8723cs/os_dep/linux/rtw_proc.c
 +++ b/drivers/staging/rtl8723cs/os_dep/linux/rtw_proc.c
 @@ -30,15 +30,6 @@ inline struct proc_dir_entry *get_rtw_drv_proc(void)
