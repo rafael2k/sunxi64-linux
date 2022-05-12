@@ -43,7 +43,7 @@ index a16333e..7c8813f 100644
  # DEVFREQ Event Drivers
 diff --git a/drivers/devfreq/sun8i-mbus.c b/drivers/devfreq/sun8i-mbus.c
 new file mode 100644
-index 0000000..d3c1655
+index 00000000..d3c1655
 --- /dev/null
 +++ b/drivers/devfreq/sun8i-mbus.c
 @@ -0,0 +1,546 @@

@@ -50,7 +50,7 @@ index 8dcea2c..bb3607f 100644
  obj-$(CONFIG_SND_SOC_ES8316)    += snd-soc-es8316.o
 diff --git a/sound/soc/codecs/ec25.c b/sound/soc/codecs/ec25.c
 new file mode 100644
-index 0000000..5dc302d
+index 00000000..5dc302d
 --- /dev/null
 +++ b/sound/soc/codecs/ec25.c
 @@ -0,0 +1,95 @@
