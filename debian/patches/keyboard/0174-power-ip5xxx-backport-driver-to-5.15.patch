@@ -1,0 +1,21 @@
+From: undef <gitlab@undef.tools>
+Date: Thu, 12 May 2022 09:36:26 +0000
+Subject: power: ip5xxx: backport driver to 5.15
+
+---
+ drivers/power/supply/ip5xxx_power.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/power/supply/ip5xxx_power.c b/drivers/power/supply/ip5xxx_power.c
+index 02ee4d2..b1fc86d 100644
+--- a/drivers/power/supply/ip5xxx_power.c
++++ b/drivers/power/supply/ip5xxx_power.c
+@@ -738,7 +738,7 @@ static int ip5xxx_power_probe(struct i2c_client *client)
+ 	if (IS_ERR(psy))
+ 		return PTR_ERR(psy);
+ 
+-	ret = power_supply_get_battery_info(psy, &ip5xxx->bat);
++	ret = power_supply_get_battery_info(psy, ip5xxx->bat);
+ 	if (ret)
+ 		return dev_err_probe(dev, ret, "Failed to get battery info\n");
+ 
