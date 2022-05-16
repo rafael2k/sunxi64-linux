@@ -10,10 +10,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 2 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index 3d73432..01ba161 100644
+index d98f1768..253cf9d 100644
 --- a/drivers/bus/sunxi-rsb.c
 +++ b/drivers/bus/sunxi-rsb.c
-@@ -733,7 +733,6 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
+@@ -735,7 +735,6 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
  {
  	struct device *dev = &pdev->dev;
  	struct device_node *np = dev->of_node;
@@ -21,7 +21,7 @@ index 3d73432..01ba161 100644
  	struct sunxi_rsb *rsb;
  	u32 clk_freq = 3000000;
  	int irq, ret;
-@@ -753,8 +752,8 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
+@@ -755,8 +754,8 @@ static int sunxi_rsb_probe(struct platform_device *pdev)
  	rsb->dev = dev;
  	rsb->clk_freq = clk_freq;
  	platform_set_drvdata(pdev, rsb);
