@@ -1,8 +1,13 @@
-linux-5.15-sunxi64 (5.15.38+sunxi64-1) UNRELEASED; urgency=medium
+linux-5.15-sunxi64 (5.15.41+sunxi64-1) unstable; urgency=medium
 
+  [ Mobot ]
   * d/patches: rebase on 5.15.38
 
- -- Mobot <invalid@mobian.org>  Tue, 10 May 2022 01:48:09 +0000
+  [ undef ]
+  * d/patches: update defconfig for new pinephone keyboard module
+  * d/patches: update to latest PP keyboard patches
+
+ -- UNdef <debian@undef.tools>  Tue, 24 May 2022 09:10:34 +0000
 
 linux-5.15-sunxi64 (5.15.37+sunxi64-1) unstable; urgency=medium
 
