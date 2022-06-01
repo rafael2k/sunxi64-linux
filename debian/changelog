@@ -1,3 +1,10 @@
+linux-5.15-sunxi64 (5.15.44+sunxi64-1) unstable; urgency=medium
+
+  * d/patches: rebase on 5.15.44
+  * d/patches: fix pinephone DTS for new keyboard drivers and renumber
+
+ -- undef <debian@undef.tools>  Sun, 05 Jun 2022 12:46:53 +0000
+
 linux-5.15-sunxi64 (5.15.41+sunxi64-1) unstable; urgency=medium
 
   [ Mobot ]
