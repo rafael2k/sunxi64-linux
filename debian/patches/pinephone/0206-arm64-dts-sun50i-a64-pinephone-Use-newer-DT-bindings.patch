@@ -1,0 +1,49 @@
+From: Ondrej Jirman <megi@xff.cz>
+Date: Fri, 8 Apr 2022 22:09:33 +0200
+Subject: arm64: dts: sun50i-a64-pinephone: Use newer DT bindings for keyboard
+
+---
+ .../arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi | 18 ++++++++++++++----
+ 1 file changed, 14 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+index 3507a46..d0cfa86 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -27,7 +27,7 @@ backlight: backlight {
+ 		/* Backlight configuration differs per PinePhone revision. */
+ 	};
+ 
+-	kb151_bat: kb151-battery {
++	ppkb_battery: keyboard-battery {
+ 		compatible = "simple-battery";
+ 		voltage-min-design-microvolt = <3000000>;
+ 		voltage-max-design-microvolt = <4200000>;
+@@ -519,14 +519,24 @@ accelerometer@68 {
+ &i2c2 {
+ 	status = "okay";
+ 
+-	keyboard@15 {
+-		compatible = "pine64,kb151";
++	ppkb: keyboard@15 {
++		compatible = "pine64,pinephone-keyboard";
+ 		reg = <0x15>;
+ 		interrupt-parent = <&r_pio>;
+ 		interrupts = <0 12 IRQ_TYPE_EDGE_FALLING>; /* PL12 */
+ 		vbat-supply = <&reg_vcc5v0>;
+ 		wakeup-source;
+-		monitored-battery = <&kb151_bat>;
++
++		i2c-bus {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			charger@75 {
++				compatible = "injoinic,ip5209";
++				reg = <0x75>;
++				monitored-battery = <&ppkb_battery>;
++			};
++		};
+ 	};
+ };
+ 
