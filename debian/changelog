@@ -1,3 +1,10 @@
+linux-5.15-sunxi64 (5.15.48+sunxi64-1) unstable; urgency=medium
+
+  [ Undef ]
+  * d/patches: rebase on 5.15.48
+
+ -- Undef <debian@undef.tools>  Mon, 20 Jun 2022 11:23:01 +0000
+
 linux-5.15-sunxi64 (5.15.44+sunxi64-1) unstable; urgency=medium
 
   * d/patches: rebase on 5.15.44
