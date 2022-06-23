@@ -13,7 +13,7 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
 
 diff --git a/Documentation/devicetree/bindings/input/pine64,pinephone-keyboard.yaml b/Documentation/devicetree/bindings/input/pine64,pinephone-keyboard.yaml
 new file mode 100644
-index 00000000..00f084b
+index 0000000..00f084b
 --- /dev/null
 +++ b/Documentation/devicetree/bindings/input/pine64,pinephone-keyboard.yaml
 @@ -0,0 +1,90 @@
