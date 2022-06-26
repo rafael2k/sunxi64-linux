@@ -14,7 +14,7 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.xyz>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
-index f9242c1..7b3ddf3 100644
+index 8dd7013..9a88706 100644
 --- a/drivers/gpu/drm/panel/panel-simple.c
 +++ b/drivers/gpu/drm/panel/panel-simple.c
 @@ -691,7 +691,7 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc,
