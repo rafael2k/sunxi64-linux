@@ -140,7 +140,7 @@ index 2ef8196..a57d28b 100644
  	if (rc < 0)
  		return rc;
 diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-index d6dc58b..4314f479 100644
+index d6dc58b..4314f47 100644
 --- a/drivers/clk/clk.c
 +++ b/drivers/clk/clk.c
 @@ -4335,6 +4335,37 @@ struct clk *devm_clk_hw_get_clk(struct device *dev, struct clk_hw *hw,
