@@ -9,10 +9,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 25 insertions(+)
 
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index d2de429..7357f4c 100644
+index 86b3eee..7fcb63e8 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-@@ -437,6 +437,28 @@ static int vidioc_s_input(struct file *file, void *fh, unsigned int i)
+@@ -441,6 +441,28 @@ static int vidioc_s_input(struct file *file, void *fh, unsigned int i)
  	return 0;
  }
  
@@ -41,7 +41,7 @@ index d2de429..7357f4c 100644
  static const struct v4l2_ioctl_ops sun6i_video_ioctl_ops = {
  	.vidioc_querycap		= vidioc_querycap,
  	.vidioc_enum_fmt_vid_cap	= vidioc_enum_fmt_vid_cap,
-@@ -448,6 +470,9 @@ static const struct v4l2_ioctl_ops sun6i_video_ioctl_ops = {
+@@ -452,6 +474,9 @@ static const struct v4l2_ioctl_ops sun6i_video_ioctl_ops = {
  	.vidioc_s_input			= vidioc_s_input,
  	.vidioc_g_input			= vidioc_g_input,
  

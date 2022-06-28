@@ -10,10 +10,10 @@ Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
  create mode 100644 include/uapi/drm/sun4i_drm.h
 
 diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/sun4i_drv.c
-index b630614..b66d17c 100644
+index 6a9ba8a..f6935d9 100644
 --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
 +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
-@@ -23,6 +23,8 @@
+@@ -24,6 +24,8 @@
  #include <drm/drm_probe_helper.h>
  #include <drm/drm_vblank.h>
  
@@ -22,7 +22,7 @@ index b630614..b66d17c 100644
  #include "sun4i_drv.h"
  #include "sun4i_frontend.h"
  #include "sun4i_framebuffer.h"
-@@ -41,6 +43,27 @@ static int drm_sun4i_gem_dumb_create(struct drm_file *file_priv,
+@@ -42,6 +44,27 @@ static int drm_sun4i_gem_dumb_create(struct drm_file *file_priv,
  
  DEFINE_DRM_GEM_CMA_FOPS(sun4i_drv_fops);
  
@@ -50,7 +50,7 @@ index b630614..b66d17c 100644
  static const struct drm_driver sun4i_drv_driver = {
  	.driver_features	= DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
  
-@@ -52,6 +75,10 @@ static const struct drm_driver sun4i_drv_driver = {
+@@ -53,6 +76,10 @@ static const struct drm_driver sun4i_drv_driver = {
  	.major			= 1,
  	.minor			= 0,
  

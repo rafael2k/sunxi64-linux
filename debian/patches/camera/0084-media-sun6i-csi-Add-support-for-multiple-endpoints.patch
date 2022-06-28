@@ -319,7 +319,7 @@ index 1d17268..0430a35 100644
  /**
   * sun6i_csi_update_buf_addr() - update the csi frame buffer address
 diff --git a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
-index 7357f4c..035c42d 100644
+index 7fcb63e8..56e2907 100644
 --- a/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 +++ b/drivers/media/platform/sunxi/sun6i-csi/sun6i_video.c
 @@ -138,6 +138,7 @@ static int sun6i_video_start_streaming(struct vb2_queue *vq, unsigned int count)
@@ -347,7 +347,7 @@ index 7357f4c..035c42d 100644
  	if (ret < 0)
  		goto stop_media_pipeline;
  
-@@ -558,27 +561,17 @@ static const struct v4l2_file_operations sun6i_video_fops = {
+@@ -562,27 +565,17 @@ static const struct v4l2_file_operations sun6i_video_fops = {
  /* -----------------------------------------------------------------------------
   * Media Operations
   */
@@ -380,7 +380,7 @@ index 7357f4c..035c42d 100644
  	int ret;
  
  	video->mbus_code = 0;
-@@ -589,13 +582,20 @@ static int sun6i_video_link_validate(struct media_link *link)
+@@ -593,13 +586,20 @@ static int sun6i_video_link_validate(struct media_link *link)
  		return -ENOLINK;
  	}
  
@@ -403,7 +403,7 @@ index 7357f4c..035c42d 100644
  		dev_err(video->csi->dev,
  			"Unsupported pixformat: 0x%x with mbus code: 0x%x!\n",
  			video->fmt.fmt.pix.pixelformat,
-@@ -617,8 +617,21 @@ static int sun6i_video_link_validate(struct media_link *link)
+@@ -621,8 +621,21 @@ static int sun6i_video_link_validate(struct media_link *link)
  	return 0;
  }
  

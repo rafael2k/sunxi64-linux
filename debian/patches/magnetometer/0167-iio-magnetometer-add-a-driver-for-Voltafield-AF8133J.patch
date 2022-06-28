@@ -17,7 +17,7 @@ Signed-off-by: Shoji Keita <awaittrot@shjk.jp>
  create mode 100644 drivers/iio/magnetometer/af8133j.c
 
 diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-index 565ee41..026fc1b 100644
+index 5444536..7b54bfe 100644
 --- a/drivers/iio/magnetometer/Kconfig
 +++ b/drivers/iio/magnetometer/Kconfig
 @@ -6,6 +6,18 @@

@@ -12,7 +12,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 17 insertions(+), 30 deletions(-)
 
 diff --git a/drivers/power/supply/axp20x_usb_power.c b/drivers/power/supply/axp20x_usb_power.c
-index e1d7996..7541567 100644
+index 2b32d0a..674ccef 100644
 --- a/drivers/power/supply/axp20x_usb_power.c
 +++ b/drivers/power/supply/axp20x_usb_power.c
 @@ -449,43 +449,30 @@ static int axp20x_usb_power_set_voltage_min(struct axp20x_usb_power *power,

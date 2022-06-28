@@ -14,7 +14,7 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  2 files changed, 104 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/power/supply/axp20x_usb_power.c b/drivers/power/supply/axp20x_usb_power.c
-index 8b31d3f..d19a164 100644
+index f05322e..144de06 100644
 --- a/drivers/power/supply/axp20x_usb_power.c
 +++ b/drivers/power/supply/axp20x_usb_power.c
 @@ -52,6 +52,8 @@

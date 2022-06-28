@@ -18,10 +18,10 @@ Signed-off-by: Ondřej Jirman <megi@xff.cz>
  create mode 100644 drivers/input/keyboard/kb151.c
 
 diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-index 9417ee0..a38d3b7 100644
+index 4ea79db..68a122f 100644
 --- a/drivers/input/keyboard/Kconfig
 +++ b/drivers/input/keyboard/Kconfig
-@@ -353,6 +353,16 @@ config KEYBOARD_HP7XX
+@@ -354,6 +354,16 @@ config KEYBOARD_HP7XX
  	  To compile this driver as a module, choose M here: the
  	  module will be called jornada720_kbd.
  
@@ -39,7 +39,7 @@ index 9417ee0..a38d3b7 100644
  	tristate "LM8323 keypad chip"
  	depends on I2C
 diff --git a/drivers/input/keyboard/Makefile b/drivers/input/keyboard/Makefile
-index e3c8648..1a7010f 100644
+index 721936e..1d74f6e 100644
 --- a/drivers/input/keyboard/Makefile
 +++ b/drivers/input/keyboard/Makefile
 @@ -34,6 +34,7 @@ obj-$(CONFIG_KEYBOARD_IMX)		+= imx_keypad.o

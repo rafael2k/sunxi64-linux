@@ -24,10 +24,10 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  1 file changed, 70 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/video/backlight/pwm_bl.c b/drivers/video/backlight/pwm_bl.c
-index 8d8959a..6610ca3 100644
+index c0523a0..737e440 100644
 --- a/drivers/video/backlight/pwm_bl.c
 +++ b/drivers/video/backlight/pwm_bl.c
-@@ -450,6 +450,61 @@ static int pwm_backlight_initial_power_state(const struct pwm_bl_data *pb)
+@@ -449,6 +449,61 @@ static int pwm_backlight_initial_power_state(const struct pwm_bl_data *pb)
  	return active ? FB_BLANK_UNBLANK: FB_BLANK_POWERDOWN;
  }
  
@@ -89,7 +89,7 @@ index 8d8959a..6610ca3 100644
  static int pwm_backlight_probe(struct platform_device *pdev)
  {
  	struct platform_pwm_backlight_data *data = dev_get_platdata(&pdev->dev);
-@@ -459,6 +514,7 @@ static int pwm_backlight_probe(struct platform_device *pdev)
+@@ -458,6 +513,7 @@ static int pwm_backlight_probe(struct platform_device *pdev)
  	struct device_node *node = pdev->dev.of_node;
  	struct pwm_bl_data *pb;
  	struct pwm_state state;
@@ -97,7 +97,7 @@ index 8d8959a..6610ca3 100644
  	unsigned int i;
  	int ret;
  
-@@ -595,8 +651,20 @@ static int pwm_backlight_probe(struct platform_device *pdev)
+@@ -594,8 +650,20 @@ static int pwm_backlight_probe(struct platform_device *pdev)
  		pb->scale = data->max_brightness;
  	}
  

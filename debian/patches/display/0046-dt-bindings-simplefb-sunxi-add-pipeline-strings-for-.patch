@@ -14,10 +14,10 @@ Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
  1 file changed, 2 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/display/simple-framebuffer.yaml b/Documentation/devicetree/bindings/display/simple-framebuffer.yaml
-index 44a29d8..ace5247 100644
+index 27ba432..5e2b15d7 100644
 --- a/Documentation/devicetree/bindings/display/simple-framebuffer.yaml
 +++ b/Documentation/devicetree/bindings/display/simple-framebuffer.yaml
-@@ -124,6 +124,8 @@ properties:
+@@ -126,6 +126,8 @@ properties:
        - mixer0-lcd0-hdmi
        - mixer1-lcd1-hdmi
        - mixer1-lcd1-tve

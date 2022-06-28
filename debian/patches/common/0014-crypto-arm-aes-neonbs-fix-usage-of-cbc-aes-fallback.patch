@@ -22,10 +22,10 @@ Email: Herbert Xu <herbert@gondor.apana.org.au>
  1 file changed, 2 insertions(+)
 
 diff --git a/arch/arm/crypto/aes-neonbs-glue.c b/arch/arm/crypto/aes-neonbs-glue.c
-index 5c6cd3c..e43bc80 100644
+index f00f042..85406626 100644
 --- a/arch/arm/crypto/aes-neonbs-glue.c
 +++ b/arch/arm/crypto/aes-neonbs-glue.c
-@@ -447,6 +447,8 @@ static struct skcipher_alg aes_algs[] = { {
+@@ -440,6 +440,8 @@ static struct skcipher_alg aes_algs[] = { {
  	.base.cra_module	= THIS_MODULE,
  	.base.cra_flags		= CRYPTO_ALG_INTERNAL |
  				  CRYPTO_ALG_NEED_FALLBACK,

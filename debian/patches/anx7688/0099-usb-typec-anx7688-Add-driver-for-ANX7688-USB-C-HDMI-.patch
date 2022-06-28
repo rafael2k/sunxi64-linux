@@ -43,12 +43,12 @@ Signed-off-by: Ondrej Jirman <megous@megous.com>
  create mode 100644 drivers/usb/typec/anx7688.c
 
 diff --git a/drivers/usb/typec/Kconfig b/drivers/usb/typec/Kconfig
-index ab480f3..aa352eb 100644
+index ba24847..53b1bb6 100644
 --- a/drivers/usb/typec/Kconfig
 +++ b/drivers/usb/typec/Kconfig
-@@ -52,6 +52,17 @@ source "drivers/usb/typec/ucsi/Kconfig"
- 
- source "drivers/usb/typec/tipd/Kconfig"
+@@ -65,6 +65,17 @@ config TYPEC_RT1719
+ 	  If you choose to build this driver as a dynamically linked module, the
+ 	  module will be called rt1719.ko
  
 +config TYPEC_ANX7688
 +	tristate "Analogix ANX7688 Type-C DRP Port controller and mux driver"
@@ -65,7 +65,7 @@ index ab480f3..aa352eb 100644
  	tristate "TI HD3SS3220 Type-C DRP Port controller driver"
  	depends on I2C
 diff --git a/drivers/usb/typec/Makefile b/drivers/usb/typec/Makefile
-index 57870a2..3e3689c 100644
+index 43626ac..9f0da33 100644
 --- a/drivers/usb/typec/Makefile
 +++ b/drivers/usb/typec/Makefile
 @@ -6,6 +6,7 @@ obj-$(CONFIG_TYPEC)		+= altmodes/

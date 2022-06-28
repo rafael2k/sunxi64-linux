@@ -17,10 +17,10 @@ Signed-off-by: Kyungmin Park <kyungmin.park@samsung.com>
  2 files changed, 16 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/video/fbdev/core/fbmem.c b/drivers/video/fbdev/core/fbmem.c
-index 13083ad..56fefcc 100644
+index a6bb0e4..ec11145 100644
 --- a/drivers/video/fbdev/core/fbmem.c
 +++ b/drivers/video/fbdev/core/fbmem.c
-@@ -1067,7 +1067,7 @@ int
+@@ -1064,7 +1064,7 @@ int
  fb_blank(struct fb_info *info, int blank)
  {
  	struct fb_event event;
@@ -29,7 +29,7 @@ index 13083ad..56fefcc 100644
  
  	if (blank > FB_BLANK_POWERDOWN)
  		blank = FB_BLANK_POWERDOWN;
-@@ -1075,11 +1075,21 @@ fb_blank(struct fb_info *info, int blank)
+@@ -1072,11 +1072,21 @@ fb_blank(struct fb_info *info, int blank)
  	event.info = info;
  	event.data = &blank;
  
@@ -52,7 +52,7 @@ index 13083ad..56fefcc 100644
  	return ret;
  }
 diff --git a/include/linux/fb.h b/include/linux/fb.h
-index 02f362c..0c9b715 100644
+index 9a77ab6..ea11bac 100644
 --- a/include/linux/fb.h
 +++ b/include/linux/fb.h
 @@ -137,6 +137,11 @@ struct fb_cursor_user {

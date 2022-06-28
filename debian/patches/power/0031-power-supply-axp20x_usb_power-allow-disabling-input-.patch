@@ -17,7 +17,7 @@ Acked-by: Maxime Ripard <maxime.ripard@bootlin.com>
  1 file changed, 5 insertions(+)
 
 diff --git a/drivers/power/supply/axp20x_usb_power.c b/drivers/power/supply/axp20x_usb_power.c
-index a1d110f..8b31d3f 100644
+index a1e6d1d..f05322e 100644
 --- a/drivers/power/supply/axp20x_usb_power.c
 +++ b/drivers/power/supply/axp20x_usb_power.c
 @@ -334,6 +334,11 @@ static int axp813_usb_power_set_current_max(struct axp20x_usb_power *power,

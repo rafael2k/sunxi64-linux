@@ -13,10 +13,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  1 file changed, 7 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
-index 711832c..0adb5ec 100644
+index 5252ce4..68cfb6d 100644
 --- a/drivers/rtc/rtc-sun6i.c
 +++ b/drivers/rtc/rtc-sun6i.c
-@@ -641,7 +641,6 @@ static const struct rtc_class_ops sun6i_rtc_ops = {
+@@ -679,7 +679,6 @@ static const struct rtc_class_ops sun6i_rtc_ops = {
  	.alarm_irq_enable	= sun6i_rtc_alarm_irq_enable
  };
  
@@ -24,7 +24,7 @@ index 711832c..0adb5ec 100644
  /* Enable IRQ wake on suspend, to wake up from RTC. */
  static int sun6i_rtc_suspend(struct device *dev)
  {
-@@ -654,7 +653,7 @@ static int sun6i_rtc_suspend(struct device *dev)
+@@ -692,7 +691,7 @@ static int sun6i_rtc_suspend(struct device *dev)
  }
  
  /* Disable IRQ wake on resume. */
@@ -33,7 +33,7 @@ index 711832c..0adb5ec 100644
  {
  	struct sun6i_rtc_dev *chip = dev_get_drvdata(dev);
  
-@@ -663,7 +662,6 @@ static int sun6i_rtc_resume(struct device *dev)
+@@ -701,7 +700,6 @@ static int sun6i_rtc_resume(struct device *dev)
  
  	return 0;
  }
@@ -41,7 +41,7 @@ index 711832c..0adb5ec 100644
  
  static SIMPLE_DEV_PM_OPS(sun6i_rtc_pm_ops,
  	sun6i_rtc_suspend, sun6i_rtc_resume);
-@@ -744,6 +742,11 @@ static int sun6i_rtc_probe(struct platform_device *pdev)
+@@ -817,6 +815,11 @@ static int sun6i_rtc_probe(struct platform_device *pdev)
  	return 0;
  }
  
@@ -53,7 +53,7 @@ index 711832c..0adb5ec 100644
  /*
   * As far as RTC functionality goes, all models are the same. The
   * datasheets claim that different models have different number of
-@@ -764,6 +767,7 @@ MODULE_DEVICE_TABLE(of, sun6i_rtc_dt_ids);
+@@ -839,6 +842,7 @@ MODULE_DEVICE_TABLE(of, sun6i_rtc_dt_ids);
  
  static struct platform_driver sun6i_rtc_driver = {
  	.probe		= sun6i_rtc_probe,

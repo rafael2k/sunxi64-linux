@@ -52,10 +52,10 @@ index 8d28a7a..434fa46a 100644
  			   struct device_node *node, void __iomem *reg,
  			   const struct sunxi_ccu_desc *desc)
 diff --git a/drivers/clk/sunxi-ng/ccu_common.h b/drivers/clk/sunxi-ng/ccu_common.h
-index 98a1834..4faee66 100644
+index fbf16c6..2a6b0e5 100644
 --- a/drivers/clk/sunxi-ng/ccu_common.h
 +++ b/drivers/clk/sunxi-ng/ccu_common.h
-@@ -63,6 +63,18 @@ struct ccu_pll_nb {
+@@ -64,6 +64,18 @@ struct ccu_pll_nb {
  
  int ccu_pll_notifier_register(struct ccu_pll_nb *pll_nb);
  

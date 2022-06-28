@@ -27,7 +27,7 @@ index 5b3ceca..6236e01 100644
  
  static const struct resource axp22x_pek_resources[] = {
 diff --git a/drivers/power/supply/axp20x_usb_power.c b/drivers/power/supply/axp20x_usb_power.c
-index d19a164..e1d7996 100644
+index 144de06..2b32d0a 100644
 --- a/drivers/power/supply/axp20x_usb_power.c
 +++ b/drivers/power/supply/axp20x_usb_power.c
 @@ -55,6 +55,11 @@
