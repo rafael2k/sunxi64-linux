@@ -3,19 +3,39 @@ Date: Thu, 12 May 2022 09:36:26 +0000
 Subject: power: ip5xxx: backport driver to 5.15
 
 ---
- drivers/power/supply/ip5xxx_power.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/power/supply/ip5xxx_power.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/power/supply/ip5xxx_power.c b/drivers/power/supply/ip5xxx_power.c
-index 02ee4d2..b1fc86d 100644
+index 02ee4d2..22804a5 100644
 --- a/drivers/power/supply/ip5xxx_power.c
 +++ b/drivers/power/supply/ip5xxx_power.c
-@@ -738,7 +738,7 @@ static int ip5xxx_power_probe(struct i2c_client *client)
- 	if (IS_ERR(psy))
- 		return PTR_ERR(psy);
+@@ -79,7 +79,7 @@
  
--	ret = power_supply_get_battery_info(psy, &ip5xxx->bat);
-+	ret = power_supply_get_battery_info(psy, ip5xxx->bat);
+ struct ip5xxx {
+ 	struct regmap *regmap;
+-	struct power_supply_battery_info *bat;
++	struct power_supply_battery_info bat;
+ 	int r_int;
+ 	bool initialized;
+ };
+@@ -369,7 +369,7 @@ static int ip5xxx_battery_get_property(struct power_supply *psy,
+ 		if (ret)
+ 			return ret;
+ 
+-		ret = power_supply_batinfo_ocv2cap(ip5xxx->bat,
++		ret = power_supply_batinfo_ocv2cap(&ip5xxx->bat,
+ 			   vol.intval - cur.intval * ip5xxx->r_int / 1000, 20);
+ 		if (ret < 0)
+ 			return ret;
+@@ -742,8 +742,8 @@ static int ip5xxx_power_probe(struct i2c_client *client)
  	if (ret)
  		return dev_err_probe(dev, ret, "Failed to get battery info\n");
+ 
+-	if (ip5xxx->bat->factory_internal_resistance_uohm >= 0)
+-		ip5xxx->r_int = ip5xxx->bat->factory_internal_resistance_uohm / 1000;
++	if (ip5xxx->bat.factory_internal_resistance_uohm >= 0)
++		ip5xxx->r_int = ip5xxx->bat.factory_internal_resistance_uohm / 1000;
+ 	else
+ 		ip5xxx->r_int = 187;
  
