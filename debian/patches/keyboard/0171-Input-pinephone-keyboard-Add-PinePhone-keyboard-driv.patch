@@ -15,10 +15,10 @@ Signed-off-by: Samuel Holland <samuel@sholland.org>
  create mode 100644 drivers/input/keyboard/pinephone-keyboard.c
 
 diff --git a/MAINTAINERS b/MAINTAINERS
-index f3e1396..d1aa8dd 100644
+index caca13e..5f83985 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -14895,6 +14895,12 @@ S:	Maintained
+@@ -14903,6 +14903,12 @@ S:	Maintained
  F:	Documentation/devicetree/bindings/iio/chemical/plantower,pms7003.yaml
  F:	drivers/iio/chemical/pms7003.c
  

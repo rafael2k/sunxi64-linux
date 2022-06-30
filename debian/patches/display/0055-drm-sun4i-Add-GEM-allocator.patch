@@ -10,7 +10,7 @@ Signed-off-by: Maxime Ripard <maxime.ripard@free-electrons.com>
  create mode 100644 include/uapi/drm/sun4i_drm.h
 
 diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/sun4i_drv.c
-index 54dd562..4a2c551 100644
+index 5b7061e..408c82a 100644
 --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
 +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
 @@ -23,6 +23,8 @@
